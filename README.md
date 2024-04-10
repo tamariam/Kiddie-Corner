@@ -28,6 +28,8 @@ I have included testing details in a separate document called [testing](TESTING.
 - Individuals looking for gifts for children's birthdays, holidays, or special occasions
 ## Project Goals
 
+To develop an innovative and user-friendly online toy store platform that caters to various age groups, offering a curated selection of toys, while providing seamless functionality for both customers and shop owners to browse, shop, and manage products efficiently
+
 
 ## Deployment
 
