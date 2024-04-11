@@ -36,20 +36,18 @@
     <title>Kiddie Corner{% block extra_title %}{% endblock%} </title>
   </head>
   <body>
-    <header class="container-fluid  fixed-top p-0">
-      <div class="announcement-bar bg-dark  text-danger text-center ">
-      <div class="d-flex justify-content-center ">
-        <div> <i class="mr-1 fa-solid fa-truck"></i></div>
-        <p class="my-0">Free nationwide delivery on orders over €50!</p>
+    <header class="lato container-fluid  fixed-top p-0  ">
+      <div class="announcement-bar bg-primary  text-white text-bold py-2  d-flex justify-content-center align-items-center ">
+        <div> <i class="text-warning mr-1 fa-solid fa-truck"></i></div>
+        <p class="my-0 announcement-text">Free nationwide delivery on orders over €50!</p>
     </div>
-    </div>
-      <div id="top-nav" class="row bg-white pt-lg-1 d-none d-lg-flex">
+      <div id="top-nav" class="row pt-lg-1 d-none d-lg-flex">
         {% include 'includes/topnav.html' %}
       </div>
-      <!-- main navigation and mobile screen -->
-      <div class="row  bg-white pt-lg-1 mx-auto">
-        <nav class="navbar navbar-expand-lg w-100">
-            <button class="bg-dark navbar-toggler navbar-dark" type="button" data-toggle="collapse"
+       <!-- main navigation and mobile screen -->
+      <div class="row  pt-lg-1 mx-auto w-100">
+        <nav class="navbar navbar-expand-lg w-100 ">
+            <button class="navbar-toggler navbar-dark bg-info" type="button" data-toggle="collapse"
                 data-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -59,7 +57,7 @@
         </nav>
     </div>
     
-    </header>
+    </header> 
     {% if messages %}
     <div class="messages-div"></div>
     {% endif %}
@@ -73,4 +71,4 @@
     {% block postloadjs%}
     {% endblock %}
 </body>
-</html>
+</html> 

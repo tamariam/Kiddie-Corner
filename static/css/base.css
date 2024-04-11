@@ -1,4 +1,80 @@
 
-.mobile-nav {
-    display: contents;
+/* general rules */
+.orange{
+    color:#ff7845;
 }
+.yellow{
+    color:#fca311;
+}
+
+/* fonts */
+@media screen and (min-width: 768px) {
+    @keyframes zoomIn {
+        0% {
+            background-size: 100% auto;
+        }
+        100% {
+            background-size: 120% auto;
+        }
+    } 
+}
+
+.background-image{
+    background-image:url('/media/background-image.jpg') ;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    width:100vw;
+    height:90vh;
+    animation: zoomIn 2s ease forwards;
+   } 
+
+
+
+.bangers{
+    font-family:'Bangers', Cursive;
+}
+
+.schoolbell{
+    font-family: "Schoolbell", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .lato{
+    font-family:'lato',sans-serif;
+    font-weight:600;
+  }
+
+  /*  give styles to header section */
+  header{
+    background-color:#feeafa;
+  }
+  .form-control{
+    box-shadow: none;
+    outline: none;
+    background-color:#f0f8ff ;
+  }
+  
+  .form-control:focus{
+    box-shadow: none;
+    background-color: #ffff;
+  }
+  .list-inline-item{
+    font-size:18px;
+  }
+  .main-nav-navigation{
+    font-size:22px;
+    letter-spacing:1.5px;
+  }
+
+   .logo{
+    font-size:40px;
+   }
+  .logo-mobile{
+    font-size:40px;
+  }
+
+  .icon-mobile{
+    font-size:24px;
+  }

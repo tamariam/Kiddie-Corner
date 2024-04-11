@@ -1,15 +1,16 @@
+{% load static %}
 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-        <h2 class="logo-font  my-0"><strong>Kiddie</strong>   <i class="fa-brands fa-earlybirds"></i>  Corner</h2>
+        <h2 class="bangers yellow logo my-0">Kiddie<i class=" m-3 text-danger fa-brands fa-earlybirds"></i>Corner</h2>
     </a>
 </div>
 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
     <form method="GET" action="">
         <div class="input-group w-100">
-            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="What are you looking for?">
-            <div class="input-group-append">
-                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                   SEARCH
+            <input class="form-control border border-black rounded-1 outxline-0" type="text" name="q" placeholder="What are you looking for?">
+            <div class="input-group-append rounded">
+                <button class="bg-warning text-white text-bold  btn btn-black border border-black rounded-0" type="submit">
+                SEARCH
                 </button>
             </div>
         </div>
@@ -18,10 +19,10 @@
 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
     <ul class="list-inline list-unstyled text-lg-right text-center my-0 mx-auto">
         <li class="list-inline-item dropdown">
-            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="yellow nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                     <div><i class="fas fa-user fa-lg"></i></div>
-                    <p class="my-0">Account</p>
+                    <p class="my-0 ">Account</p>
                 </div>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -38,7 +39,7 @@
             </div>
         </li>
         <li class="list-inline-item dropdown">
-            <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true"
+            <a class="yellow text-bold nav-link" href="#" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <div class="text-center">
                     {% if users_wishlist %}
@@ -49,7 +50,7 @@
                     <div><i class="fa-solid fa-heart icon "></i></div>
                     {% endif %}
 
-                    <p class="my-0">Wishlist</p>
+                    <p class="my-0 ">Wishlist</p>
                 </div>
             </a>
             <div class="dropdown-menu border-0">
@@ -62,9 +63,9 @@
             </div>
         </li>
         <li class="list-inline-item">
-            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link yellow " href="">
                 <div class="text-center">
-                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                    <div><i class="fa-solid fa-cart-shopping"></i></div>
                     <p class="my-0">
                         {% if grand_total %}
                             ${{ grand_total|floatformat:2 }}
