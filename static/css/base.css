@@ -29,7 +29,14 @@
     animation: zoomIn 2s ease forwards;
    } 
 
-
+.about-image{
+  background-image:url('/media/pexelss.jpg');
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width:100vw;
+  height:100vh;
+ } 
 
 .bangers{
     font-family:'Bangers', Cursive;
