@@ -15,6 +15,9 @@
     {% block corecss%}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Schoolbell&display=swap" rel="stylesheet">
         {% endblock %}
 
     {% block extra_css %}
@@ -33,12 +36,19 @@
     <title>Kiddie Corner{% block extra_title %}{% endblock%} </title>
   </head>
   <body>
-    <header class="container-fluid  fixed-top d-flex flex-column  mx-auto">
+    <header class="container-fluid  fixed-top p-0">
+      <div class="announcement-bar bg-dark  text-danger text-center ">
+      <div class="d-flex justify-content-center ">
+        <div> <i class="mr-1 fa-solid fa-truck"></i></div>
+        <p class="my-0">Free nationwide delivery on orders over €50!</p>
+    </div>
+    </div>
       <div id="top-nav" class="row bg-white pt-lg-1 d-none d-lg-flex">
         {% include 'includes/topnav.html' %}
       </div>
-      <div class="row primary-bg">
-        <nav class="navbar navbar-expand-lg">
+      <!-- main navigation and mobile screen -->
+      <div class="row  bg-white pt-lg-1 mx-auto">
+        <nav class="navbar navbar-expand-lg w-100">
             <button class="bg-dark navbar-toggler navbar-dark" type="button" data-toggle="collapse"
                 data-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -48,11 +58,6 @@
             {% include 'includes/main-nav.html' %}
         </nav>
     </div>
-<div id="delivery-banner" class="row text-center">
-    <div class="col bg-black text-white">
-        <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>                
-    </div>            
-</div>
     
     </header>
     {% if messages %}
