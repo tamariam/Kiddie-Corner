@@ -20,7 +20,7 @@
 }
 
 .background-image{
-    background-image:url('/media/background-image.jpg') ;
+    background-image:url('/media/background-image.avif') ;
     background-size: cover;
     background-position:center;
     background-repeat: no-repeat;
@@ -77,4 +77,11 @@
 
   .icon-mobile{
     font-size:24px;
+  }
+  .main-message{
+    background-color:#f5ebe0;
+    color:black;
+  }
+  .banner-icon{
+    font-size:30px;
   }
