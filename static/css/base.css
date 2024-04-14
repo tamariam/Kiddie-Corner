@@ -18,6 +18,9 @@
         }
     } 
 }
+body{
+  background-color:#f1faee;
+}
 
 .background-image{
     background-image:url('/media/background-image.avif') ;
@@ -25,7 +28,7 @@
     background-position:center;
     background-repeat: no-repeat;
     width:100vw;
-    height:90vh;
+    height:70vh;
     animation: zoomIn 2s ease forwards;
    } 
 
@@ -103,9 +106,3 @@
   width:150px;
   text-align: center;
 }
-  @media (max-width: 533px) {
-    .features-div {
-     justify-content: center !important;
-     align-items: center !important;
-    }
-  }
