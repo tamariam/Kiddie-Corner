@@ -56,8 +56,8 @@
             {% include 'includes/main-nav.html' %}
         </nav>
     </div>
-    
-    </header> 
+ </header> 
+
     {% if messages %}
     <div class="messages-div"></div>
     {% endif %}
@@ -67,6 +67,11 @@
 
     {% block content %}
     {% endblock %}
+
+        
+ <footer class="footer bg-dark mb-0">
+  {% include 'includes/footer.html' %}
+</footer>
 
     {% block postloadjs%}
     {% endblock %}
