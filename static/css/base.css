@@ -106,3 +106,17 @@ body{
   width:150px;
   text-align: center;
 }
+
+.social-icon{
+  font-size:37px;
+  color:#fca311;
+}
+
+.footer-link{
+  text-transform: uppercase;
+}
+
+.footer-link:hover{
+  background-color:red;
+  text-decoration: none;
+}
