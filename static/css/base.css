@@ -20,6 +20,7 @@
 }
 body{
   background-color:#f1faee;
+  padding-top:250px;
 }
 
 .background-image{
@@ -28,7 +29,7 @@ body{
     background-position:center;
     background-repeat: no-repeat;
     width:100vw;
-    height:70vh;
+    height:55vh;
     animation: zoomIn 2s ease forwards;
    } 
 
@@ -117,6 +118,6 @@ body{
 }
 
 .footer-link:hover{
-  background-color:red;
+  background-color:#ff7845;
   text-decoration: none;
 }
