@@ -1,6 +1,6 @@
 {% load static %}
 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-    <a href="{% url 'home' %}" class="nav-link main-logo-link">
+    <a href="{% url 'home' %}" class="nav-link main-logo-link" aria-label="link to Home page">
         <h2 class="bangers yellow logo my-0">Kiddie<i class=" m-3 text-danger fa-brands fa-earlybirds"></i>Corner</h2>
     </a>
 </div>
@@ -9,7 +9,7 @@
         <div class="input-group w-100">
             <input class="form-control border border-black rounded-1 outxline-0" type="text" name="q" placeholder="What are you looking for?">
             <div class="input-group-append rounded">
-                <button class="bg-warning text-white text-bold  btn btn-black border border-black rounded-0" type="submit">
+                <button class="bg-warning text-black text-bold  btn btn-black border border-black rounded-0" type="submit" aria-label ="search button">
                 SEARCH
                 </button>
             </div>
@@ -28,13 +28,13 @@
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item">Product Management</a>
+                        <a href="" class="dropdown-item" aria-label="link to user favourites" aria-label="product management">Product Management</a>
                     {% endif %}
                     <a href="" class="dropdown-item">My Profile</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="link to logout page">Logout</a>
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="link to register page">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="link to login page">Login</a>
                 {% endif %}
             </div>
         </li>
@@ -55,10 +55,10 @@
             </a>
             <div class="dropdown-menu border-0">
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'user_wishlist' %}" class="dropdown-item">Manage Wishlist</a>
+                <a href="{% url 'user_wishlist' %}" class="dropdown-item" aria-label="link to manage wishlist page">Manage Wishlist</a>
                 {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="link to register page">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="link to login page">Login</a>
                 {% endif %}
             </div>
         </li>

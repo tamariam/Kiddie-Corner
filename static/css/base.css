@@ -8,7 +8,7 @@
 }
 
 /* fonts */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     @keyframes zoomIn {
         0% {
             background-size: 100% auto;
@@ -17,7 +17,7 @@
             background-size: 120% auto;
         }
     } 
-}
+} */
 body{
   background-color:#f1faee;
   padding-top:250px;
@@ -58,9 +58,7 @@ body{
   }
 
   /*  give styles to header section */
-  header{
-    background-color:#feeafa;
-  }
+ 
   .form-control{
     box-shadow: none;
     outline: none;
@@ -120,4 +118,24 @@ body{
 .footer-link:hover{
   background-color:#ff7845;
   text-decoration: none;
+}
+
+.mobile-nav{
+  display:contents;
+}
+
+.about-text{
+  background-color: #008000;
+}
+
+.announcement-bar,.footer-bottom{
+  background-color:#00bbf9;
+}
+
+header,footer{
+  background-color: #003049;
+}
+
+.age-btn{
+color:black;
 }

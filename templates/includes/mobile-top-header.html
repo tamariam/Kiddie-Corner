@@ -1,30 +1,33 @@
 
+        <ul class="mobile-nav">
         <li class=" col-2 list-inline-item dropdown d-block d-lg-none">
-            <a class=" icon-mobile text-info nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="icon-mobile text-info nav-link" href="#" aria-label="link to my account " id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                     <div><i class="fas fa-user fa-lg"></i></div>
                 </div>
+                </a>
+    
             <div>
             <li class="dropdown-menu border-0" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item">Product Management</a>
+                        <a href="" class="dropdown-item" aria-label="link to product management">Product Management</a>
                     {% endif %}
-                    <a href="" class="dropdown-item">My Profile</a>
-                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                    <a href="" class="dropdown-item" aria-label="link to myprofile page" >My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="link to logout page">Logout</a>
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="link to register page">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="link to user login page">Login</a>
                 {% endif %}
             </li>
         </li>
         <li class="col-2 text-center list-inline-item d-block d-lg-none">
-            <a href="{% url 'home' %}" class="nav-link text-info ">
+            <a href="{% url 'home' %}" class="nav-link text-info " aria-label="link to home page">
                 <h2><i class="logo-mobile text-danger fa-brands fa-earlybirds"></i></h2>
             </a>
         </li>
         <li class="col-2 list-inline-item dropdown d-block d-lg-none">
-            <a class="icon-mobile text-info nav-link" href="#" data-toggle="dropdown" aria-haspopup="true"
+            <a class="icon-mobile text-info nav-link" aria-label="link to  favourites page" href="#" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <div class="text-center">
                     <div><i class="fa-solid fa-heart icon "></i></div>
@@ -33,26 +36,27 @@
             </a>
             <div class="dropdown-menu border-0">
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'user_wishlist' %}" class="dropdown-item">Manage Wishlist</a>
+                <a href="{% url 'user_wishlist' %}" class="dropdown-item" aria-label="link to favourites page">Manage Wishlist</a>
                 {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="link to  register page">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="link to login page">Login</a>
                 {% endif %}
             </div>
         </li>
         <li class="col-2 list-inline-item d-block d-lg-none ">
-            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-info icon-mobile " href="">
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-info icon-mobile " href="" aria-label="link to  dhopping cart">
                 <div class="text-center">
                     <div><i class="fa-solid fa-cart-shopping"></i></div>
                 </div>
             </a>
         </li>
+        </ul>
 <div class="col-10 mt-3 mx-auto col-md-10 col-lg-4  py-1 py-lg-0 d-block d-lg-none">
     <form method="GET" action="">
         <div class="input-group w-100">
             <input class="form-control border-rounded-2" type="text" name="q" placeholder="Search">
             <div class="input-group-append">
-                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                <button class="form-control btn btn-black border border-black rounded-0" type="submit" aria-label="search icon">
                     <span class="icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
