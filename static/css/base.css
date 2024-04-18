@@ -11,10 +11,10 @@
 /* @media screen and (min-width: 768px) {
     @keyframes zoomIn {
         0% {
-            background-size: 100% auto;
+            background-size: 80% auto;
         }
         100% {
-            background-size: 120% auto;
+            background-size: 100% auto;
         }
     } 
 } */
@@ -29,16 +29,16 @@ body{
     background-position:center;
     background-repeat: no-repeat;
     width:100vw;
-    height:55vh;
+    height:70vh;
     animation: zoomIn 2s ease forwards;
    } 
 
 .about-image{
-  background-image:url('/media/pexelss.jpg');
+  background-image:url('/media/about.avif');
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
-  width:100vw;
+  width:100%;
   height:50vh;
  } 
 
@@ -138,4 +138,9 @@ header,footer{
 
 .age-btn{
 color:black;
+}
+
+.age-img{
+  width:100%;
+  height:100%;
 }
