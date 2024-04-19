@@ -7,7 +7,17 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
 - [Planning and Design](#planning-and-design)
     - [Target-Audience](#target-audience)
     - [Project-Goalss](#project-goals)
+    - [User Stories and Epics](#user-stories-and-epics)
+    - [Wireframes](#wireframes)
+    - [Database Schema](#Database-schema)
+    - [Typography](#typography)
+    - [Colour Pallete](#colour-pallete)
+- [Features](#Features)
+    - [Navigation Bar](#navigation-bar)
+    - [Homepage](#homepage)
+    - [Footer] (#footer)
 - [Testing](#testing)
+    - [lighthouse](#lighthouse)
 - [Deployment](#dployment)
    - [Heroku Deployment](#heroku-deployment)
    - [ElephantSQL Database](#elephantsql-database)
@@ -26,9 +36,100 @@ I have included testing details in a separate document called [testing](TESTING.
 - Individuals passionate about toys, collectors, or hobbyists
 - Teachers, daycare providers, and educational institutions looking for toys for classrooms or childcare settings.
 - Individuals looking for gifts for children's birthdays, holidays, or special occasions
-## Project Goals
 
+## Project Goals
 To develop an innovative and user-friendly online toy store platform that caters to various age groups, offering a curated selection of toys, while providing seamless functionality for both customers and shop owners to browse, shop, and manage products efficiently
+
+## User Stories and Epics
+
+-  As a **site user** I want  **to navigate through landing page** so that **i can easily access various sections**
+
+## Wireframes
+[Home-page-desktop](./docs/wireframes/home-page-desktop.png).
+<details>
+  <summary>Homepage - Mobile (click to expand)</summary>
+
+![Homepage - mobile-wireframe](/docs/wireframes/home-page-mobile.png)
+
+</details>
+
+## Database Schema
+
+
+## Typography
+
+
+## Colour Pallete
+
+
+# Features
+## Navigation Bar 
+The navigation  bar designed with bootstrap adapts seamlessly to different screen sizes, ensuring a consistent user experience across desktops, tablets, and mobile devices.
+The navbar contains the business logo which links back to the homepage when clicked. There is also a Search bar that allows users to query the 'products' database. There are three icon links in the upper right of the navbar that link to the user favourites, user account/account management, and shopping bag features.The Menu Contains links to the Home, About, All Products, shop byu age, and special offers pages.
+
+![navigation-Desktop](/docs/features/navigation-bar-desktop.png)
+
+At smaller screen widths, the nav bar collapses into a burger-style dropdown menu to enhance user experience on mobile and tablet devices.
+
+![navigation-mobile](/docs/features/navigation-bar-mobile.png)
+
+## Delivery Banner
+
+The website features a prominent delivery banner positioned at the top of the header section. This banner encourages users to spend more than €50 to qualify for free delivery on their orders.
+
+![delivery-banner](/docs/features/delivery-banner.png)
+
+## Homepage
+
+The home page features a main background image to catch users eye, with a button placed in the middle of the banner. Clicking this button takes user to the All Products page. Below that there is Highlighted Features and under that section there's a section about us with a small description of the page. Additionally, users can find age-specific links that lead to toys tailored for different age groups..
+
+
+![Homepage-Desktop](/docs/features/dekstop-home-1.png)
+
+<details>
+  <summary>Homepage - Mobile (click to expand)</summary>
+
+![Homepage - mobile](/docs/wireframes/home-page-mobile.png)
+
+</details>
+
+
+
+
+
+
+## Footer
+
+# Testing
+## Lighthouse
+
+
+### Lighthouse testing
+
+[Chrome DevTools Lighthouse](https://developers.google.com/web/tools/lighthouse) was used to test:
+
+* Performance
+* Accessibility
+* Best Practices
+* SEO.
+
+Below are the Lighthouse test results for all pages
+
+
+<details>
+  <summary>lighthouse-Testing-Home-Desktop (click to expand)</summary>
+
+![Footer-Desktop](./docs/testing/lighthouse/home-page-desktop.png)
+
+</details>
+
+
+<details>
+  <summary>lighthouse-Testing-Home-Mobile (click to expand)</summary>
+
+![Footer-Desktop](./docs/testing/lighthouse/home-page-mobile.png)
+
+</details>
 
 
 ## Deployment
