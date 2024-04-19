@@ -86,10 +86,15 @@ The home page features a main background image to catch users eye, with a button
 
 ![Homepage-Desktop](/docs/features/dekstop-home-1.png)
 
+![Homepage-Desktop](/docs/features/dekstop-home-2.png)
+
 <details>
   <summary>Homepage - Mobile (click to expand)</summary>
 
-![Homepage - mobile](/docs/wireframes/home-page-mobile.png)
+![Homepage - mobile](/docs/features/mobile-home-1.png)
+![Homepage - mobile](/docs/features/mobile-home-2.png)
+![Homepage - mobile](/docs/features/mobile-home-3.png)
+![Homepage - mobile](/docs/features/mobile-home-4.png)
 
 </details>
 
