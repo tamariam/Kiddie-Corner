@@ -20,7 +20,7 @@ class ProductAdmin(admin.ModelAdmin):
     """
     list_display = (
         'name', 'category', 'description', 'in_stock',
-        'for_sensory_needs', 'rating', 'image_url',
+        'rating', 'image_url',
         'price', 'sku', 'featured_image',)
     search_fields = (
         'category', 'name',

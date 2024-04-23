@@ -55,7 +55,7 @@
             </a>
             <div class="dropdown-menu border-0">
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'user_wishlist' %}" class="dropdown-item" aria-label="link to manage wishlist page">Manage Wishlist</a>
+                <a href="" class="dropdown-item" aria-label="link to manage favourites page">Manage Wishlist</a>
                 {% else %}
                 <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="link to register page">Register</a>
                 <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="link to login page">Login</a>
