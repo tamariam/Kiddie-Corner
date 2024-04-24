@@ -128,13 +128,24 @@ body{
   text-decoration: none;
 }
 
-.announcement-bar,.footer-bottom{
+.announcement-bar,.footer-bottom, .card-title{
   background-color:#00bbf9;
 }
 
 header,footer{
   background-color: #003049;
 }
+
+/* give styles to all products page */
+.card{
+  background-color:;
+}
+.price{
+  font-size:22px;
+}
+
+
+
 
 
 
