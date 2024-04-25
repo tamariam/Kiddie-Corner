@@ -155,6 +155,15 @@ background-color: #ffe8d6;
   font-size: 12px;
 }
 
+.text{
+  text-decoration: line-through;
+  pointer-events:none;
+}
+
+.btn-div{
+  height:100px;
+}
+
 
 
 
