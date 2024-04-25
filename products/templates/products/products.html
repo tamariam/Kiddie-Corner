@@ -35,11 +35,14 @@
                                 {% endif %}
                                 
                                 <div class="card-body  pt-0 border-0 text-left">
-                                    <h3 class="text-center card-title mt-2">{{ product.name }}</h3>
+                                    {% if product.has_sale %}
+                                    <span class="sale-mark">Sale</span>
+                                {% endif %}
+                                    <h3 class="text-center card-title mt-2 ">{{ product.name }}</h3>
                                     <div class="row">
                                         <div class="col">
-                                            <div class="row d-flex justify-content-center text-success font-weight-bold ">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            <div>
+                                            <p class="lead mb-0  font-weight-bold text-center">£{{ product.price }}</p>
                                             </div>
                                             <div class="row d-flex justify-content-around mt-2">
                                             {% if product.rating %}

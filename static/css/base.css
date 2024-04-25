@@ -144,6 +144,16 @@ header,footer{
 .product-card{
 background-color: #ffe8d6;
 }
+.sale-mark {
+  position: absolute;
+  top:-15px;
+  right:0;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
 
 
 
