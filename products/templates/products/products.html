@@ -13,81 +13,71 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 >Products</h2>
+                <h2 class="logo-font">All Products</h2>
+                <hr class="w-50 mb-1 bg-danger ">
             </div>
         </div>
         <div class="row">
-            <div class="product-container col-10 mx-auto">
+            <div class="col-10 offset-1 lato">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
-                        <div class=".col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border">
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="card h-100 border-bottom">
                                 {% if product.image %}
                                 <a href="">
-                                    <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
                                 <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}placeholder.jpg" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
-                                <div class="card-body bg-white py-0 border-top ">
-                                    <h5 class="mt-2 p-2 rounded card-title text-center">{{product.name}}</h5>
-                                    <div class="row ">
-                                        <div class="col d-flex justify-content-between  align-items-center ">
-                                            <p class="price font-weight-bold mt-3 text-success">${{ product.price }}</p>
+                                
+                                <div class="card-body  pt-0 border-0 text-left">
+                                    <h3 class="text-center card-title mt-2">{{ product.name }}</h3>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="row d-flex justify-content-center text-success font-weight-bold ">
+                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            </div>
+                                            <div class="row d-flex justify-content-around mt-2">
                                             {% if product.rating %}
-                                                <small class="text-muted font-weight-bold "><i class="fas fa-star mr-1 text-warning"></i>{{ product.rating }} / 5</small>
+                                                <small class="text-muted"><i class="fas fa-star mr-1 text-warning "></i>{{ product.rating }} / 5</small>
                                             {% else %}
-                                                <small class="text-muted font-weight-bold">No Rating</small>
+                                                <small class="text-muted">No Rating</small>
                                             {% endif %}
                                             {% if product.in_stock %}
-                                                <small class="text-muted font-weight-bold "><i class="fas fa-star mr-1 text-warning"></i>In stock</small>
-                                            {% else %}
-                                                <small class="text-muted font-weight-bold">Out of Stock</small>
+                                            <small class="text-success" ><i class="mr-1 fa-solid fa-check"></i> In Stock</small>
+                                        {% else %}
+                                            <small class="text-danger"><i class="mr-1 fa-solid fa-xmark"></i>Out of Stock</small>
                                             {% endif %}
-                                        </div>
-                                        {% if product.in_stock %}
-                                        <div class="card-body">
-                                            <a href="#" class="mx-auto text-center btn">Add to favourites</a>
-                                            <a href="#" class="mx-auto text-center btn">Add To Bag</a>
-                                            <a href="#" class="mx-auto text-center btn">Product Details</a>
                                             </div>
-                                            {% else %}
-                                            <div class="card-body">
-                                                <a href="#" class="mx-auto text-center btn">Add to favourites</a>
-                                                <a href="#" class="mx-auto text-center btn">Add to favourites</a>
-                                                
-                                                </div>
-                                                {% endif %}
-
+                                           
+                                        </div>
                                     </div>
-                                   
                                 </div>
-                                        
-                                
-                               
+                                <div class="card-footer p-3 d-flex justify-content-center">
+                                    <a href="#" class="btn btn-danger text-center btn">Product Details</a>
+                                </div>
                             </div>
                         </div>
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
-                                <hr>
                             </div>
                         {% endif %}                        
                         {% if forloop.counter|divisibleby:2 %}
                             <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
                             <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
+                               
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:4 %}
                             <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
+                               
                             </div>
                         {% endif %}
                     {% endfor %}
