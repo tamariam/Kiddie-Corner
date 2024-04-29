@@ -14,14 +14,14 @@
         Shop By Age
       </a>
       <div class="dropdown-menu bg-dark ">
-        <a class="dropdown-item text-warning" href="#">Up to 1 Year</a>
-        <a class="dropdown-item text-warning" href="#">1-2 Years</a>
-        <a class="dropdown-item text-warning" href="#">2-3 Years</a>
-        <a class="dropdown-item text-warning " href="#">3 + Years</a>
+        <a class="dropdown-item text-warning" href="{% url 'products' %}?category=up_to_one_year">Up to 1 Year</a>
+        <a class="dropdown-item text-warning" href="{% url 'products' %}?category=1_2_years">1-2 Years</a>
+        <a class="dropdown-item text-warning" href="{% url 'products' %}?category=2_3_years">2-3 Years</a>
+        <a class="dropdown-item text-warning " href="{% url 'products' %}?category=3_plus_years">3 + Years</a>
 </div>
     </li>
     <li class="nav-item">
-        <a class="special-offer nav-link text-white" href="#">Special Offer</a>
+        <a class="special-offer nav-link text-white" href="{% url 'products' %}">Special Offer</a>
       </li>
   </ul>
 </div>
