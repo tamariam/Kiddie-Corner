@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
  
+
+
 {% block extra_title %} - {{ product.name }}{% endblock %}
-
-
 
 {% block page_header %}
     <div class="container header-container">
@@ -34,7 +34,7 @@
                     <a class="btn btn-outline-success" href=""><i class="mr-1 fa-solid fa-cart-plus"></i>add To cart</a>
                     </div>
                 {% else %}
-                <div class="btn-div row d-flex  justify-content-center  mb-5 ">
+                <div class="btn-div row d-flex  justify-content-around  mb-5  align-items-center">
                     <a class="bg-white btn btn-outline-primary btn-pill" href="{% url 'products' %}"><i class="mr-1 fa-solid fa-magnifying-glass"></i>Find More Products</a>
                     <a class="btn btn-outline-danger text" href=""><i class="mr-1 fa-solid fa-cart-plus"></i>Out Of stock</a>
                     <a class="btn btn-outline-dark" href=""><i class="mr-1 fa-solid fa-heart-circle-plus"></i>add to wishlist</a>
@@ -45,11 +45,7 @@
                 <div class="">
                     <h2 class="text-white bg-dark text-center ">{{ product.name }}</h2>
                     <p class="lead mb-0  font-weight-bold text-center bg-danger">Price: £{{ product.price }}</p>
-                    <!-- {% if product.in_stock %}
-                    <p class="mt-1" ><i class="mr-1 fa-solid fa-check text-success "></i> <span>In Stock</span></p>
-                {% else %}
-                    <p class="text-danger"><i class="mr-1 fa-solid fa-xmark"></i>Out of Stock</p> -->
-                    {% endif %}
+                    
                     <p >sku: {{ product.sku }}</p>
                      
                     {% if product.rating %}
@@ -58,31 +54,40 @@
                         <p class="text-muted">No Rating</p>
                     {% endif %}
                     <!-- quantity -->
-                    {% if product.in_stock %}
                     <form class="form" action="" method="POST">
-                        <input type="hidden" name="" value="...">
+                        {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
                                 <p class="mt-2 pl-2"><strong>Quantity:</strong></p>
                                 <div class="text-center">
-                                    <div class="input-group-selector rounded-0 text-lg-left">
+                                    <div class="form-group detail-form-selector">
                                         <div class="input-group-selector rounded-0 text-lg-left">
-                                            <button type="button" class="btn btn-outline-secondary quantity-btn" data-action="decrement">-</button>
-                                            <input type="number" name="quantity" class="form-control quantity-input" value="1" min="1">
-                                            <button type="button" class="btn btn-outline-secondary quantity-btn" data-action="increment">+</button>
+                                            <select class="form-control custom-select" name="quantity" {% if not product.in_stock %}disabled{% endif %}>
+                                                {% if not product.in_stock %}
+                                                    <!-- Display "Out of Stock" text as the default disabled option -->
+                                                    <option disabled selected>Out of Stock</option>
+                                                {% else %}
+                                                    <!-- Render options 1 to 10 when product is in stock -->
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                {% endif %}
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
-                {% else %}
-                    <p class="text-danger">Out of stock</p>
-                {% endif %}
-                    
-                
-
-                    <h3 class="text-center ">Product description</h3>
+                        
+<h3 class="text-center ">Product description</h3>
                     <div class="bg-primary text-white p-2 rounded" >
                         
                     <p class="mt-3">{{ product.description }}</p>

@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %} - Products {% endblock %}
+
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -15,6 +18,14 @@
             <div class="col text-center mt-3">
                 <h2 class="logo-font">All Products</h2>
                 <hr class="w-50 mb-1 bg-danger ">
+            </div>
+           
+
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+            <input type="checkbox" id="available-products">
+            <label class="mb-3" for="hide-no-stock">Available Products Only</label>
             </div>
         </div>
         <div class="row">
