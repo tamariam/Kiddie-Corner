@@ -9,6 +9,10 @@ def all_products(request):
     products = Product.objects.all()
     query = None
     category_filter = None  # Initialize category filter variable
+    has_sale_filter = request.GET.get('has_sale')
+
+    if has_sale_filter == 'True':
+        products = products.filter(has_sale=True)
 
     if request.GET:
         if 'q' in request.GET:
@@ -28,8 +32,8 @@ def all_products(request):
                 products = products.filter(category__name=category_filter)
 
     # Retrieve all categories for rendering in template
-    categories = Category.objects.all()
-
+        categories = Category.objects.all()
+   
     context = {
         'products': products,
         'categories': categories,  # Pass all categories to template
