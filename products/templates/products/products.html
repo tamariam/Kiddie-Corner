@@ -25,16 +25,21 @@
         <div class="row">
             <div class="col-12 text-center">
             <input type="checkbox" id="available-products">
-            <label class="mb-3" for="hide-no-stock">Available Products Only</label>
+            <label class="mb-3" for="available-products">Available Products Only</label>
             </div>
         </div>
-        <div class="row">
-            <div class="col-10 offset-1 lato">
+        <div class="row ">
+            <div class="col-10 offset-1 mb-3 lato">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card product-card h-100 border-bottom">
+                    {% if product.in_stock %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 in-stock">
+                        {% else %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 out-of-stock">
+                            {% endif %}
+                        <!-- <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3"> -->
+                            <div class="card product-card h-100 border-bottom ">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -99,4 +104,6 @@
             </div>
         </div>
     </div>
+    
 {% endblock %}
+

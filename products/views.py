@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-from .models import Product,Category
+from .models import Product, Category
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
@@ -18,7 +18,7 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, 'Please enter what you are looking for.')
+                messages.error(request, 'what you are looking for?')
                 return redirect(reverse('products'))
 
             # Define filter criteria for search query
@@ -32,8 +32,8 @@ def all_products(request):
                 products = products.filter(category__name=category_filter)
 
     # Retrieve all categories for rendering in template
-        categories = Category.objects.all()
-   
+    categories = Category.objects.all()
+
     context = {
         'products': products,
         'categories': categories,  # Pass all categories to template
@@ -48,7 +48,7 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
-      'product':product,
+      'product': product,
     }
 
     return render(request, 'products/product_detail.html',  context)
