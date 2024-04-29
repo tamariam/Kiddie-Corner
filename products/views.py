@@ -1,15 +1,29 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Product
 from django.shortcuts import get_object_or_404
+from django.contrib import messages
+from django.db.models import Q
+
 
 def all_products(request):
     products = Product.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, 'Enter what you are looking for?')
+                return redirect('products:products')
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     context = {
-      'products':products,
+        'products': products,
     }
 
-    return render(request, 'products/products.html',  context)
+    return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
