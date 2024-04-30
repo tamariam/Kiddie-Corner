@@ -15,7 +15,10 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
 - [Features](#Features)
     - [Navigation Bar](#navigation-bar)
     - [Homepage](#homepage)
+    - [Products-page](#products-page)
+    - [Product-Details-Page](#product-details-page)
     - [Footer](#footer)
+
 - [Testing](#testing)
     - [lighthouse](#lighthouse)
 - [Deployment](#dployment)
@@ -125,6 +128,87 @@ The home page features a main background image to catch users eye, with a button
 ![Homepage - mobile](/docs/features/mobile-home-4.png)
 
 </details>
+
+## Products-Page
+
+When you click on "All Products" in the navigation bar, you will be directed to the product listing page where you can view all available products. Each product entry on this page includes:
+
+- Product Name: Clearly labeled to identify the product.Product Price: Indicating the cost of the product.
+- Product Rating: Showing the average rating of the product based on user reviews.
+- Stock Status: Displayed to inform users whether the product is in stock or out of stock.
+- Product Details Button: Clicking this button allows you to view more detailed information about the product.
+- Clickable Image: You can also click directly on the product image to navigate to the product details page.
+
+![Products-Page-Desktop](/docs/features/allproducts-page.png)
+
+
+<details>
+  <summary>Products-page- Mobile (click to expand)</summary>
+
+![products-page- mobile](/docs/features/allproducts-mobile.png)
+
+</details>
+
+- If a product is on sale, a small sale mark will be applied to its image to highlight the discounted price.
+
+![sale](/docs/features/sale.png)
+
+- If no image is uploaded for a product, a placeholder image will be shown.
+
+
+![placeholder](/docs/features/placeholder.png)
+
+Additionally, there is a checkbox option labeled " Available Products Only ". When this checkbox is selected, the product listing will automatically filter to display only those products that are currently in stock and available for purchase. This feature provides users with the convenience of viewing products that they can immediately order.
+
+![placeholder](/docs/features/availableproducts-only.png)
+
+## Product-Details
+
+
+Adter clicking the "Product Details" button for any product, you will be directed to the product detail page. On this page,This page offers a comprehensive view of the selected product's details:
+
+- Product Image: The product image is displayed prominently, with a wider view compared to the product listing page.
+- Product Information: Detailed information is provided, including the product name, price, SKU  rating and price
+- Action Buttons:
+  - more products: This button allows you to return to the main products page for further browsing.
+  - Add to Bag: Clicking this button adds the product to your shopping bag or cart.
+  - Add to Favorites: This button allows you to add the product to your favorites or wishlist.
+- Quantity Selection: A dropdown or form is provided to select the desired quantity of the product.
+
+![placeholder](/docs/features/product-details-in-stock.png)
+
+
+<details>
+  <summary>Product-details-Mobile (click to expand)</summary>
+
+![product-details-mobile](/docs/features/product-page-mobile.png)
+
+</details>
+
+
+
+
+ If the product is out of stock, the quantity selection will be disabled, and the "Add to Bag" button will also be disabled to prevent adding out-of-stock items to the bag.
+
+ ![product-out-of-stock](/docs/features/product-details-out-of-stock.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
