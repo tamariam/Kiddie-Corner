@@ -45,13 +45,41 @@ To develop an innovative and user-friendly online toy store platform that caters
 -  As a **site user** I want  **to navigate through landing page** so that **i can easily access various sections**
 
 ## Wireframes
-[Home-page-desktop](./docs/wireframes/home-page-desktop.png).
+[Home-page-desktop](./docs/wireframes/home-page-desktop.png)
+
 <details>
   <summary>Homepage - Mobile (click to expand)</summary>
 
 ![Homepage - mobile-wireframe](/docs/wireframes/home-page-mobile.png)
 
 </details>
+
+[products-page-desktop](./docs/wireframes/all-products-desktop.png)
+
+<details>
+  <summary>allproducts - tablet (click to expand)</summary>
+
+![allproducts - tablet-wireframe](/docs/wireframes/all-products-tablet.png)
+
+</details>
+
+<details>
+  <summary>allproducts - mobile (click to expand)</summary>
+
+![allproducts-mobile-wireframe](/docs/wireframes/products-mobile.png)
+
+</details>
+
+
+[product-detail-page-desktop](./docs/wireframes/product-detail.png)
+
+<details>
+  <summary>product-detail- mobile (click to expand)</summary>
+
+![product-detail-mobile-wireframe](/docs/wireframes/product-details-mobile.png)
+
+</details>
+
 
 ## Database Schema
 
