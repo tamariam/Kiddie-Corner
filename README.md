@@ -17,6 +17,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Homepage](#homepage)
     - [Products-page](#products-page)
     - [Product-Details-Page](#product-details-page)
+    - [Special-Offers](#special-offers)
     - [Footer](#footer)
 
 - [Testing](#testing)
@@ -103,6 +104,17 @@ The navbar contains the business logo which links back to the homepage when clic
 At smaller screen widths, the nav bar collapses into a burger-style dropdown menu to enhance user experience on mobile and tablet devices.
 
 ![navigation-mobile](/docs/features/navigation-bar-mobile.png)
+
+In the main menu, there is a dropdown link titled "Shop by Age" where you can select a specific age category to browse relevant products. When you click on "Shop by Age," a dropdown menu will appear, allowing you to choose the desired age category.After selecting your preferred age category, you will be redirected to a page displaying product categories tailored to the chosen age group. 
+
+![navigation-mobile](/docs/features/shop-by-age-dropdown.png)
+
+Located in the top navigation bar, there is a search bar that allows you to search for products based on their name or description.
+
+![navigation-mobile](/docs/features/search.png)
+
+
+
 
 ## Delivery Banner
 
@@ -192,6 +204,13 @@ Adter clicking the "Product Details" button for any product, you will be directe
 
  ![product-out-of-stock](/docs/features/product-details-out-of-stock.png)
 
+ ## Special Offers
+
+Clicking on the "Special Offers" link in the main menu will direct you to the Special Offers page. On this page, you will find a curated list of products that are currently on sale.
+
+ ![special-offers](/docs/features/special-offers-page.png)
+
+
 
 
 
@@ -278,6 +297,33 @@ Below are the Lighthouse test results for all pages
 
 </details>
 
+<details>
+  <summary>lighthouse-Testing-shop-by-age-desktop (click to expand)</summary>
+
+![Shop-By-Age-Desktop](./docs/testing/lighthouse/shop-by-age-d-lh.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-shop-by-age-mobile (click to expand)</summary>
+
+![Shop-By-Age-Mobile](./docs/testing/lighthouse/shop-by-age-lh.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-special-offers-Desktop (click to expand)</summary>
+
+![Special-Offers-Desktop](./docs/testing/lighthouse/special-offer-desktop-lh.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-special-offers-Mobile (click to expand)</summary>
+
+![Special-Offers-Mobile](./docs/testing/lighthouse/special-oiffers-mobile-lh.png)
+
+</details>
 
 
 
