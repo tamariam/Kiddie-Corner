@@ -146,14 +146,12 @@ header,footer{
 }
 
 .product-card{
-background-color: #ffe8d6;
+background-color: #023047;
 }
 .sale-mark {
   position: absolute;
   top:-15px;
-  right:0;
-  background-color: red;
-  color: white;
+  right:-7px;
   padding: 10px;
   border-radius: 5px;
   font-size: 12px;
@@ -168,7 +166,10 @@ background-color: #ffe8d6;
   height:100px;
 }
 
-
+.card-img{
+  width:280px;
+  height:185px;
+}
 
 
 

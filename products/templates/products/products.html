@@ -52,24 +52,24 @@
                                 
                                 <div class="card-body  pt-0 border-0 text-left">
                                     {% if product.has_sale %}
-                                    <span class="sale-mark">Sale</span>
+                                    <span class="sale-mark text-dark bg-warning">Sale</span>
                                 {% endif %}
                                     <h3 class="text-center card-title mt-2 ">{{ product.name }}</h3>
                                     <div class="row">
                                         <div class="col">
                                             <div>
-                                            <p class="lead mb-0  font-weight-bold text-center">£{{ product.price }}</p>
+                                            <p class="lead mb-0  font-weight-bold text-center text-warning">£{{ product.price }}</p>
                                             </div>
                                             <div class="row d-flex justify-content-around mt-2">
                                             {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1 text-warning "></i>{{ product.rating }} / 5</small>
+                                                <p class="text-white"><i class="fas fa-star mr-1 text-warning "></i>{{ product.rating }} / 5</p>
                                             {% else %}
-                                                <small class="text-muted">No Rating</small>
+                                                <p class=" text-white"><i class="fas fa-star mr-1 text-warning "></i>0/5</p>
                                             {% endif %}
                                             {% if product.in_stock %}
-                                            <small class="text-success" ><i class="mr-1 fa-solid fa-check"></i> In Stock</small>
+                                            <p class="text-warning font-weight-bold" ><i class="mr-1 fa-solid fa-check"></i> In Stock</p>
                                         {% else %}
-                                            <small class="text-danger"><i class="mr-1 fa-solid fa-xmark"></i>Out of Stock</small>
+                                            <p class="text-white font-weight-bold"><i class="mr-1 fa-solid fa-xmark"></i>Out of Stock</p>
                                             {% endif %}
                                             </div>
                                            
