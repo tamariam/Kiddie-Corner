@@ -15,7 +15,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
 - [Features](#Features)
     - [Navigation Bar](#navigation-bar)
     - [Homepage](#homepage)
-    - [Footer] (#footer)
+    - [Footer](#footer)
 - [Testing](#testing)
     - [lighthouse](#lighthouse)
 - [Deployment](#dployment)
@@ -114,7 +114,7 @@ The home page features a main background image to catch users eye, with a button
 
 ![Homepage-Desktop](/docs/features/dekstop-home-1.png)
 
-![Homepage-Desktop](/docs/features/dekstop-home-2.png)
+![Homepage-Desktop-1](/docs/features/desktop-home-2.png)
 
 <details>
   <summary>Homepage - Mobile (click to expand)</summary>
@@ -163,6 +163,41 @@ Below are the Lighthouse test results for all pages
 ![Footer-Desktop](./docs/testing/lighthouse/home-page-mobile.png)
 
 </details>
+
+
+<details>
+  <summary>lighthouse-testing-Allproducts-desktop (click to expand)</summary>
+
+![allproducts-Desktop](./docs/testing/lighthouse/products-desktop-lh.png)
+
+</details>
+
+
+<details>
+  <summary>lighthouse-Testing-AllProducts-Mobile (click to expand)</summary>
+
+![products-mobile](./docs/testing/lighthouse/products-mobile-lh.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-product-details-Desktop (click to expand)</summary>
+
+![Product-Details-Mobile](./docs/testing/lighthouse/product-details-desktop-lh.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-product-details-mobile (click to expand)</summary>
+
+![Product-Details-Mobile](./docs/testing/lighthouse/product-details-mobile-lh.png)
+
+</details>
+
+
+
+
+
 
 
 ## Deployment
