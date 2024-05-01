@@ -75,6 +75,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'shopping_bag.contexts.shopping_bag_contents'
             ],
         },
     },
@@ -161,3 +162,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+FREE_SHIPPING_LIMIT = 100
+STANDARD_SHIPPING_PECRENT = 15
