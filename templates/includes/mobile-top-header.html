@@ -43,7 +43,7 @@
     </div>
 </li>
 <li class="col-2 list-inline-item d-block d-lg-none ">
-    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-info icon-mobile " href="" aria-label="link to  dhopping cart">
+    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-info icon-mobile " href="{% url 'shopping_bag'%}" aria-label="link to  shopping bag">
         <div class="text-center">
             <div><i class="fa-solid fa-cart-shopping"></i></div>
         </div>
