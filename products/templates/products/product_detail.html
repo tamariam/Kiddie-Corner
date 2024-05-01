@@ -28,15 +28,13 @@
                     {% endif %}
                 
                 {% if product.in_stock %}
-                <div class="row btn-div  d-flex  justify-content-around align-items-center p-2 my-3">
+                <div class="row btn-div  d-flex  justify-content-around align-items-center  my-3 ">
                     <a class="btn btn-warning btn-pill text-dark font-weight-bold" href="{% url 'products' %}"><i class="mr-1 fa-solid fa-magnifying-glass"></i>More Products</a>
-                    <a class="btn btn-danger" href=""><i class="mr-1 fa-solid fa-cart-plus"></i>Add To Bag</a>
                     <a class="btn btn-outline-dark" href=""><i class="mr-1 fa-solid fa-heart-circle-plus"></i>add to Favourites</a>
                     </div>
                 {% else %}
                 <div class="btn-div row d-flex  justify-content-around   align-items-center">
                     <a class="btn btn-warning text-dark font-weight-bold " href="{% url 'products' %}"><i class="mr-1 fa-solid fa-magnifying-glass"></i>More Products</a>
-                    <a class="btn btn-danger text" href="" disabled><i class="mr-1 fa-solid fa-cart-plus"></i>Out Of Stock</a>
                     <a class="btn btn-outline-dark" href=""><i class="mr-1 fa-solid fa-heart-circle-plus"></i>add to Favourites</a>
                     </div>
                     {% endif %}
@@ -54,7 +52,7 @@
                     <p class="bg-dark text-white"><i class="fas fa-star mr-1 text-warning "></i>Costumer rating: <span class="mx-2 text-warning font-weight-bold"> 0 / 5</span></p>
                     {% endif %}
                     <!-- quantity -->
-                    <form class="form" action="" method="POST">
+                    <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
@@ -85,6 +83,13 @@
                                 </div>
                             </div>
                         </div>
+                        {% if product.in_stock %}
+                        <div class="text-center my-2 ">
+                            <input class="btn btn-danger fa-input  text-center rounded-0 text-uppercase "
+                                type="submit" value="Add To Basket">
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        {% endif %}
                     </form>
                         
 <h3 class="text-center ">Product description</h3>

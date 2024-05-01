@@ -157,19 +157,12 @@ background-color: #023047;
   font-size: 12px;
 }
 
-.text{
-  text-decoration: line-through;
-  pointer-events:none;
-}
 
 .btn-div{
   height:100px;
 }
 
-.card-img{
-  width:280px;
-  height:185px;
-}
+
 
 
 

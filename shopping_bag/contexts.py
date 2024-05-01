@@ -19,7 +19,7 @@ def shopping_bag_contents(request):
     context = {
             'bag_items': bag_items,
             'total': total,
-            'count':   count,
+            'count':  count,
             'shipping': shipping,
             'free_shipping_delta': free_shipping_delta,
             'free_shipping_limit': settings.FREE_SHIPPING_LIMIT,
