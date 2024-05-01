@@ -2,7 +2,7 @@
 {% load static %}
 
 
-<!-- Shopping Basket Page -->
+<!-- Shopping Bag Page -->
 
 {% block extra_title %} - Shopping_Bag {% endblock %}
 
@@ -16,7 +16,7 @@
             {% if bag_items %}
                 {% for item in bag_items %}
                     <div class="card mb-3">
-                        <div class="row no-gutters">
+                        <div class="row  no-gutters">
                             <div class="col-md-4">
                                 <img src="{{ item.product.image.url }}" class="card-img" alt="Product Image">
                             </div>
@@ -79,13 +79,9 @@
         <!-- Bag Summary Column -->
         <div class="col-lg-4 ">
             <div class="col-sm-12 col-md-12 col-lg-12 bg-white rounded text-center bag-summary-card mb-3  pt-3">
+              
                 <div class="text-center">
-                    <a href="{% url 'products' %}">
-                        <div><i class="icon fa-solid fa-circle-arrow-left"></i>Back to Shopping</div>
-                    </a>
-                </div>
-                <div class="text-center">
-                    <h3 class="py-2">BASKET SUMMARY</h3>
+                    <h3 class="bg-danger rounded py-2">Shopping  Report</h3>
                 </div>
                 <div class="row pt-4 mt-2">
                     <div class="col text-left">
@@ -120,8 +116,13 @@
                     </div>
                 </div>
                 <div class="text-center my-2">
-                    <a href="">
-                        <div><i class="fa-solid fa-lock"></i>Checkout</div>
+                    <a href="" class="btn btn-outline-danger">
+                        <div>  <i class="fa-solid fa-lock mr-2 "></i>secure Checkout</div>
+                    </a>
+                </div>
+                <div class="text-center">
+                    <a href="{% url 'products' %}" class="btn btn-outline-success">
+                        <div><i class="icon fa-solid fa-circle-arrow-left mr-2"></i>keep Shopping</div>
                     </a>
                 </div>
             </div>
