@@ -14,17 +14,17 @@
     
     <div class="row">
         <div class="col-12 text-center mt-3">
-            <h2>My Shopping Basket</h2> 
+            <h2>My Shopping Bag</h2> 
         </div>
     </div>
     
     <div class="row">
         <div class="col-12 text-center mb-4">
-            <p class="mb-0 item-count-header">{{ count }} product items in basket</p>
+            <p class="mb-0 item-count-header">{{ count }} product items in the Bag</p>
         </div>
     </div>
 
-    <!-- Shopping Basket Items -->
+    <!-- Shopping Bag Items -->
 
     <div class="row center-row">
         <div class="col-sm-12 col-md-7 mb-3 basket-col">
@@ -88,23 +88,23 @@
                     </div>
                     {% endfor %}
 
-                <!-- No Items In Basket -->
+                <!-- if no Items In Bag -->
 
                 {% else %}
                     <div class="col-12 text-center basket-empty">
                         <h3>Empty Basket!</h3>
-                        <p>Looks like you haven't added anything to your basket.</p>
-                        <p>Click below to continue browsing our quality, affordable range.</p>
-                        <a href="{% url 'products' %}" class="sensical-button text-center rounded-0 mt-2">
+                        <p>Looks like you haven't added anything to your bag.</p>
+                        <p>Click below to continue Shopping.</p>
+                        <a href="{% url 'products' %}" class="text-center rounded-0 mt-2">
                             <span class="icon"><i class="fa-solid fa-circle-arrow-left"></i></span>
-                            <span class="text-uppercase">Find Some Products!</span>
+                            <span class="text-uppercase">Find More Products!</span>
                         </a>
                     </div>
                 {% endif %}
             </div>
         </div>
 
-        <!-- Basket Summary and Action Buttons -->
+        <!-- Bag Summary  -->
 
         <div class="col-sm-12 col-md-4 text-center">
             <div class="basket-checkout text-center mb-2">
@@ -129,7 +129,7 @@
                     <p><strong>Sub-total:</strong></p>
                 </div>
                 <div class="col text-right">
-                    <span>€{{ total|floatformat:2 }}</span>
+                    <span>€{{ subtotal|floatformat:2 }}</span>
                 </div>
             </div>
             <div class="row checkout-row">
