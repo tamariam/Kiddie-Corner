@@ -22,16 +22,16 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ item.product.name }}</h5>
-                                    <p class="card-text">Price: €{{ item.product.price }}</p>
+                                    <h5 class="card-title p-1 text-center rounded">{{ item.product.name }}</h5>
+                                    <p class="card-text font-weight-bold">Price: €{{ item.product.price }}</p>
                                     
                                     <!-- Quantity Selection Form -->
                                     <form class="form update-form" method="POST" action="">
                                         {% csrf_token %}
                                         <div>
                                             <div class="input-group-selector">
-                                                <label><small>Quantity:</small></label>
-                                                <select class="form-control custom-select"
+                                                <label><small class="font-weight-bold">Quantity:</small></label>
+                                                <select class="form-control"
                                                 name="quantity" 
                                                 data-item_id="{{ item.item_id }}"
                                                 id="id_qty_{{ item.item_id }}">
@@ -48,17 +48,18 @@
                                                     <option>10</option>
                                                 </select>
                                             </div>
-                                            <input class=" btn btn-warning my-2 " type="submit" value="update">
+                                            <div class="input-group-selector  text-center">
+                                            <input class=" btn btn-warning my-2 card-button" type="submit" value="update bag">
+                                            </div>
                                         </div>
                                     </form>
                                     
                                     <!-- Remove Button Form -->
                                     <form class="form " method="POST" action="">
                                         {% csrf_token %}
-                                        <div>
-                                            <div class="input-group-selector">
-                                                <input class="btn btn-danger" type="submit" value="remove">
-                                            </div>    
+                                        <div class="text-center">
+                                                <input class="btn btn-danger card-button" type="submit" value="remove item">
+                                               
                                         </div>
                                     </form>
                                 </div>
@@ -96,7 +97,7 @@
                         <p><strong>Sub-total:</strong></p>
                     </div>
                     <div class="col text-right">
-                        <span>€{{ subtotal|floatformat:2 }}</span>
+                        <span>€{{ total |floatformat:2 }}</span>
                     </div>
                 </div>
                 <div class="row">
@@ -121,8 +122,8 @@
                     </a>
                 </div>
                 <div class="text-center">
-                    <a href="{% url 'products' %}" class="btn btn-outline-success">
-                        <div><i class="icon fa-solid fa-circle-arrow-left mr-2"></i>keep Shopping</div>
+                    <a href="{% url 'products' %}" class="btn btn-outline-success text-uppercase">
+                        <div><i class="icon fa-solid fa-circle-arrow-left mr-2 text-uppercase"></i>keep Shopping</div>
                     </a>
                 </div>
             </div>
