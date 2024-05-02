@@ -63,7 +63,7 @@
                                     </form>
                                     
                                     <!-- Remove Button Form -->
-                                    <form class="form " method="POST" action="">
+                                    <form class="form " method="POST" action="{% url 'remove_item' item.item_id %}">
                                         {% csrf_token %}
                                         <div class="text-center">
                                                 <input class="btn btn-danger card-button" type="submit" value="remove item">
