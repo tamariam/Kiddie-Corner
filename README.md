@@ -84,6 +84,20 @@ To develop an innovative and user-friendly online toy store platform that caters
 
 </details>
 
+<details>
+  <summary>shopping-bag-desktop (click to expand)</summary>
+
+![Shopping-Bag-Desktop-wireframe](/docs/wireframes/shopping-bag-desktop.png)
+
+</details>
+
+<details>
+  <summary>shopping-bag-mobile (click to expand)</summary>
+
+![Shopping-Bag-Mobile-wireframe](/docs/wireframes/shopping-bag-mobile.png)
+
+</details>
+
 
 ## Database Schema
 
@@ -200,7 +214,7 @@ Adter clicking the "Product Details" button for any product, you will be directe
 
 
 
- If the product is out of stock, the quantity selection will be disabled, and the "Add to Bag" button will also be disabled to prevent adding out-of-stock items to the bag.
+ If the product is out of stock, the quantity selection will be disabled, and the 'Add to Bag' button will be removed to prevent adding out-of-stock items.
 
  ![product-out-of-stock](/docs/features/product-details-out-of-stock.png)
 
