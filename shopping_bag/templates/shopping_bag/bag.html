@@ -57,7 +57,7 @@
                                                 </select>
                                             </div>
                                             <div class="input-group-selector  text-center">
-                                            <input class=" btn btn-warning my-2 card-button" type="submit" value="update bag">
+                                            <input class=" btn btn-warning my-2 card-button text-uppercase" type="submit" value="update bag">
                                             </div>
                                         </div>
                                     </form>
@@ -65,8 +65,9 @@
                                     <!-- Remove Button Form -->
                                     <form class="form " method="POST" action="{% url 'remove_item' item.item_id%}">
                                         {% csrf_token %}
-                                        <div class="text-center">
-                                                <input class="btn btn-danger card-button" type="submit" value="remove item">
+                                        <div class="text-center ">
+                                                <input  class="btn btn-danger card-button text-uppercase" type="submit" value="Remove">
+                                                
                                                
                                         </div>
                                     </form>

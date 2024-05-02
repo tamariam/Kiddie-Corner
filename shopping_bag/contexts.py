@@ -28,7 +28,6 @@ def shopping_bag_contents(request):
     else:
         shipping = 0
         free_shipping_delta = 0
-
     grand_total = shipping + total
 
     context = {
