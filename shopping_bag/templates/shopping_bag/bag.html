@@ -34,7 +34,7 @@
                                     <p class="card-text font-weight-bold">Price: €{{ item.product.price }}</p>
                                     
                                     <!-- Quantity Selection Form -->
-                                    <form class="form update-form" method="POST" action="">
+                                    <form class="form update-form" method="POST" action="{% url 'update_bag' item.item_id %}">
                                         {% csrf_token %}
                                         <div>
                                             <div class="input-group-selector">

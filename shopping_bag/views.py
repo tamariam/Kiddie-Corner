@@ -22,14 +22,14 @@ def add_to_bag(request, item_id):
     return redirect(redirect_url)
 
 
-def remove_item(request, item_id):
+def update_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
 
     if quantity > 0:
-        bag[item_id]= quantity
+        bag[item_id] = quantity
     else:
         bag.pop[item_id]
     
