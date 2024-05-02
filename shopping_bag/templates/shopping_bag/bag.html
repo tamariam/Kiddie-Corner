@@ -30,7 +30,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title p-1 text-center rounded">{{ item.product.name }}</h5>
+                                    <h3 class="card-title p-1 text-center rounded">{{ item.product.name }}</h3>
                                     <p class="card-text font-weight-bold">Price: €{{ item.product.price }}</p>
                                     
                                     <!-- Quantity Selection Form -->
@@ -38,7 +38,7 @@
                                         {% csrf_token %}
                                         <div>
                                             <div class="input-group-selector">
-                                                <label><small class="font-weight-bold">Quantity:</small></label>
+                                                <label  for="id_qty_{{ item.item_id }}" class="font-weight-bold">Quantity:</label>
                                                 <select class="form-control"
                                                 name="quantity" 
                                                 data-item_id="{{ item.item_id }}"
@@ -131,7 +131,7 @@
                     </a>
                 </div>
                 <div class="text-center">
-                    <a href="{% url 'products' %}" class="btn btn-outline-success text-uppercase">
+                    <a href="{% url 'products' %}" class="btn btn-warning text-uppercase">
                         <div><i class="icon fa-solid fa-circle-arrow-left mr-2 text-uppercase"></i>keep Shopping</div>
                     </a>
                 </div>

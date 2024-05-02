@@ -340,6 +340,23 @@ Below are the Lighthouse test results for all pages
 </details>
 
 
+<details>
+  <summary>lighthouse-Testing-shopping-bag-Mobile (click to expand)</summary>
+
+![Shopping-Bag-Mobile](./docs/testing/lighthouse/shopping-bag-lh-mobile.png)
+
+</details>
+
+
+<details>
+  <summary>lighthouse-Testing-shopping-bag-Mobile (click to expand)</summary>
+
+![Shopping-Bag-Desktop](./docs/testing/lighthouse/shopping-bag-lg-desktop.png)
+
+</details>
+
+
+
 
 
 
