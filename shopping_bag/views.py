@@ -32,7 +32,7 @@ def update_bag(request, item_id):
         bag[item_id] = quantity
     else:
         bag.pop[item_id]
-    
+
     request.session['bag'] = bag
     return redirect(reverse('shopping_bag'))
 
@@ -41,17 +41,8 @@ def remove_item(request, item_id):
     bag = request.session.get('bag', {})
     if item_id in bag:
         del bag[item_id]
-    
+
         request.session['bag'] = bag
-        return HttpResponse('item removed')
+        return redirect(reverse('shopping_bag'))
     else:
-        return HttpResponse('ups')
-
-
-
-
-
-
-
-
-
+        return HttpResponse('ups',  status=404)
