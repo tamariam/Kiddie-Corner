@@ -1,5 +1,5 @@
 
-<ul class="mobile-nav">
+<ul class="mobile-nav col-12 ">
 <li class=" col-2 list-inline-item dropdown d-block d-lg-none">
     <a class="icon-mobile text-info nav-link" href="#" aria-label="link to my account " id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
@@ -26,7 +26,7 @@
     </a>
 </li>
 <li class="col-2 list-inline-item dropdown d-block d-lg-none">
-    <a class="icon-mobile text-info nav-link" aria-label="link to  favourites page" href="#" data-toggle="dropdown" aria-haspopup="true"
+    <a class="icon-mobile text-info nav-link" aria-label="link to favourites page" href="#" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
         <div class="text-center">
             <div><i class="fa-solid fa-heart icon "></i></div>
@@ -43,7 +43,7 @@
     </div>
 </li>
 <li class="col-2 list-inline-item d-block d-lg-none ">
-    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-info icon-mobile " href="{% url 'shopping_bag'%}" aria-label="link to  shopping bag">
+    <a class="icon-mobile  {% if grand_total %}text-warning font-weight-bold{% else %}text-black{% endif %} nav-link text-info" href="{% url 'shopping_bag' %}" aria-label="link to shopping bag">
         <div class="text-center">
             <div><i class="fa-solid fa-cart-shopping"></i></div>
         </div>

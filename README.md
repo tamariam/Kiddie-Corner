@@ -246,9 +246,13 @@ If there are items in the shopping bag, the page will display all item details i
 
 </details>
 
-When items are added to the shopping bag, the color of the navigation cart link will change, indicating that items are present. Additionally, the cart link will display the total price of the items in the bag.
+When items are added to the shopping bag, the color of the navigation cart link will change, indicating that items are present. Additionally, the cart link will display the total price of the items in the bag(for desktop screen)
 
 ![shopping-cart-icon-with-item](/docs/features/shopping-cart-icon-with-item.png)
+
+On mobile and tablet screens, the cart icon turns yellow when items are added to the shopping bag.
+
+![shopping-cart-icon-with-item-mobile](/docs/features/mobile-cart-icon.png)
 
 
 

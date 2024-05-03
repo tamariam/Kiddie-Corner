@@ -57,6 +57,12 @@ body{
   display:contents;
 }
 
+/*  Media query to adjust the minimum width of the icons list container on larger screens */
+@media (min-width: 992px) {
+  .icons-list{
+    min-width:336px !important;
+  }
+}
  .form-control{
     box-shadow: none;
     outline: none;
