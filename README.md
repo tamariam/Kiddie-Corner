@@ -18,6 +18,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Products-page](#products-page)
     - [Product-Details-Page](#product-details-page)
     - [Special-Offers](#special-offers)
+    - [Shopping-Bag](#shopping-bag)
     - [Footer](#footer)
 
 - [Testing](#testing)
@@ -186,7 +187,7 @@ When you click on "All Products" in the navigation bar, you will be directed to 
 
 Additionally, there is a checkbox option labeled " Available Products Only ". When this checkbox is selected, the product listing will automatically filter to display only those products that are currently in stock and available for purchase. This feature provides users with the convenience of viewing products that they can immediately order.
 
-![placeholder](/docs/features/availableproducts-only.png)
+![available-products-only](/docs/features/availableproducts-only.png)
 
 ## Product-Details
 
@@ -201,7 +202,7 @@ Adter clicking the "Product Details" button for any product, you will be directe
   - Add to Favorites: This button allows you to add the product to your favorites or wishlist.
 - Quantity Selection: A dropdown or form is provided to select the desired quantity of the product.
 
-![placeholder](/docs/features/product-details-in-stock.png)
+![product-in-stock](/docs/features/product-details-in-stock.png)
 
 
 <details>
@@ -223,6 +224,41 @@ Adter clicking the "Product Details" button for any product, you will be directe
 Clicking on the "Special Offers" link in the main menu will direct you to the Special Offers page. On this page, you will find a curated list of products that are currently on sale.
 
  ![special-offers](/docs/features/special-offers-page.png)
+
+ ## Shopping Bag
+
+ To access the shopping bag page, click on the cart icon located on the top right side of the page.
+
+  ![shopping-cart-icon](/docs/features/shopping-cart-icon.png)
+
+After navigating to the shopping bag page, if no items have been added, an appropriate message will be displayed encouraging users to add products to their bag. This message will include a button that directs users to the products page.
+
+  ![empty-bag](/docs/features/empty-bag.png)
+
+If there are items in the shopping bag, the page will display all item details including product name, quantity, and price. Users will have the ability to update the quantity or remove items using dedicated buttons. Additionally, there will be a separate section displaying a shopping summary, which includes information about the total cost of items and delivery charges.
+
+ ![shopping-bag-page-desktop](/docs/features/shopping-bag-desktop.png)
+
+ <details>
+  <summary>Product-details-Mobile (click to expand)</summary>
+
+![shopping-bag-mobile](/docs/features/shopping-bag-mobile.png)
+
+</details>
+
+When items are added to the shopping bag, the color of the navigation cart link will change, indicating that items are present. Additionally, the cart link will display the total price of the items in the bag.
+
+![shopping-cart-icon-with-item](/docs/features/shopping-cart-icon-with-item.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -352,6 +388,22 @@ Below are the Lighthouse test results for all pages
   <summary>lighthouse-Testing-shopping-bag-Mobile (click to expand)</summary>
 
 ![Shopping-Bag-Desktop](./docs/testing/lighthouse/shopping-bag-lg-desktop.png)
+
+</details>
+
+
+
+<details>
+  <summary>lighthouse-Testing-Empty-Bag-Desktop (click to expand)</summary>
+
+![Empty-Bag-Desktop](./docs/testing/lighthouse/empty-bag-desktop-lh.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-Empty-Bag-Mobile (click to expand)</summary>
+
+![Empty-Bag-Desktop](./docs/testing/lighthouse/empty-bag-mobile.png)
 
 </details>
 
