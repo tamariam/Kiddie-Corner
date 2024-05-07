@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
-
+from django.http import JsonResponse
 
 def shopping_bag(request):
     return render(request, 'shopping_bag/bag.html')

@@ -15,8 +15,6 @@
 {% endblock %}
 
 {% block content %}
-
-
 <div class="container ">
     <div class="row">
         <!-- Product Cards Column -->
@@ -61,30 +59,27 @@
                                             </div>
                                         </div>
                                     </form>
-                                    
                                     <!-- Remove Button Form -->
                                     <form class="form " method="POST" action="{% url 'remove_item' item.item_id%}">
                                         {% csrf_token %}
                                         <div class="text-center ">
                                                 <input  class="btn btn-danger card-button text-uppercase" type="submit" value="Remove">
-                                                
-                                               
-                                        </div>
-                                    </form>
-                                </div>
+                                     </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            {% else %}
-                <div class="col-12 text-center mt-2">
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="col-12 text-center mt-2">
                     <h3>Empty Bag!</h3>
                     <p>Looks like you haven't added anything to your bag.</p>
                     <p>Click below to continue shopping.</p>
                     <a href="{% url 'products' %}" class="btn btn-warning">Find More Products</a>
-                </div>
-            {% endif %}
-        </div>
+                    </div>
+                    {% endif %}
+             </div>
 
         <!-- Bag Summary Column -->
         <div class="col-lg-4 ">
