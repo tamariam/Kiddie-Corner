@@ -176,4 +176,33 @@ background-color: #023047;
 }
 
 
+.message-rule {
+  width: 80%;
+  border-color: #75e6ff;
+  margin-bottom: 30px;
+}
+
+.message-item {
+  border: 1px solid white;
+  padding: 0.5rem;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 0.5rem;
+}
+
+.messages-div {
+  position: fixed;
+  top: 36px;
+  right: 20px;
+  z-index: 9991;
+}
+
+
+.toast-scroll {
+  max-height:250px;
+  overflow-y:scroll;
+}
+
+
+
 
