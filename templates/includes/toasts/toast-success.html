@@ -1,18 +1,18 @@
 
-<div class="toast  border-3 border-dark bg-light" role="alert" aria-live="assertive" aria-atomic="true" data-delay="{% if count %}10000{% else %}5000{% endif %}">
+<div class="toast  border-3 bg-warning border-dark" role="alert" aria-live="assertive" aria-atomic="true" data-delay="{% if count %}10000{% else %}5000{% endif %}">
     
-    <div class="toast-header bg-success text-light border-3 border-dark">
-        <span class="mr-auto font-weight-bold text-black">Success</span>
+    <div class="toast-header bg-success text-light padding-2  border-3">
+        <span class="mr-auto font-weight-bold text-black text-uppercase">Success</span>
 
         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="toast-body bg-black text-success font-weight-bold">
+    <div class="toast-body bg-danger text-white font-weight-bold">
         {{ message }}
     </div>
     {% if grand_total and count and not on_profile_page %}
-        <div class="bg-black text-light py-2">
+        <div class=" text-dark py-2">
             <p class="px-3 font-weight-bold">Current Bag Items ({{ count }})</p>
         </div>
         
@@ -40,10 +40,9 @@
                         <p class="small">Price per item: {{ item.product.price }}</p>
                     </div>
                 </div>
-                <hr class="my-1">
             {% endfor %}
         </div>
-        <div class="row no-gutters">
+        <div class="row ">
             <div class="col  bg-black">
                 <strong>
                     <p class="m-2">
@@ -51,17 +50,14 @@
                         <span class="float-right">€{{ total|floatformat:2 }}</span>
                     </p>
                 </strong>
-                <div class="text-center m-2">
-                    <a href="{% url 'shopping_bag' %}" class="btn btn-warning rounded-0">
-                        <span class="text-uppercase">Secure Checkout</span>
-                        <span class="icon">
-                            <i class="fas fa-lock"></i>
-                        </span>
+                <div class="text-center rounded  m-2">
+                    <a href="{% url 'shopping_bag' %}" class="btn btn-danger rounded-0">
+                        <span class="text-uppercase  ">view shopping bag</span>
                     </a>
                 </div>
                 {% if free_shipping_delta > 0 %}
                     <p class="mb-0 p-2 bg-danger shadow-sm text-black text-center">
-                        You're just <span class="font-weight-bold">€{{ free_shipping_delta }}</span> away from free international shipping!
+                        spend <span class="font-weight-bold">€{{ free_shipping_delta }}</span> more for free  shipping!
                     </p>
                 {% endif %}
 

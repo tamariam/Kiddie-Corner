@@ -192,7 +192,7 @@ background-color: #023047;
 
 .messages-div {
   position: fixed;
-  top: 36px;
+  top: 50px;
   right: 20px;
   z-index: 9991;
 }
