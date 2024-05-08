@@ -33,8 +33,7 @@ def update_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
-    else:
-        bag.pop[item_id]
+        messages.success(request,  f" { product.name }'s updated to the bag up to {quantity}")
 
     request.session['bag'] = bag
     return redirect(reverse('shopping_bag'))
@@ -42,9 +41,11 @@ def update_bag(request, item_id):
 
 def remove_item(request, item_id):
     """ up a quantity of the specified product to the shopping bag """
+    product = get_object_or_404(Product, pk=item_id)
     bag = request.session.get('bag', {})
     if item_id in bag:
         del bag[item_id]
+        messages.success(request,  f" { product.name } successsfully removed  from your bag")
 
         request.session['bag'] = bag
         return redirect(reverse('shopping_bag'))
