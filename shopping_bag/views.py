@@ -32,8 +32,16 @@ def update_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if quantity > 0:
-        bag[item_id] = quantity
-        messages.success(request,  f" { product.name }'s updated to the bag up to {quantity}")
+        if item_id in bag:
+            if bag[item_id] == quantity:
+                messages.error(request, f"{product.name}'s quantity is already {quantity} in the bag.")
+            else:
+                bag[item_id] = quantity
+                messages.success(request, f"{product.name}'s quantity updated to {quantity} in the bag.")
+        else:
+            messages.error(request, "Product not found in the bag.")
+    else:
+        messages.error(request, "Invalid quantity.")
 
     request.session['bag'] = bag
     return redirect(reverse('shopping_bag'))
