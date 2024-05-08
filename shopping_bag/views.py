@@ -16,17 +16,18 @@ def add_to_bag(request, item_id):
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
+        messages.success(request,  f"{quantity} more { product.name }'s added to the bag")
     else:
         bag[item_id] = quantity
 
-    messages.success(request,  f"{ bag[item_id] } { product.name }'s added to basket",)
+        messages.success(request,  f"{ bag[item_id] } { product.name }'s added to the bag")
     request.session['bag'] = bag
     return redirect(redirect_url)
 
 
 def update_bag(request, item_id):
     """ up a quantity of the specified product to the shopping bag """
-
+    product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
 
