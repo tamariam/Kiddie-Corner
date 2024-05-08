@@ -34,7 +34,7 @@ def update_bag(request, item_id):
     if quantity > 0:
         if item_id in bag:
             if bag[item_id] == quantity:
-                messages.error(request, f"{product.name}'s quantity is already {quantity} in the bag.")
+                messages.error(request, f"{quantity} {product.name}'s  is already  in the bag.please choose another quantity")
             else:
                 bag[item_id] = quantity
                 messages.success(request, f"{product.name}'s quantity updated to {quantity} in the bag.")
