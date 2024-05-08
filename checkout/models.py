@@ -4,6 +4,7 @@ from django.db.models import Sum
 from django.conf import settings
 
 from django_countries.fields import CountryField
+from decimal import Decimal
 
 from products.models import Product
 
@@ -47,4 +48,38 @@ class Order(models.Model):
     original_bag = models.TextField(null=False, blank=False, default='')
     order_status = models.CharField(max_length=50, null=False, choices=ORDER_STATUS, default='received')
 
+    class Meta:
+        ordering = (-'date',)
 
+    def _generate_order_number(self):
+        """
+        Generate a random, unique order number using UUID
+        """
+        return uuid.uuid4().hex.upper()
+
+    def update_total(self):
+        """"
+        Update grand total each time a line item is added,
+        accounting for delivery costs.
+        """
+
+        self.order_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
+
+        if self.order_total < settings.FREE_SHIPPING_LIMIT:
+
+            self.shipping_cost = self.order_total * \
+                Decimal(settings.STANDARD_SHIPPING_PERCENT / 100)
+
+        else:
+
+            self.shipping_cost = 0
+            self.shipping_method = 'free'
+
+        self.grand_total = self.order_total + self.shipping_cost
+        self.save()
+
+    def save(self, *args, **kwargs):
+        if not self.order_number:
+            self.order_number = self.generate_order_number()
+        super().save(*args, **kwargs)
