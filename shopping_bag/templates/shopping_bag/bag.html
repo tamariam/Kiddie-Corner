@@ -121,9 +121,11 @@
                     </div>
                 </div>
                 <div class="text-center my-2">
-                    <a href="{% url 'checkout' %}" class="btn btn-outline-danger">
-                        <div>  <i class="fa-solid fa-lock mr-2 "></i>secure Checkout</div>
-                    </a>
+                    <form action="{% url 'checkout' %}" method="get">
+                        <button type="submit" {% if not bag_items %}disabled {% endif %} class="checkout-btn btn btn-outline-danger">
+                           Secure  Checkout
+                        </button>
+                    </form>
                 </div>
                 <div class="text-center">
                     <a href="{% url 'products' %}" class="btn btn-warning text-uppercase">
