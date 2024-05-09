@@ -49,7 +49,7 @@ class Order(models.Model):
     order_status = models.CharField(max_length=50, null=False, choices=ORDER_STATUS, default='received')
 
     class Meta:
-        ordering = (-'date',)
+        ordering = ('-date',)
 
     def _generate_order_number(self):
         """
@@ -80,6 +80,36 @@ class Order(models.Model):
         self.save()
 
     def save(self, *args, **kwargs):
+        """"
+         add order number if there is not.
+        """
         if not self.order_number:
             self.order_number = self.generate_order_number()
         super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.order_number
+
+
+class OrderLineItem(models.Model):
+    """ Model for current customer order item """
+    order = models.ForeignKey(Order, null=False, blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='lineitems')
+    product = models.ForeignKey(Product, null=False,
+                                blank=False, on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False,
+                                   blank=False, default=0)
+    lineitem_total = models.DecimalField(max_digits=6,
+                                         decimal_places=2, null=False,
+                                         blank=False, editable=False)
+
+    def save(self, *args, **kwargs):
+        """
+        Set lineitem total and update the order total.
+        """
+        self.lineitem_total = self.product.price * self.quantity
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'SKU {self.product.sku} on order {self.order.order_number}'
