@@ -29,4 +29,5 @@ class CheckoutForm(forms.ModelForm):
             'street_address2': 'STREET_ADDRESS 2',
             'county': 'COUNTY',
         }
+    self.fields['full_name'].widget.attrs['autofocus']=True
 
