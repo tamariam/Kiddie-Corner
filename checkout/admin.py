@@ -14,7 +14,7 @@ class OrderAdmin(admin.ModelAdmin):
     """
     register  the Order model in Admin panel
     """
-    inlines = (OrderLineItemAdminInline)
+    inlines = (OrderLineItemAdminInline,)
     fields = (
         'order_number', 'full_name', 'date',
         'email', 'phone_number', 'country',
@@ -33,8 +33,8 @@ class OrderAdmin(admin.ModelAdmin):
         'email', 'order_number',)
 
     readonly_fields = (
-        'order_number', 'order_total', 'grand_total'
-        'date', 'shipping_cost', 'original_bag',
+        'order_number', 'order_total', 'grand_total',
+        'shipping_cost', 'original_bag', 'date'
 
     )
 
