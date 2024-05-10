@@ -41,5 +41,5 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = (
         'order_number',  'full_name', 'shipping_method', 'date'
     )
-    
+
     ordering = ('-date',)
