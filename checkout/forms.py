@@ -15,7 +15,7 @@ class CheckoutForm(forms.ModelForm):
             'postcode', 'town_or_city', 'street_address1',
             'street_address2', 'county',
         )
-   
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
@@ -29,7 +29,7 @@ class CheckoutForm(forms.ModelForm):
             'street_address2': 'STREET_ADDRESS 2',
             'county': 'COUNTY',
         }
-        self.fields['full_name'].widget.attrs['autofocus']=True
+        self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'country':
                 if self.fields[field].required:
@@ -44,4 +44,3 @@ class CheckoutForm(forms.ModelForm):
                     'aria-label'] = 'select a country'
             self.fields[field].widget.attrs['class'] = 'stripe-styles'
             self.fields[field].label = False
-

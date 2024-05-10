@@ -40,7 +40,7 @@ class Order(models.Model):
     shipping_cost = models.DecimalField(max_digits=10,
                                         decimal_places=2,
                                         null=False, default=0)
-    shipping_method = models.CharField(max_length=20, choices=SHIPPING_METHOD, null=False, blank=False, default='standard')                          
+    shipping_method = models.CharField(max_length=20, choices=SHIPPING_METHOD, null=False, blank=False, default='standard')                       
     order_total = models.DecimalField(max_digits=10,
                                       decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10,
