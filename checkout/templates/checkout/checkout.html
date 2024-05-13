@@ -79,21 +79,21 @@
                         {{ checkout_form.street_address1 | as_crispy_field }}
                         {{ checkout_form.street_address2 | as_crispy_field }}
                         {{ checkout_form.postcode| as_crispy_field }}
-                        <!-- <div class="form-check form-check-inline float-right mr-0">
+                        <div class="float-right mr-0">
                             {% if user.is_authenticated %}
-                            <label class="form-check-label" for="id-save-info">Save this delivery
+                            <label for="id-save-info">Save this delivery
                                 information to my profile</label>
-                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info"
+                            <input class="ml-2 mr-0" type="checkbox" id="id-save-info"
                                 name="save-info" checked>
                             {% else %}
-                            <label class="form-check-label" for="id-save-info">
+                            <label  for="id-save-info">
                                 <a class="text-info" href="{% url 'account_signup' %}">Create an account</a>
                                 or
                                 <a class="text-info" href="{% url 'account_login' %}">login</a> to save this
                                 information
                             </label>
                             {% endif %}
-                        </div> -->
+                        </div>
                     </fieldset>
                     <p class="px-3">Please Enter your card details and press 'Submit Order' to complete your order...</p>
                     <fieldset class="rounded px-3 mb-5">
