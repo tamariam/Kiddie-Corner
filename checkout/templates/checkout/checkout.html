@@ -12,16 +12,21 @@
 
 {% block extra_title %} - checkout {% endblock %}
 
-{% block page_header %}
+<!-- {% block page_header %}
     <div class="container header-container">
         <div class="row">
             <div class="col"></div>
         </div>
     </div>
-{% endblock %}
+{% endblock %} -->
 
 {% block content %}
-<div class="container-luid ">
+<div class="container-fluid ">
+    <div class="col text-center ">
+        <h2 class="bg-primary text-white mb-5 text-uppercase ">Chekout</h2>
+    </div>
+   
+
     <div class="row">
         <!-- Product Cards Column -->
         <div class="col-lg-4">
@@ -34,7 +39,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h3 class="card-title p-1 text-center rounded">{{ item.product.name }}</h3>
+                                    <h3 class="card-title bg-primary text-white p-1 text-center rounded">{{ item.product.name }}</h3>
                                     <p class="card-text font-weight-bold">Price: €{{ item.product.price }}</p>
                                     <p class="card-text font-weight-bold">Quantity:{{ item.quantity }}</p>
                                     
@@ -48,50 +53,47 @@
                     </div>
                     {% endfor %}
                     {% else %}
-                    <div class="col-12 text-center mt-2">
+                    <!-- <div class="col-12 text-center mt-2">
                     <h3>Empty Bag!</h3>
                     <p>Looks like you haven't added anything to your bag.</p>
                     <p>Click below to continue shopping.</p>
                     <a href="{% url 'products' %}" class="btn btn-warning">Find More Products</a>
-                    </div>
+                    </div> -->
                     {% endif %}
              </div>
-             <div class="col-lg-6">
-                <form class="form " method="POST" action="{% url 'checkout '%}" id="payment-form">
+             <div class="col-lg-5">
+                <form class="form " method="POST" action="{% url 'checkout'%}" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label small">Your Details</legend>
-                        {{ order_form.full_name | as_crispy_field }}
-                        {{ order_form.email | as_crispy_field }}
-                        {{ order_form.phone_number | as_crispy_field }}
+                        {{ checkout_form.full_name | as_crispy_field }}
+                        {{ checkout_form.email | as_crispy_field }}
+                        {{ checkout_form.phone_number | as_crispy_field }}
 
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label small">Your Address</legend>
-                        {{ order_form.country | as_crispy_field }}
-                        {{ order_form.town_or_city | as_crispy_field }}
-                        {{ order_form.county | as_crispy_field }}
-                        {{ order_form.street_address1 | as_crispy_field }}
-                        {{ order_form.street_address2 | as_crispy_field }}
-                        {{ order_form.postcode| as_crispy_field }}
+                        {{ checkout_form.country | as_crispy_field }}
+                        {{ checkout_form.town_or_city | as_crispy_field }}
+                        {{ checkout_form.county | as_crispy_field }}
+                        {{ checkout_form.street_address1 | as_crispy_field }}
+                        {{ checkout_form.street_address2 | as_crispy_field }}
+                        {{ checkout_form.postcode| as_crispy_field }}
 
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small">Your Details</legend>
-                        {{ order_form.full_name | as_crispy_field }}
-                        {{ order_form.email | as_crispy_field }}
-                        {{ order_form.phone_number | as_crispy_field }}
-
+                        <legend class="fieldset-label small">Payment</legend>
+                        <!-- for stripe payment -->
                     </fieldset>
             </form>
                  </div>
 
         <!-- Bag Summary Column -->
-        <div class="col-lg-2">
+        <div class="col-lg-3">
             <div class="col-sm-12 col-md-12 col-lg-12 bg-white rounded text-center bag-summary-card mb-3  pt-2">
               
                 <div class="text-center">
-                    <h3 class="bg-danger rounded py-2">Shopping  Report</h3>
+                    <h3 class="bg-primary text-white rounded py-2 ">Summery</h3>
                 </div>
                 <div class="row pt-4 mt-2">
                     <div class="col text-left">
