@@ -21,7 +21,7 @@
 {% endblock %} -->
 
 {% block content %}
-<div class="container-fluid ">
+<div class="container-fluid lato ">
     <div class="col text-center ">
         <h2 class="bg-primary text-white mb-5 text-uppercase ">Chekout</h2>
     </div>
@@ -52,13 +52,7 @@
                     </div>
                     </div>
                     {% endfor %}
-                    {% else %}
-                    <!-- <div class="col-12 text-center mt-2">
-                    <h3>Empty Bag!</h3>
-                    <p>Looks like you haven't added anything to your bag.</p>
-                    <p>Click below to continue shopping.</p>
-                    <a href="{% url 'products' %}" class="btn btn-warning">Find More Products</a>
-                    </div> -->
+
                     {% endif %}
              </div>
              <div class="col-lg-5">
@@ -96,19 +90,19 @@
                         </div>
 
                     </fieldset>
-                    <p class="px-3">Please Enter your card details and press 'Submit Order' to complete your order...</p>
+                    <p class="px-3 text-danger font-weight-bold">Please Enter your card details and press 'Submit Order' to complete your order...</p>
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label">Card Details</legend>
                         <!-- for stripe payment -->
                     </fieldset>
 
             </form>
-            <div class="text-center text-lg-left my-2">
+            <div class="text-center text-lg-right my-2">
                 <button form="payment-form" id="submit-button" class="btn btn-success submit-btn">
-                    <span><i class="fas fa-lock"></i> Submit Order</span>
+                    <span><i class="fas fa-lock mr-3 "></i> Submit Order</span>
                 </button>
             </div>
-            <div class="text-center text-lg-left  my-2">
+            <div class="text-center text-lg-right  my-2">
                 <a href="{% url 'products' %}" class="btn btn-danger text-center rounded">
                     <span class="icon"><i class="fa-solid fa-circle-arrow-left"></i></span>
                     <span class="text-uppercase ">Back to shopping</span>
@@ -156,11 +150,11 @@
                         <span>€{{ shipping|floatformat:2 }}</span>
                     </div>
                 </div>
-                <div class="row">
+                <div class="bg-danger row rounded ">
                     <div class="col text-left">
                         <p><strong>Total:</strong></p>
                     </div>
-                    <div class="col text-right">
+                    <div class="text-white col text-right">
                         <span>{{ grand_total|floatformat:2 }}</span>
                     </div>
                 </div>
