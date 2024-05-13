@@ -65,14 +65,14 @@
                 <form class="form " method="POST" action="{% url 'checkout'%}" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small">Your Details</legend>
+                        <legend class="fieldset-label ">Your Details</legend>
                         {{ checkout_form.full_name | as_crispy_field }}
                         {{ checkout_form.email | as_crispy_field }}
                         {{ checkout_form.phone_number | as_crispy_field }}
 
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small">Your Address</legend>
+                        <legend class="fieldset-label ">Your Address</legend>
                         {{ checkout_form.country | as_crispy_field }}
                         {{ checkout_form.town_or_city | as_crispy_field }}
                         {{ checkout_form.county | as_crispy_field }}
@@ -82,7 +82,7 @@
 
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small">Payment</legend>
+                        <legend class="fieldset-label">Payment</legend>
                         <!-- for stripe payment -->
                     </fieldset>
             </form>
