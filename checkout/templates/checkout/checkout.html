@@ -79,13 +79,49 @@
                         {{ checkout_form.street_address1 | as_crispy_field }}
                         {{ checkout_form.street_address2 | as_crispy_field }}
                         {{ checkout_form.postcode| as_crispy_field }}
-
+                        <!-- <div class="form-check form-check-inline float-right mr-0">
+                            {% if user.is_authenticated %}
+                            <label class="form-check-label" for="id-save-info">Save this delivery
+                                information to my profile</label>
+                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info"
+                                name="save-info" checked>
+                            {% else %}
+                            <label class="form-check-label" for="id-save-info">
+                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a>
+                                or
+                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this
+                                information
+                            </label>
+                            {% endif %}
+                        </div> -->
                     </fieldset>
+                    <p class="px-3">Please Enter your card details and press 'Submit Order' to complete your order...</p>
                     <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label">Payment</legend>
+                        <legend class="fieldset-label">Card Details</legend>
                         <!-- for stripe payment -->
                     </fieldset>
+
             </form>
+            <div class="text-center text-lg-right my-2">
+                <button form="payment-form" id="submit-button" class="btn btn-success">
+                    <span><i class="fas fa-lock"></i> Submit Order</span>
+                </button>
+            </div>
+            <div class="text-center text-lg-right my-2">
+                <a href="{% url 'products' %}" class="btn btn-danger text-center rounded-0 mt-2">
+                    <span class="icon"><i class="fa-solid fa-circle-arrow-left"></i></span>
+                    <span class="text-uppercase ">Back to shopping</span>
+                </a>
+            </div>
+            <div class="text-center text-lg-right my-3">
+                <p class="small text-danger mr-2">
+                    <span class="icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </span>
+                    <span>Your credit/debit card will be charged
+                        <strong>€{{ grand_total|floatformat:2 }}</strong></span>
+                </p>
+            </div>
                  </div>
 
         <!-- Bag Summary Column -->
