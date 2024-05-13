@@ -1,5 +1,148 @@
-<h3>juhuu</h3>
+{% extends 'base.html' %}
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock%}
+
+
+
+
+<!-- Shopping Bag Page -->
+
+{% block extra_title %} - checkout {% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container ">
+    <div class="row">
+        <!-- Product Cards Column -->
+        <div class="col-lg-8">
+            {% if bag_items %}
+                {% for item in bag_items %}
+                    <div class="card mb-3">
+                        <div class="row  no-gutters">
+                            <div class="col-md-4">
+                                <img src="{{ item.product.image.url }}" class="card-img" alt="Product Image">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title p-1 text-center rounded">{{ item.product.name }}</h3>
+                                    <p class="card-text font-weight-bold">Price: €{{ item.product.price }}</p>
+                                    
+                                    <!-- Quantity Selection Form -->
+                                    <form class="form update-form" method="POST" action="{% url 'update_bag' item.item_id %}">
+                                        {% csrf_token %}
+                                        <div>
+                                            <div class="input-group-selector">
+                                                <label  for="id_qty_{{ item.item_id }}" class="font-weight-bold">Quantity:</label>
+                                                <select class="form-control"
+                                                name="quantity" 
+                                                data-item_id="{{ item.item_id }}"
+                                                id="id_qty_{{ item.item_id }}">
+                                                    <option value="{{ item.quantity }}" selected hidden>{{ item.quantity }}</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group-selector  text-center">
+                                            <input class=" btn btn-warning my-2 card-button text-uppercase" type="submit" value="update bag">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- Remove Button Form -->
+                                    <form class="form " method="POST" action="{% url 'remove_item' item.item_id%}">
+                                        {% csrf_token %}
+                                        <div class="text-center ">
+                                                <input  class="btn btn-danger card-button text-uppercase" type="submit" value="Remove">
+                                     </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="col-12 text-center mt-2">
+                    <h3>Empty Bag!</h3>
+                    <p>Looks like you haven't added anything to your bag.</p>
+                    <p>Click below to continue shopping.</p>
+                    <a href="{% url 'products' %}" class="btn btn-warning">Find More Products</a>
+                    </div>
+                    {% endif %}
+             </div>
+
+        <!-- Bag Summary Column -->
+        <div class="col-lg-4 ">
+            <div class="col-sm-12 col-md-12 col-lg-12 bg-white rounded text-center bag-summary-card mb-3  pt-2">
+              
+                <div class="text-center">
+                    <h3 class="bg-danger rounded py-2">Shopping  Report</h3>
+                </div>
+                <div class="row pt-4 mt-2">
+                    <div class="col text-left">
+                        <p><strong>Items:</strong></p>
+                    </div>
+                    <div class="col text-right">
+                        <span>{{ count }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">
+                        <p><strong>Sub-total:</strong></p>
+                    </div>
+                    <div class="col text-right">
+                        <span>€{{ total |floatformat:2 }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">
+                        <p><strong>Delivery:</strong></p>
+                    </div>
+                    <div class="col text-right">
+                        <span>€{{ shipping|floatformat:2 }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">
+                        <p><strong>Total:</strong></p>
+                    </div>
+                    <div class="col text-right">
+                        <span>{{ grand_total|floatformat:2 }}</span>
+                    </div>
+                </div>
+                <div class="text-center my-2">
+                    <form action="{% url 'checkout' %}" method="get">
+                        <button type="submit" {% if not bag_items %}disabled {% endif %} class="checkout-btn btn btn-outline-danger">
+                           Secure  Checkout
+                        </button>
+                    </form>
+                </div>
+                <div class="text-center">
+                    <a href="{% url 'products' %}" class="btn btn-warning text-uppercase">
+                        <div><i class="icon fa-solid fa-circle-arrow-left mr-2 text-uppercase"></i>keep Shopping</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+
