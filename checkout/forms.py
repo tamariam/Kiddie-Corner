@@ -43,5 +43,5 @@ class CheckoutForm(forms.ModelForm):
             else:
                 self.fields[field].widget.attrs[
                     'aria-label'] = 'select a country'
-            self.fields[field].widget.attrs['class'] = 'stripe-styles'
+            self.fields[field].widget.attrs['class'] = 'stripe-style'
             self.fields[field].label = False
