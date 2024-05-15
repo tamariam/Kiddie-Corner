@@ -78,12 +78,18 @@ def checkout(request):
     }
     return render(request, template, context)
 
+
 def checkout_success(request, order_number):
     '''successfull checkouts'''
     save_info = request.session.get('save-info')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request,f'Your order processed successfully, a confirmation email will be sent to{order.email}')
-if 'bag'  in request.session:
-    del request.session['bag']
+    messages.success(request, f'Your order processed successfully, a confirmation email will be sent to{order.email}')
+    if 'bag' in request.session:
+        del request.session['bag']
 
-    
+    template = 'checkout/checkout_success.html'
+    return render(request, template, {'order': order})
+
+
+
+
