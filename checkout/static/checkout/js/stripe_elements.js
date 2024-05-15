@@ -2,7 +2,7 @@ const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 const clientSecret = $('#id_client_secret').text().slice(1, -1);
 const errorDiv = $("#error-message");
 
-const stripe = Stripe(stripePublicKey);
+const stripe = stripe(stripePublicKey);
 
 let elements = stripe.elements();
 let style = {
@@ -35,25 +35,17 @@ let getErrorMessage=(event)=>{
 
 }
 
-card.on('change', (event)=>{
-    if (event.error){
-    let errorText=getErrorMessage(event)
-    $(errorDiv).html(errorText);
-    }else {
-        errorDiv.textContent = '';
+card.on('change', (event) => {
+    if (event.error) {
+        let errorText = getErrorMessage(event);
+        $(errorDiv).html(errorText);
+    } else {
+        $(errorDiv).text(''); // Clear the error message when input is valid
     }
-})
+});
 
 // Handle form submision
-let getRsultErrorMessage=(result)=>{
-    return `
-    <span role="alert">
-    <i class="fa-solid fa-triangle-exclamation fa-sm"></i>
-    </span>
-    <span>${result.error.message}</span>
-    `;
 
-}
 const form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(event) {
@@ -66,8 +58,8 @@ form.addEventListener('submit', function(event) {
         }
     }).then(function(result) {
         if (result.error) {
-            let errorResultText=getResultErrorMessage(result)
-            $(errorDiv).html(errorResultText);
+            let errorText=getErrorMessage(result)
+            $(errorDiv).html(errorText);
             card.update({'disabled': false})
             $('#submit-button').attr({'disabled':false})
       } else {
