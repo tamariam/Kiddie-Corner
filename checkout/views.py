@@ -53,8 +53,11 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('shopping_bag'))
-
-
+            
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('checkout_success.html', args=[order.order_number]))
+        else:
+            messages.error('There is error in your Form,please make sure everything is correct ')
     if not bag:
         messages.error(request, "Your shopping bag is  empty, please choose items to purchase")
         return redirect(reverse('products'))
@@ -74,3 +77,7 @@ def checkout(request):
         'client_secret': stripe_intent.client_secret,
     }
     return render(request, template, context)
+
+def checkout_success(request, order_number):
+    '''successfull checkouts'''
+    save_info = request.session.get('save-info')
