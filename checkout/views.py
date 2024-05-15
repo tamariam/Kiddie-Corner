@@ -16,6 +16,7 @@ def checkout(request):
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
+
         form_data={
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -28,6 +29,31 @@ def checkout(request):
             'county': request.POST['county'],
         }
         
+        checkout_form = CheckoutForm(form_data)  
+        if checkout_form.is_valid():
+            checkout_form.save()
+            order = checkout_form.save(commit=False)
+            
+            for item_id, quantity in bag.items():
+                try:
+                    product = Product.objects.get(id=item_id)
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=quantity,
+                    )
+                    order_line_item.save()
+                except Product.DoesNotExist:
+                    messages.error(request, (
+                        """
+                        One of the products in your bag wasn't
+                        found in our database.
+                    
+                        """)
+                    )
+                    order.delete()
+                    return redirect(reverse('shopping_bag'))
+
 
     if not bag:
         messages.error(request, "Your shopping bag is  empty, please choose items to purchase")
