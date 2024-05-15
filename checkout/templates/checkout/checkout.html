@@ -1,239 +1,180 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load cart_subtotal_tool %}
-
+{% load crispy_forms_tags %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
-{% endblock %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock%}
 
-{% block head_title %}- Checkout Success{% endblock %}
+
+
+
+<!-- Shopping Bag Page -->
+
+{% block extra_title %} - checkout {% endblock %}
+
+<!-- {% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %} -->
 
 {% block content %}
-<main class="container my-3">
+<div class="container-fluid lato ">
+    <div class="col text-center ">
+        <h2 class="bg-primary text-white mb-5 text-uppercase ">Chekout</h2>
+    </div>
+   
 
     <div class="row">
+        <!-- Product Cards Column -->
+        <div class="col-lg-4">
+            {% if bag_items %}
+                {% for item in bag_items %}
+                    <div class="card mb-3">
+                        <div class="row  no-gutters">
+                            <div class="col-md-4">
+                                <img src="{{ item.product.image.url }}" class="card-img" alt="Product Image">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title bg-primary text-white p-1 text-center rounded">{{ item.product.name }}</h3>
+                                    <p class="card-text font-weight-bold">Price: €{{ item.product.price }}</p>
+                                    <p class="card-text font-weight-bold">Quantity:{{ item.quantity }}</p>
+                                    
+                                    <!-- Quantity Selection Form -->
+                                    
+                                    <!-- Remove Button Form -->
+                                  
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    {% endfor %}
 
-        <div class="col">
+                    {% endif %}
+             </div>
+             <div class="col-lg-5">
+                <form class="form " method="POST" action="{% url 'checkout'%}" id="payment-form">
+                    {% csrf_token %}
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend class="fieldset-label ">Your Details</legend>
+                        {{ checkout_form.full_name | as_crispy_field }}
+                        {{ checkout_form.email | as_crispy_field }}
+                        {{ checkout_form.phone_number | as_crispy_field }}
 
-            <h1 class="text-left border-bottom mt-0 py-3 mb-4 text-uppercase">Order Confirmation</h1>
-            <p class="{% if from_profile %}border-bottom mt-0 py-3 mb-4{% endif %}">Thank you for shopping with us, the below confirmation {% if from_profile %}was{% else %}will be{% endif %} sent to {{ order.email }}.</p>
-            
-            {% if not from_profile %}
-                <p class="small text-danger border-bottom mt-0 py-3 mb-4">* Kindly note that if this page refreshes or you leave the page it is lost forever. Users who where signed in during checkout can revisit their order history via thier profile.</p>
-            {% endif %}
+                    </fieldset>
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend class="fieldset-label ">Your Address</legend>
+                        {{ checkout_form.country | as_crispy_field }}
+                        {{ checkout_form.town_or_city | as_crispy_field }}
+                        {{ checkout_form.county | as_crispy_field }}
+                        {{ checkout_form.street_address1 | as_crispy_field }}
+                        {{ checkout_form.street_address2 | as_crispy_field }}
+                        {{ checkout_form.postcode| as_crispy_field }}
+                        <div class="form-check form-check-inline  mr-0">
+                            {% if user.is_authenticated %}
+                            <label class="form-check-label" for="id-save-info">Save this 
+                                information to my profile</label>
+                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info"
+                                name="save-info" checked>
+                            {% else %}
+                            <label class="form-check-label" for="id-save-info">
+                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a>
+                                or
+                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this
+                                information
+                            </label>
+                            {% endif %}
+                        </div>
 
-        </div>
-    </div>
-    <h2 class="sub-heading font-weight-bold">Order Summary:</h2>
+                    </fieldset>
+                    <p class="px-3 text-danger font-weight-bold">Please Enter your card details and press 'Submit Order' to complete your order...</p>
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend class="fieldset-label">Card Details</legend>
+                        <!-- for stripe payment -->
+                        <div class="mb-3" id="payment-element"></div>
+                        <div class="mb-3 text-danger" id="error-message" role="alert"></div>
 
-    <div class="row">
+                    </fieldset>
 
-        <!-- details of the order created automatically -->
-        <div class="col-12 col-sm-6 text-left">
-            <p class="mb-1">Order Reference:</p>
-        </div>
-
-        <div class="col-12 col-sm-6 text-center text-sm-right">
-
-            <p class="mb-1">{{ order.order_number }}</p>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col-12 col-sm-6 text-left">
-
-            <p class="mb-1">Time of Purchase:</p>
-
-        </div>
-
-        <div class="col-12 col-sm-6 text-center text-sm-right">
-
-            <p class="mb-1">{{ order.date }}</p>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col-12 col-sm-6 text-left">
-            <p class="mb-1">Curent status:</p>
-        </div>
-
-        <div class="col-12 col-sm-6 text-center text-sm-right">
-            <p class="mb-1">{{ order.order_status }}</p>
-        </div>
-
-    </div>
-
-    <div class="row border-top  mt-2">
-        
-        <div class="col-12">
-            <h3 class="text-left mt-2 pb-3 sub-heading">Items purchased:</h3>
-        </div>
-
-    </div>
-
-    <!-- Order items -->
-    {% for ordered_product in order.lineitems.all %}
-
-        <div class="row">
-
-            <div class="col-2 my-2">
-
-                {% if ordered_product.product.image %}
-                    <a href="{{ ordered_product.product.image.url }}" target="_blank" aria-label="Opens the image of {{ ordered_product.product.name }} in a new tab">
-                        <img class="w-100" src="{{ ordered_product.product.image.url }}" alt="image of {{ ordered_product.product.name }}">
-                    </a>
-                {% else %}
-                    <a href="">
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="No image available for {{ ordered_product.product.name }}">
-                    </a>
-                {% endif %}
-
+            </form>
+            <div class="text-center text-lg-right my-2">
+                <button form="payment-form" id="submit-button" class="btn btn-success submit-btn">
+                    <span><i class="fas fa-lock mr-3 "></i> Submit Order</span>
+                </button>
             </div>
-
-            <div class="col-7">
-
-                <p class="my-2 font-weight-bold">
-                    <!-- opens a new tab to see the product info this is because if a user is not signed in they cannot return to the order confirmation -->
-                    <a href="{% url 'product_detail' ordered_product.product.slug %}" target="_blank" aria-label="Takes you back to {{ ordered_product.product.name }}'s details in a new tab">
-                        {{ ordered_product.product.name }}
-                    </a>
+            <div class="text-center text-lg-right  my-2">
+                <a href="{% url 'products' %}" class="btn btn-danger text-center rounded">
+                    <span class="icon"><i class="fa-solid fa-circle-arrow-left"></i></span>
+                    <span class="text-uppercase ">Back to shopping</span>
+                </a>
+            </div>
+            <div class="text-center  my-2">
+                <p class="small text-danger mr-2">
+                    <span class="icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </span>
+                    <span>Your credit/debit card will be charged
+                        <strong>€{{ grand_total|floatformat:2 }}</strong></span>
                 </p>
-
-                <p class="my-2 small text-muted">Qty: {{ ordered_product.quantity }}</p>
-
-                <p class="small text-muted">@ €{{ ordered_product.product.price }} each</p>
-
             </div>
+                 </div>
 
-            <div class="col-3 text-right">
-
-                <p class="my-2 small">€{{ ordered_product.product.price | calc_subtotal:ordered_product.quantity }}</p>
-
+        <!-- Bag Summary Column -->
+        <div class="col-lg-3">
+            <div class="col-sm-12 col-md-12 col-lg-12 bg-white rounded text-center bag-summary-card mb-3  pt-2">
+              
+                <div class="text-center">
+                    <h3 class="bg-primary text-white rounded py-2 ">Summery</h3>
+                </div>
+                <div class="row pt-4 mt-2">
+                    <div class="col text-left">
+                        <p><strong>Items:</strong></p>
+                    </div>
+                    <div class="col text-right">
+                        <span>{{ count }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">
+                        <p><strong>Sub-total:</strong></p>
+                    </div>
+                    <div class="col text-right">
+                        <span>€{{ total |floatformat:2 }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">
+                        <p><strong>Delivery:</strong></p>
+                    </div>
+                    <div class="col text-right">
+                        <span>€{{ shipping|floatformat:2 }}</span>
+                    </div>
+                </div>
+                <div class="bg-danger row rounded ">
+                    <div class="col text-left">
+                        <p><strong>Total:</strong></p>
+                    </div>
+                    <div class="text-white col text-right">
+                        <span>{{ grand_total|floatformat:2 }}</span>
+                    </div>
+                </div>
+               
             </div>
-
         </div>
-
-    {% endfor %}
-
-    <!-- Order totals -->
-    <div class="row text-right border-top pt-3">
-
-        <div class="col-8">Order Total:</div>
-        <div class="col-4">€{{ order.order_total }}</div>
-
     </div>
+</div>
+{% endblock content %}
 
-    <div class="row text-right">
-
-        <div class="col-8">Shipping Method:</div>
-        <div class="col-4">{{ order.shipping_method }}</div>
-
-    </div>
-
-    <div class="row text-right">
-
-        <div class="col-8">Shipping Charge:</div>
-        <div class="col-4">€{{ order.shipping_cost }}</div>
-
-    </div>
-
-    <div class="row text-right border-bottom pb-3">
-
-        <div class="col-8">Grand Total:</div>
-        <div class="col-4">€{{ order.grand_total }}</div>
-
-    </div>
-
-    <div class="row mt-3">
-
-        <div class="col-12">
-
-            <h4 class="text-left mt-2 pb-3 sub-heading">Shipping Details:</h4>
-
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col-12">
-
-            <p class="mb-1">{{ order.full_name }}</p>
-
-            <p class="mb-1">{{ order.street_address1 }}</p>
-
-            {% if order.street_address2 %}
-
-                <p class="mb-1">{{ order.street_address2 }}</p>
-
-            {% endif %}
-
-            <p class="mb-1">{{ order.town_or_city }}</p>
-
-            {% if order.county %}
-
-                <p class="mb-1">{{ order.county }}</p>
-
-            {% endif %}
-
-            {% if order.postcode %}
-
-                <p class="mb-1">{{ order.postcode }}</p>
-
-            {% endif %}
-
-            <p class="mb-1">{{ order.country }}</p>
-            <p class="mb-1">{{ order.phone_number }}</p>
-
-        </div>
-
-    </div>
-
-    <div class="row text-center my-3">
-
-        <div class="col-12">
-
-            {% if from_profile %}
-
-                <a href="{% url 'profile' %}" class="btn btn-outline-dark rounded-0 btn-lg mt-3 ml-3">
-                    <span>
-                        <i class="fas fa-chevron-left fa-sm"></i>
-                    </span>
-                    <span class="font-weight-bold pr-2">
-                        Back to Profile
-                    </span>
-                </a>
-
-            {% else %}
-
-                <a href="{% url 'home' %}" class="btn btn-outline-dark rounded-0 btn-lg mt-3">
-
-                    <span>
-                        <i class="fas fa-chevron-left fa-sm"></i>
-                    </span>
-
-                    <span class="font-weight-bold">Back to Home</span>
-
-                </a>
-
-                <a href="{% url 'products' %}?clearance" class="btn btn-lg btn-warning border border-dark px-4 ml-3 mt-3">
-
-                    <span class="font-weight-bold">Special Offers</span>
-
-                </a>
-
-            {% endif %}
-
-        </div>
-
-    </div>
-
-</main>
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script> 
 
 {% endblock %}
+
+
+
