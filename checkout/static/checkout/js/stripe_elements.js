@@ -46,10 +46,12 @@ card.on('change', (event)=>{
 
 // Handle form submision
 
-var form = document.getElementById('payment-form');
+const form = document.getElementById('payment-form');
 
-form.addEventListener('submit', function(ev) {
-    ev.preventDefault();
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    card.update({'disabled': true})
+    $('#submit-button').attr({'disabled':true})
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
