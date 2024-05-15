@@ -22,7 +22,7 @@ def checkout(request):
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
             'country': request.POST['country'],
-            'eircode': request.POST['eircode'],
+            'postcode': request.POST['postcode'],
             'town_or_city': request.POST['town_or_city'],
             'street_address1': request.POST['street_address1'],
             'street_address2': request.POST['street_address2'],
@@ -55,28 +55,30 @@ def checkout(request):
                     return redirect(reverse('shopping_bag'))
             
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success.html', args=[order.order_number]))
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error('There is error in your Form,please make sure everything is correct ')
-    if not bag:
-        messages.error(request, "Your shopping bag is  empty, please choose items to purchase")
-        return redirect(reverse('products'))
-    current_bag = shopping_bag_contents(request)
-    total = current_bag['grand_total']
-    stripe_total = round(total*100)
-    stripe.api_key = stripe_secret_key
-    stripe_intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-    )
-    checkout_form = CheckoutForm()
-    template = 'checkout/checkout.html'
-    context = {
-        'checkout_form': checkout_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': stripe_intent.client_secret,
-    }
-    return render(request, template, context)
+    else:
+        bag = request.session.get('bag', {})   
+        if not bag:
+            messages.error(request, "Your shopping bag is  empty, please choose items to purchase")
+            return redirect(reverse('products'))
+        current_bag = shopping_bag_contents(request)
+        total = current_bag['grand_total']
+        stripe_total = round(total*100)
+        stripe.api_key = stripe_secret_key
+        stripe_intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
+        checkout_form = CheckoutForm()
+        template = 'checkout/checkout.html'
+        context = {
+            'checkout_form': checkout_form,
+            'stripe_public_key': stripe_public_key,
+            'client_secret': stripe_intent.client_secret,
+        }
+        return render(request, template, context)
 
 
 def checkout_success(request, order_number):

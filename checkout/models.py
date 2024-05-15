@@ -69,7 +69,7 @@ class Order(models.Model):
         if self.order_total < settings.FREE_SHIPPING_LIMIT:
 
             self.shipping_cost = self.order_total * \
-                Decimal(settings.STANDARD_SHIPPING_PERCENT / 100)
+                Decimal(settings.STANDARD_SHIPPING_PECRENT / 100)
 
         else:
 
@@ -84,7 +84,7 @@ class Order(models.Model):
          add order number if there is not.
         """
         if not self.order_number:
-            self.order_number = self.generate_order_number()
+            self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
     def __str__(self):
