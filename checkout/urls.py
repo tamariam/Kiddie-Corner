@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import checkout,checkout_success
+from .views import checkout, checkout_success
 
 urlpatterns = [
     path('', checkout, name='checkout'),
