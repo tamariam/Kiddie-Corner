@@ -28,6 +28,6 @@ def checkout(request):
     context = {
         'checkout_form': checkout_form,
         'stripe_public_key': stripe_public_key,
-        'client_secret': 'client_Secret',
+        'client_secret': stripe_intent.client_Secret,
     }
     return render(request, template, context)
