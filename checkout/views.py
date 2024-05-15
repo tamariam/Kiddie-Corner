@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from .forms import CheckoutForm
 from shopping_bag.contexts import shopping_bag_contents
 import stripe 
 from django.conf import settings
+from products.models import Product
+from .models import Order, OrderLineItem
 
 # Create your views here.
 
@@ -11,7 +13,22 @@ from django.conf import settings
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    bag = request.session.get('bag', {})
+
+    if request.method == 'POST':
+        bag = request.session.get('bag', {})
+        form_data={
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'country': request.POST['country'],
+            'eircode': request.POST['eircode'],
+            'town_or_city': request.POST['town_or_city'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+            'county': request.POST['county'],
+        }
+        
+
     if not bag:
         messages.error(request, "Your shopping bag is  empty, please choose items to purchase")
         return redirect(reverse('products'))
@@ -28,6 +45,6 @@ def checkout(request):
     context = {
         'checkout_form': checkout_form,
         'stripe_public_key': stripe_public_key,
-        'client_secret': stripe_intent.client_Secret,
+        'client_secret': stripe_intent.client_secret,
     }
     return render(request, template, context)
