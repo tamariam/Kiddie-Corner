@@ -1,5 +1,5 @@
-const stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
-const client_secret = $('#id_client_secret').text().slice(1, -1);
+const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
+const clientSecret = $('#id_client_secret').text().slice(1, -1);
 const errorDiv = $("#error-message");
 
 const stripe = Stripe(stripe_public_key);
@@ -45,7 +45,15 @@ card.on('change', (event)=>{
 })
 
 // Handle form submision
+let getRsultErrorMessage=(result)=>{
+    return `
+    <span role="alert">
+    <i class="fa-solid fa-triangle-exclamation fa-sm"></i>
+    </span>
+    <span>${result.error.message}</span>
+    `;
 
+}
 const form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(event) {
@@ -58,8 +66,11 @@ form.addEventListener('submit', function(event) {
         }
     }).then(function(result) {
         if (result.error) {
-           
-        } else {
+            let errorResultText=getResultErrorMessage(result)
+            $(errorDiv).html(errorResultText);
+            card.update({'disabled': false})
+            $('#submit-button').attr({'disabled':false})
+      } else {
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
             }
