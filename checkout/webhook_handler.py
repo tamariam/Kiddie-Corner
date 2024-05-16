@@ -1,4 +1,7 @@
 from django .http import HttpResponse
+from .models import Order, OrderLineItem
+from products.models import Product
+
 
 
 class StripeWH_Handler:
@@ -97,8 +100,8 @@ class StripeWH_Handler:
                 if order:
                     order.delete()
                 return HttpResponse(
-                    content=f'Webhook received: {event["type"]} | ERROR: {e}',
-                    status=500)
+                content=f'Webhook received: {event["type"]} | ERROR: {e}',
+                status=500)
         return HttpResponse(content=f'Webhook received: {event["type"]} | SUCCESS:Created order in webhook',status=200)
             
 

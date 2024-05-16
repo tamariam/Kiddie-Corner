@@ -52,6 +52,9 @@ def checkout(request):
         if checkout_form.is_valid():
             checkout_form.save()
             order = checkout_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order_stripe_pid = pid
+            order.original_bag=json.dumps(bag)
             
             for item_id, quantity in bag.items():
                 try:
