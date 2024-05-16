@@ -21,7 +21,7 @@ class OrderAdmin(admin.ModelAdmin):
         'postcode', 'town_or_city', 'street_address1',
         'street_address2', 'county', 'shipping_cost',
         'order_total', 'grand_total',
-        'order_status', 'shipping_method','original_bag', 'stripe_pid',
+        'order_status', 'shipping_method', 'original_bag', 'stripe_pid',
     )
     list_display = (
         'full_name', 'email', 'phone_number', 'order_number',
