@@ -60,50 +60,53 @@ form.addEventListener('submit', function(event) {
     };
 
     const url = '/checkout/cache_checkout_data/'
-    $.post(url,postData).done
-    stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-            card: card,
-            billing_details:{
-                billing_details: {
+    $.post(url, postData).done(function)(){
+        stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: card,
+                billing_details:{
+                    billing_details: {
+                        name: $.trim(paymentForm.full_name.value),
+                        phone: $.trim(paymentForm.phone_number.value),
+                        email: $.trim(paymentForm.email.value),
+                        address: {
+                            line1: $.trim(paymentForm.street_address1.value),
+                            line2: $.trim(paymentForm.street_address2.value),
+                            city: $.trim(paymentForm.town_or_city.value),
+                            country: $.trim(paymentForm.country.value),
+                            state: $.trim(paymentForm.county.value),
+                        }
+                    }
+                },
+                shipping: {
                     name: $.trim(paymentForm.full_name.value),
                     phone: $.trim(paymentForm.phone_number.value),
-                    email: $.trim(paymentForm.email.value),
                     address: {
                         line1: $.trim(paymentForm.street_address1.value),
                         line2: $.trim(paymentForm.street_address2.value),
                         city: $.trim(paymentForm.town_or_city.value),
                         country: $.trim(paymentForm.country.value),
+                        postal_code: $.trim(paymentForm.postcode.value),
                         state: $.trim(paymentForm.county.value),
                     }
+                }                    
                 }
-            },
-            shipping: {
-                name: $.trim(paymentForm.full_name.value),
-                phone: $.trim(paymentForm.phone_number.value),
-                address: {
-                    line1: $.trim(paymentForm.street_address1.value),
-                    line2: $.trim(paymentForm.street_address2.value),
-                    city: $.trim(paymentForm.town_or_city.value),
-                    country: $.trim(paymentForm.country.value),
-                    postal_code: $.trim(paymentForm.postcode.value),
-                    state: $.trim(paymentForm.county.value),
+            
+        }).then(function(result) {
+            if (result.error) {
+                let errorText=getErrorMessage(result)
+                $(errorDiv).html(errorText);
+                card.update({'disabled': false})
+                $('#submit-button').attr({'disabled':false})
+          } else {
+                if (result.paymentIntent.status === 'succeeded') {
+                    form.submit();
                 }
-            }                    
             }
-        
-    }).then(function(result) {
-        if (result.error) {
-            let errorText=getErrorMessage(result)
-            $(errorDiv).html(errorText);
-            card.update({'disabled': false})
-            $('#submit-button').attr({'disabled':false})
-      } else {
-            if (result.paymentIntent.status === 'succeeded') {
-                form.submit();
-            }
-        }
-    });
+        }).fail(function(){
+            location.reload();
+        })
+}
 });
 
 
