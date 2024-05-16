@@ -36,6 +36,12 @@ class StripeWH_Handler:
             intent.latest_charge
         )
         grand_total = round(stripe_charge.amount / 100, 2)
+        # Clean data in the shipping details
+        for field, value in shipping_details.address.items():
+            if value == "":
+                shipping_details.address[field] = None
+
+
         message = f'Webhook received: {event["type"]}'
         return HttpResponse(
             content=message, status=200
