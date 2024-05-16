@@ -11,20 +11,25 @@ import json
 
 # Create your views here.
 
+
 @require_Post
 def cache_checkout_data(request):
-try:
-    pid = request.POST.get('client_Secret').split('_secret')[0]
-    stripe.api_key = settings.STRIPE_SECRET_KEY
-    stripe.PaymentIntent.modify(pid,metadata={
-        'bag': json.dumps(request.session.get('bag', {})),
-        'save_info': request.POST.get('save_info'),
-        'username': request.user,
-    })
-    return HttpResponse(status=200)
-except Exception as e:
-    messages.error(request,'Your payment can not be processed.Please Try again later')
-    return HttpResponse(content=e , status=200)
+    '''this view adds metadata to the payment intent
+      '''
+    try:
+        pid = request.POST.get('client_Secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid,metadata={
+            'bag': json.dumps(request.session.get('bag', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Your payment can not be processed.Please Try again later')
+        return HttpResponse(content=str(e), status=200)
+
+        
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
