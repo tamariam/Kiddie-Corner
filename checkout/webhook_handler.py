@@ -42,6 +42,8 @@ class StripeWH_Handler:
                 shipping_details.address[field] = None
 
         order_exists = False
+        attempt = 1
+        while attempt <= 5
         try:
             order = Order.object.get(
                     full_name__iexact=shipping_details.name,
@@ -58,26 +60,31 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 order_exists = True
-                message = f'Webhook received: {event["type"]}|SUCCESS:Verified order already in database'
-                return HttpResponse(
-                content=message, status=200
-                )
+                break
         except Order.DoesNotExist:
-            try:
-             
-                order = Order.objects.create(
-                full_name=shipping_details.name,
-                email=billing_details.email,
-                phone_number=shipping_details.phone,
-                country=shipping_details.address.country,
-                eircode=shipping_details.address.postal_code,
-                town_or_city=shipping_details.address.city,
-                street_address1=shipping_details.address.line1,
-                street_address2=shipping_details.address.line2,
-                county=shipping_details.address.state,
-                original_bag=bag,
-                stripe_pid=pid,
+            attempt += 1
+            time.sleep(1)
+    if order_exists:
+        message = f'Webhook received: {event["type"]}|SUCCESS:Verified order already in database'
+            return HttpResponse(
+            content=message, status=200
             )
+    else:
+        order = None
+        try:
+            order = Order.objects.create(
+            full_name=shipping_details.name,
+            email=billing_details.email,
+            phone_number=shipping_details.phone,
+            country=shipping_details.address.country,
+            eircode=shipping_details.address.postal_code,
+            town_or_city=shipping_details.address.city,
+            street_address1=shipping_details.address.line1,
+            street_address2=shipping_details.address.line2,
+            county=shipping_details.address.state,
+            original_bag=bag,
+            stripe_pid=pid,
+        )
             for item_id, quantity in json.loads(bag).items():
                 product = Product.objects.get(id=item_id)
                 order_line_item = OrderLineItem(
@@ -90,6 +97,7 @@ class StripeWH_Handler:
             if order:
                 order.delete()
             return HttpResponse(content=f'Webhook received:{event['type']} | Error:{e}',status=500)
+    return HttpResponse(content=f'Webhook received:{event['type']} | SUCCESS:Created order in webhook',status=200)
         
 
 
