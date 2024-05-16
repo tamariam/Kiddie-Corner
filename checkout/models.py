@@ -47,6 +47,7 @@ class Order(models.Model):
                                       decimal_places=2, null=False, default=0)
     original_bag = models.TextField(null=False, blank=False, default='')
     order_status = models.CharField(max_length=50, null=False, choices=ORDER_STATUS, default='received')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     class Meta:
         ordering = ('-date',)

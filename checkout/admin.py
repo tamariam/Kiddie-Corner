@@ -20,13 +20,14 @@ class OrderAdmin(admin.ModelAdmin):
         'email', 'phone_number', 'country',
         'postcode', 'town_or_city', 'street_address1',
         'street_address2', 'county', 'shipping_cost',
-        'order_total', 'grand_total', 'original_bag',
-        'order_status', 'shipping_method',
+        'order_total', 'grand_total',
+        'order_status', 'shipping_method','original_bag', 'stripe_pid',
     )
     list_display = (
         'full_name', 'email', 'phone_number', 'order_number',
         'date', 'shipping_cost',
         'order_status', 'order_total', 'grand_total',
+        'original_bag', 'stripe_pid',
         )
     search_fields = (
         'full_name', 'phone_number',
