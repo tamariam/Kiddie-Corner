@@ -6,28 +6,27 @@ import stripe
 from django.conf import settings
 from products.models import Product
 from .models import Order, OrderLineItem
-from django.views.decorators.http import require_Post
+from django.views.decorators.http import require_POST
 import json
 
 # Create your views here.
 
 
-@require_Post
+@require_POST
 def cache_checkout_data(request):
-    '''this view adds metadata to the payment intent
-      '''
     try:
-        pid = request.POST.get('client_Secret').split('_secret')[0]
+        pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        stripe.PaymentIntent.modify(pid,metadata={
-            'bag': json.dumps(request.session.get('bag', {})),
+        stripe.PaymentIntent.modify(pid, metadata={
+            'basket': json.dumps(request.session.get('basket', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Your payment can not be processed.Please Try again later')
-        return HttpResponse(content=str(e), status=200)
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
         
 def checkout(request):
@@ -37,7 +36,7 @@ def checkout(request):
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
-        form_data={
+        form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
