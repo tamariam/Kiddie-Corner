@@ -114,8 +114,8 @@ $(document).ready(function() {
                     }
                 }
             });
-        }).fail(function() {
-            // Just reload the page, the error will be in django messages
+        }).fail(() => {
+            // Just reload the page, the error will be in Django messages
             location.reload();
         });
     });
