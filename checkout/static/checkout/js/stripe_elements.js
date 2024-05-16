@@ -50,8 +50,17 @@ const form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
-    card.update({'disabled': true})
-    $('#submit-button').attr({'disabled':true})
+    card.update({'disabled': true});
+    $('#submit-button').attr({'disabled':true});
+
+    let saveInfo = Boolean($('#id-save-info').attr('checked'));
+    let csrfToken  = $('input[name="csrfmiddlewaretoken"]').val();
+    let postData = {
+
+    };
+
+    const url = '/checkout/cache_checkout_data/'
+    $.post(url,postData).done
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
