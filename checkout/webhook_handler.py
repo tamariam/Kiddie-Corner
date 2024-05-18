@@ -54,7 +54,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
-                    email__iexact=billing_details.email,
+                    email__iexact=shipping_details.email,
                     phone_number__iexact=shipping_details.phone,
                     country__iexact=shipping_details.address.country,
                     eircode__iexact=shipping_details.address.postal_code,
@@ -82,7 +82,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
-                    email=billing_details.email,
+                    email=shipping_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
                     eircode=shipping_details.address.postal_code,
