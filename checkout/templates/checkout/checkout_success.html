@@ -24,7 +24,7 @@
         <div class="col-12">
             <div class="p-2  email-conf">
                <div class="table-responsive">
-                <h4 class="text-center mb-4">Order Details</h4>
+                <h3 class="text-center mb-4">Order Details</h3>
                 <table class="table table-bordered">
                     <tbody>
                         <tr>
@@ -45,7 +45,7 @@
                                 <div>
                                     <div class="mr-3 text-center">
                                         {% if item.product.image %}
-                                            <img src="{{ item.product.image.url }}" alt="image of {{ item.product.name }}" class="w-50" >
+                                            <img src="{{ item.product.image.url }}" alt="image of {{ item.product.name }}" class="success-img">
                                         {% else %}
                                             <img src="{{ MEDIA_URL }}placeholder.avih" alt="No image available for {{ item.product.name }}" class="w-50">
                                         {% endif %}
@@ -60,32 +60,32 @@
                         </tr>
                         {% endfor %}
                         <tr>
-                            <td class="text-black font-weight-bold">Full Name:</td>
+                            <td class="text-black font-weight-bold">Full<br> Name</td>
                             <td>{{ order.full_name }}</td>
                         </tr>
                         <tr>
-                            <td class="text-black font-weight-bold">Address:</td>
+                            <td class="text-black font-weight-bold">Address</td>
                             <td>{{ order.street_address1 }}, {% if order.street_address2 %}{{ order.street_address2 }}, {% endif %}{{ order.town_or_city }}, {{ order.county }}, {{ order.country }}</td>
                         </tr>
                         <tr>
-                            <td class="text-black font-weight-bold">Phone Number:</td>
+                            <td class="text-black font-weight-bold">Phone</td>
                             <td>{{ order.phone_number }}</td>
                         </tr>
                         <tr>
-                            <td class="text-black font-weight-bold">Order Total:</td>
+                            <td class="text-black font-weight-bold">Total</td>
                             <td>€{{ order.order_total }}</td>
                         </tr>
                         <tr>
-                            <td class="text-black font-weight-bold">Delivery Cost:</td>
+                            <td class="text-black font-weight-bold">Delivery</td>
                             <td>€{{ order.shipping_cost }}</td>
                         </tr>
                         
                         <tr>
-                            <td class="text-black font-weight-bold">Shipping Method:</td>
+                            <td class="text-black font-weight-bold">Shipping<br> Method</td>
                             <td>{{ order.shipping_method }}</td>
                         </tr>
                         <tr>
-                            <td class="text-black font-weight-bold">Grand Total:</td>
+                            <td class="text-black font-weight-bold">Grand <br>Total</td>
                             <td>€{{ order.grand_total }}</td>
                         </tr>
                     </tbody>
@@ -100,7 +100,7 @@
             {% if user.is_authenticated %}
                 <a href="" class="btn btn-primary mb-3 ">Return to  My Profile</a>
             {% else %}
-                <a href="{% url 'home' %}" class="btn btn-primary mb-3">Back to Home</a>
+                <a href="{% url 'home' %}" class="btn btn-danger mb-3 ">Back to Home</a>
             {% endif %}
         </div>
     </div>

@@ -41,5 +41,10 @@ select option {
 .table td {
     word-wrap: break-word; /* Ensures long words break to fit within the cell */
     word-break: break-all; /* Ensures long words break to fit within the cell */
-    overflow-wrap: break-word; /* Prevents overflow by breaking long words */
+    overflow-wrap: break-word; 
+}
+
+.success-img{
+    width:50%;
+    height:auto;
 }

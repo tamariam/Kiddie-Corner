@@ -56,7 +56,7 @@
                     {% endif %}
              </div>
              <div class="col-lg-5">
-                <form class="form " method="POST" action="{% url 'checkout'%}" id="payment-form">
+                <form class="form " method="POST" action="{% url 'checkout'%}" id="payment-form" name="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label ">Your Details</legend>
@@ -80,12 +80,12 @@
                             <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info"
                                 name="save-info" checked>
                             {% else %}
-                            <label class="form-check-label" for="id-save-info">
+                            <div class="">
                                 <a class="text-info" href="{% url 'account_signup' %}">Create an account</a>
                                 or
-                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this
+                                <a  class="text-info" href="{% url 'account_login' %}">login</a> to save this
                                 information
-                            </label>
+                            </div>
                             {% endif %}
                         </div>
 

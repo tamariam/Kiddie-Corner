@@ -19,6 +19,8 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Product-Details-Page](#product-details-page)
     - [Special-Offers](#special-offers)
     - [Shopping-Bag](#shopping-bag)
+    - [checkout Page](#checkout-page)
+    - [Order Complete](#order-complete)
     - [Footer](#footer)
 
 - [Testing](#testing)
@@ -85,12 +87,11 @@ To develop an innovative and user-friendly online toy store platform that caters
 
 </details>
 
-<details>
-  <summary>shopping-bag-desktop (click to expand)</summary>
+
 
 ![Shopping-Bag-Desktop-wireframe](/docs/wireframes/shopping-bag-desktop.png)
 
-</details>
+
 
 <details>
   <summary>shopping-bag-mobile (click to expand)</summary>
@@ -98,6 +99,26 @@ To develop an innovative and user-friendly online toy store platform that caters
 ![Shopping-Bag-Mobile-wireframe](/docs/wireframes/shopping-bag-mobile.png)
 
 </details>
+
+![checkout-page-Desktop](/docs/wireframes/checkout-desktop.png)
+
+<details>
+  <summary>checkout-page-mobile (click to expand)</summary>
+
+![checkout-page-mobile](/docs/wireframes/checkout-mobile.png)
+
+</details>
+  
+
+![checkout-success-Desktop](/docs/wireframes/checkout-success-desktop.png)
+
+<details>
+  <summary>checkout-success-mobile (click to expand)</summary>
+
+![checkout-success-mobile](/docs/wireframes/checkout-success-mobile.png)
+
+</details>
+
 
 
 ## Database Schema
@@ -407,9 +428,39 @@ Below are the Lighthouse test results for all pages
 <details>
   <summary>lighthouse-Testing-Empty-Bag-Mobile (click to expand)</summary>
 
-![Empty-Bag-Desktop](./docs/testing/lighthouse/empty-bag-mobile.png)
+![Empty-Bag-Mobile](./docs/testing/lighthouse/empty-bag-mobile.png)
 
 </details>
+
+<details>
+  <summary>lighthouse-Testing-checkout-page-Desktop (click to expand)</summary>
+
+![checkout-Desktop](./docs/testing/lighthouse/checkout-desktop.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-checkout-page-Mobile (click to expand)</summary>
+
+![checkout-Mobile](./docs/testing/lighthouse/checkout-page-mobile.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-checkout-success-desktop (click to expand)</summary>
+
+![checkout-success-Desktop](./docs/testing/lighthouse/checkout-success-desktop.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-checkout-success-Mobile (click to expand)</summary>
+
+![checkout-success-Mobile](./docs/testing/lighthouse/checkoout-success-mobile.png)
+
+</details>
+
+
 
 
 
