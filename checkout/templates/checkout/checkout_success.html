@@ -22,7 +22,8 @@
 
     <div class="row mt-4">
         <div class="col-12">
-            <div class="p-2 border email-conf">
+            <div class="p-2  email-conf">
+               <div class="table-responsive">
                 <h4 class="text-center mb-4">Order Details</h4>
                 <table class="table table-bordered">
                     <tbody>
@@ -41,8 +42,8 @@
                         {% for item in order.lineitems.all %}
                         <tr>
                             <td colspan="2">
-                                <div class="d-flex align-items-center">
-                                    <div class="mr-3">
+                                <div>
+                                    <div class="mr-3 text-center">
                                         {% if item.product.image %}
                                             <img src="{{ item.product.image.url }}" alt="image of {{ item.product.name }}" class="w-50" >
                                         {% else %}
@@ -50,9 +51,9 @@
                                         {% endif %}
                                     </div>
                                     <div>
-                                        <p class="mb-0 font-weight-bold">{{ item.product.name }}</p>
-                                        <p class="mb-0">Quantity: {{ item.quantity }}</p>
-                                        <p class="mb-0">Price: €{{ item.product.price }}</p>
+                                        <h3 class="mb-0 font-weight-bold text-center">{{ item.product.name }}</h3>
+                                        <p class="mb-0  text-center">Quantity:<span> {{ item.quantity }}</span></p>
+                                        <p class="mb-0 text-center ">Price:  <span>€{{ item.product.price }}</span></p>
                                     </div>
                                 </div>
                             </td>
@@ -89,6 +90,7 @@
                         </tr>
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

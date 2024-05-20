@@ -33,3 +33,13 @@ select option {
     height: 44px;
     width: 100%;
 } 
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table td {
+    word-wrap: break-word; /* Ensures long words break to fit within the cell */
+    word-break: break-all; /* Ensures long words break to fit within the cell */
+    overflow-wrap: break-word; /* Prevents overflow by breaking long words */
+}
