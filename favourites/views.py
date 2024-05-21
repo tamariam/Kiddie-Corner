@@ -7,7 +7,8 @@ from django.contrib import messages
 
 
 def favourites(request):
-    return render(request, 'favourites/favourites.html')
+    favourites = Favourite.objects.filter(user=request.user)
+    return render(request, 'favourites/favourites.html', {'favourites': favourites})
 
 
 def add_to_favourite(request, product_id):
@@ -19,7 +20,7 @@ def add_to_favourite(request, product_id):
         messages.info(request, f'{product.name} is already in your favourites')
     else:
         Favourite.objects.create(user=request.user, product=product)
-        messages.success(request, f'{product.name} has b een added to your favourites')
+        messages.success(request, f'{product.name} has been added to your favourites')
     return redirect('product_detail', product_id=product_id)
     
 

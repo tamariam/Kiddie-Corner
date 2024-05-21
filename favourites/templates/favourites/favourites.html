@@ -1,1 +1,6 @@
-<h3>jushhuu</h3>
+<h1>My Favourites</h1>
+<ul>
+{% for favourite in favourites %}
+    <li>{{ favourite.product.name }}</li>
+{% endfor %}
+</ul>
