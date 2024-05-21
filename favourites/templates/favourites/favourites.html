@@ -15,10 +15,11 @@
 {% endblock %}
 
 {% block content %}
-<div class="container ">
+<div class="container">
+    <h2 class="text-center" >Favourites</h2> </h2>
     <div class="row">
         <!-- Product Cards Column -->
-        <div class="col-lg-8">
+        <div class="col-lg-12 my-3 ">
             {% if favourites %}
                 {% for favourite in favourites %}
                     <div class="card mb-3">
@@ -31,12 +32,22 @@
                                     <h3 class="card-title p-1 text-center rounded">{{ favourite.product.name }}</h3>
                                     <p class="card-text font-weight-bold">Price: €{{ favourite.product.price }}</p>
                                    <!-- Remove Button Form -->
+                                   <div>
                                     <form class="form " method="POST" action="{% url 'remove_favourite' favourite.product.id %}">
                                         {% csrf_token %}
                                         <div class="text-center ">
                                                 <input  class="btn btn-danger card-button text-uppercase" type="submit" value="Remove">
                                      </div>
                                 </form>
+                                <form class="form" action="{% url 'add_to_bag' favourite.product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="quantity" value="1">
+                                    <div class="text-center my-2">
+                                        <input class="btn btn-danger fa-input text-center rounded text-uppercase" type="submit" value="Add to Bag">
+                                    </div>
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -33,7 +33,7 @@ def remove_favourite(request, product_id):
     if favourites.exists():
         favourites.delete()
     else:
-        messages.warning(request, "You can only delete your own bookings")
+        messages.warning(request, f' Can not find {product.name} in your favourites')
     return redirect('favourites')
 
 
