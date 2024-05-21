@@ -267,13 +267,77 @@ If there are items in the shopping bag, the page will display all item details i
 
 </details>
 
-When items are added to the shopping bag, the color of the navigation cart link will change, indicating that items are present. Additionally, the cart link will display the total price of the items in the bag(for desktop screen)
+When items are added to the shopping bag, approrpaiete message  will be displayed to user, also the color of the navigation cart link will change, indicating that items are present. Additionally, the cart link will display the total price of the items in the bag(for desktop screen)
+ 
+ 
+![shopping-bag-item-added](/docs/features/add-tobag-message.png)
 
-![shopping-cart-icon-with-item](/docs/features/shopping-cart-icon-with-item.png)
+
+![shopping-bag-icon-with-item](/docs/features/shopping-cart-icon-with-item.png)
 
 On mobile and tablet screens, the cart icon turns yellow when items are added to the shopping bag.
 
-![shopping-cart-icon-with-item-mobile](/docs/features/mobile-cart-icon.png)
+![shopping-bag-icon-with-item-mobile](/docs/features/mobile-cart-icon.png)
+
+On the shopping bag page, you can update or remove items using the appropriate buttons. After performing an update or removal, a message will be displayed to inform you of the action taken.
+
+![update-message](/docs/features/update-message.png)
+
+![remove-message](/docs/features/remove-message.png)
+
+
+
+
+## Checkout Page
+When you click on the "Secure Checkout" link on the shopping bag page, you'll be directed to the checkout page. Here, you can complete your purchase by filling out a form with your personal and delivery information, followed by providing your card details. Once you've filled out the necessary information, you can click "Submit Order" to finalize your purchase. Alternatively, you can return to the products page.
+
+If you're authenticated, you have the option to save your information for future purchases. Only logged-in users can avail this feature. Additionally, a small card section displays a summary of your shopping, including the number of items you're purchasing and the total cost, including delivery fees. On the left-hand side(on desktop screen) you'll find images of the items you've selected along with their quantities and prices below.
+
+![checkout-page-desktop](/docs/features/checkout-page-desktop.png)
+
+ <details>
+  <summary>Checkout-page-Mobile (click to expand)</summary>
+
+![Checkout-page-mobile](/docs/features/checkout-page-mobile.png)
+
+</details>
+
+If you attempt to click the "Secure Checkout" button without having any items in your shopping bag, you will not be able to proceed to the checkout page. Instead, an error message will be displayed to notify you that your shopping bag is empty. You will need to choose items first to continue with your purchase.
+
+![error-message](/docs/features/error-message.png)
+
+
+after sucessfuly submiting infromation appropriate message wil displayed to let you know that order  confirmation has sent to your email.
+
+![Checkout-page-mobile](/docs/features/order-message.png)
+
+If you enter incorrect card numbers or expiry date, an appropriate message will be displayed below the card details section to alert you of the error.
+
+![Checkout-page-mobile](/docs/features/expiry.png)
+
+
+
+##  Checkout Success
+
+After successfully submitting your order, you'll be redirected to another page where you'll receive a confirmation message indicating that your order has been completed. On this page, you'll find all the relevant information regarding your order.
+You have the option to return to the home page by clicking the "Back To Home" button.
+
+
+ ![Checkout-page-mobile](/docs/features/checkout-page-mobile.png)
+
+  <details>
+  <summary>Checkout-success-Mobile (click to expand)</summary>
+
+![Checkout-success-mobile](/docs/features/checkout-success-mobile.png)
+
+</details>
+
+
+
+
+
+
+
 
 
 
