@@ -16,7 +16,7 @@
 
 {% block content %}
 <div class="container">
-    <h2 class="text-center" >Favourites</h2> </h2>
+    <h2 class="text-center mb-3 " >Favourites</h2> 
     <div class="row">
         <!-- Product Cards Column -->
         <div class="col-lg-12 my-3 ">
@@ -31,6 +31,11 @@
                                 <div class="card-body">
                                     <h3 class="card-title p-1 text-center rounded">{{ favourite.product.name }}</h3>
                                     <p class="card-text font-weight-bold">Price: €{{ favourite.product.price }}</p>
+                                    {% if favourite.product.in_stock %}
+                                            <p class="text-danger font-weight-bold" ><i class="mr-1 fa-solid fa-check"></i> In Stock</p>
+                                        {% else %}
+                                            <p class="text-black font-weight-bold"><i class="mr-1 fa-solid fa-xmark"></i>Out of Stock</p>
+                                        {% endif %}
                                    <!-- Remove Button Form -->
                                    <div>
                                     <form class="form " method="POST" action="{% url 'remove_favourite' favourite.product.id %}">
@@ -43,7 +48,7 @@
                                     {% csrf_token %}
                                     <input type="hidden" name="quantity" value="1">
                                     <div class="text-center my-2">
-                                        <input class="btn btn-danger fa-input text-center rounded text-uppercase" type="submit" value="Add to Bag">
+                                        <input class="btn card-button btn-warning fa-input text-center rounded text-uppercase" type="submit" value="Add to Bag">
                                     </div>
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </form>

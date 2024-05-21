@@ -35,7 +35,7 @@
                 {% else %}
                 <div class="btn-div row d-flex  justify-content-around   align-items-center">
                     <a class="btn btn-warning text-dark font-weight-bold " href="{% url 'products' %}"><i class="mr-1 fa-solid fa-magnifying-glass"></i>More Products</a>
-                    <a class="btn btn-outline-dark" href=""><i class="mr-1 fa-solid fa-heart-circle-plus"></i>add to Favourites</a>
+                    <a class="btn btn-outline-dark" href="{% url 'add_to_favourite' product.id %}"><i class="mr-1 fa-solid fa-heart-circle-plus"></i>add to Favourites</a>
                     </div>
                     {% endif %}
             </div>
