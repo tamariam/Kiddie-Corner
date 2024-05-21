@@ -25,11 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-iz+slj6l(2!b$0qvri(=ye3djhi()=kdhhd*$edf372i+gkk$0'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-STRIPE_PUBLIK_KEY=os.environ.get('STRIPE_PUBLIC_KEY')
-STRIPE_WH_SECRET=os.environ.get('STRIPE_WH_SECRET')
-STRIPE_SECRET_KEY=os.environ.get('STRIPE_SECRET_KEY')
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -189,6 +187,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 FREE_SHIPPING_LIMIT = 100
 STANDARD_SHIPPING_PECRENT = 15
 STRIPE_CURRENCY = 'eur'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
