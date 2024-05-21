@@ -1,6 +1,86 @@
-<h1>My Favourites</h1>
-<ul>
+{% extends "base.html" %}
+{% load static %}
+
+
+<!-- Shopping Bag Page -->
+
+{% block extra_title %} - Favourites {% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container ">
+    <div class="row">
+        <!-- Product Cards Column -->
+        <div class="col-lg-8">
+            {% if bag_items %}
+                {% for item in bag_items %}
+                    <div class="card mb-3">
+                        <div class="row  no-gutters">
+                            <div class="col-md-4">
+                                <img src="{{ item.product.image.url }}" class="card-img" alt="Product Image">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title p-1 text-center rounded">{{ item.product.name }}</h3>
+                                    <p class="card-text font-weight-bold">Price: €{{ item.product.price }}</p>
+                                    
+                                    <!-- Quantity Selection Form -->
+                                    <form class="form update-form" method="POST" action="{% url 'update_bag' item.item_id %}">
+                                        {% csrf_token %}
+                                        <div>
+                                            <div class="input-group-selector">
+                                                <label  for="id_qty_{{ item.item_id }}" class="font-weight-bold">Quantity:</label>
+                                                <select class="form-control"
+                                                name="quantity" 
+                                                data-item_id="{{ item.item_id }}"
+                                                id="id_qty_{{ item.item_id }}">
+                                                    <option value="{{ item.quantity }}" selected hidden>{{ item.quantity }}</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group-selector  text-center">
+                                            <input class=" btn btn-warning my-2 card-button text-uppercase" type="submit" value="update bag">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- Remove Button Form -->
+                                    <form class="form " method="POST" action="{% url 'remove_item' item.item_id%}">
+                                        {% csrf_token %}
+                                        <div class="text-center ">
+                                                <input  class="btn btn-danger card-button text-uppercase" type="submit" value="Remove">
+                                     </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="col-12 text-center mt-2">
+                    <h3>Empty Bag!</h3>
+                    <p>Looks like you haven't added anything to your bag.</p>
+                    <p>Click below to continue shopping.</p>
+                    <a href="{% url 'products' %}" class="btn btn-warning">Find More Products</a>
+                    </div>
+                    {% endif %}
+             </div>
+
 {% for favourite in favourites %}
     <li>{{ favourite.product.name }}</li>
 {% endfor %}
-</ul>
