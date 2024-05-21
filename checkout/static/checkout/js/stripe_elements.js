@@ -58,7 +58,7 @@ $(document).ready(function() {
     });
 
     // Handle form submission
-    const form = document.getElementById('payment-form');
+    let form = document.getElementById('payment-form');
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();

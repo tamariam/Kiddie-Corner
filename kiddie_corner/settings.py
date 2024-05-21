@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+if os.path.exists("env.py"):
+    import env
+
 
 from pathlib import Path
 
@@ -24,10 +27,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-iz+slj6l(2!b$0qvri(=ye3djhi()=kdhhd*$edf372i+gkk$0'
 
+STRIPE_PUBLIK_KEY=os.environ.get('STRIPE_PUBLIC_KEY')
+STRIPE_WH_SECRET=os.environ.get('STRIPE_WH_SECRET')
+STRIPE_SECRET_KEY=os.environ.get('STRIPE_SECRET_KEY')
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-tamariam-kiddiecorner-pmgxf0gq0yq.ws-eu111.gitpod.io']
+ALLOWED_HOSTS = ['8000-tamariam-kiddiecorner-pmgxf0gq0yq.ws-eu114.gitpod.io']
 
 
 # Application definition
@@ -47,6 +55,7 @@ INSTALLED_APPS = [
     'products',
     'shopping_bag',
     'checkout',
+    'favourites',
 
     'crispy_forms',
 ]

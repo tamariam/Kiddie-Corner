@@ -1,3 +1,5 @@
+/*styles for checkout page */
+
 .submit-btn{
     width:195px;
 }
@@ -18,8 +20,8 @@
 }
 
 .stripe-style:focus,
-.stripe-style:active, {
-  box-shadow: 0 1px 3px 0 red;
+.stripe-style:active {
+  box-shadow:0 1px 3px 0 red;
 }
 
 select option {
@@ -33,6 +35,7 @@ select option {
     height: 44px;
     width: 100%;
 } 
+
 .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;

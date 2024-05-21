@@ -1,10 +1,10 @@
 from django .http import HttpResponse
 from .models import Order, OrderLineItem
 from products.models import Product
-from django.template.loader import render_to_string
+
 
 import stripe
-import json 
+import json
 import time
 
 
@@ -12,7 +12,7 @@ class StripeWH_Handler:
     '''Handle stripe webhooks'''
     def __init__(self, request):
         self.request = request
-    
+
     def handle_event(self, event):
         '''
         Handle an unexpected webhook events
@@ -20,7 +20,6 @@ class StripeWH_Handler:
         message = f'Unhandled Webhook received: {event["type"]}'
         return HttpResponse(
             content=message, status=200
-            
         )
 
     def handle_payment_intent_succeeded(self, event):
@@ -37,7 +36,7 @@ class StripeWH_Handler:
             intent.latest_charge
         )
 
-        billing_details = stripe_charge.billing_details 
+        billing_details = stripe_charge.billing_details
         shipping_details = intent.shipping
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge
@@ -71,7 +70,6 @@ class StripeWH_Handler:
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
-        
         if order_exists:
             message = f'Webhook received: {event["type"]}|SUCCESS: Verified order already in database'
             return HttpResponse(
@@ -111,8 +109,6 @@ class StripeWH_Handler:
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500
                 )
-            
-
 
     def handle_payment_intent_failed(self, event):
         '''
@@ -121,7 +117,4 @@ class StripeWH_Handler:
         message = f'Webhook received: {event["type"]}'
         return HttpResponse(
             content=message, status=200
-            
         )
-
-    
