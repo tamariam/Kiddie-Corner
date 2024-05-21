@@ -15,7 +15,7 @@ def add_to_favourite(request, product_id):
     '''view to add product in favourites
     '''
     product = get_object_or_404(Product, id=product_id)
-    # Check if the product is already in favourites list 
+    # Check if the product is already in favourites list
     if Favourite.objects.filter(user=request.user, product=product).exists():
         messages.info(request, f'{product.name} is already in your favourites')
     else:
@@ -25,16 +25,15 @@ def add_to_favourite(request, product_id):
     
 
 def remove_favourite(request, product_id):
-    """ up a quantity of the specified product to the shopping bag """
+    """Remove a product from the user's favourites"""
     product = get_object_or_404(Product, id=product_id)
     favourites = Favourite.objects.filter(user=request.user, product=product)
+    messages.success(request, f'{product.name} has been removed from your favourites')
+
     if favourites.exists():
         favourites.delete()
-        messages.success(request, f'{product.name} has been removed from your favourites')
     else:
-        messages.error(request, f'can not find {product.name} in your favourites')
-    return redirect('product_detail', product_id=product_id)
-
-
+        messages.warning(request, "You can only delete your own bookings")
+    return redirect('favourites')
 
 
