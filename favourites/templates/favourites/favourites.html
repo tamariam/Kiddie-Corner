@@ -31,7 +31,7 @@
                                     <h3 class="card-title p-1 text-center rounded">{{ favourite.product.name }}</h3>
                                     <p class="card-text font-weight-bold">Price: €{{ favourite.product.price }}</p>
                                    <!-- Remove Button Form -->
-                                    <form class="form " method="POST" action="">
+                                    <form class="form " method="POST" action="{% url 'remove_favourite' favourite.product.id %}">
                                         {% csrf_token %}
                                         <div class="text-center ">
                                                 <input  class="btn btn-danger card-button text-uppercase" type="submit" value="Remove">
