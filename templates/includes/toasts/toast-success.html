@@ -11,6 +11,33 @@
     <div class="toast-body bg-danger text-white font-weight-bold">
         {{ message }}
     </div>
+    {% if favourites.exists %}
+    <div class="text-dark py-2">
+        <p class="px-3 font-weight-bold">Favorite Items ({{ favourites.count }})</p>
+    </div>
+    
+    <div class="toast-scroll px-3">
+        {% for item in favourites %}
+            <div class="row pb-0">
+                <div class="col-3">
+                    {% if item.product.image %}
+                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                    {% else %}
+                        <img src="{{ MEDIA_URL }}placeholder.avif" alt="No image available for {{ item.product.name }}" class="w-100">
+                    {% endif %}
+                </div>
+                <div class="col-9">
+                    <p class="font-weight-bold">
+                        {{ item.product.name }}
+                    </p>
+                    <p>
+                        €{{ item.product.price }}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
     {% if grand_total and count and not on_profile_page %}
         <div class=" text-dark py-2">
             <p class="px-3 font-weight-bold">Current Bag Items ({{ count }})</p>
