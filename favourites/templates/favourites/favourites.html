@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{% static 'favourites/css/favourites.css' %}">
 {% endblock%}
 
-<!-- Shopping Bag Page -->
+<!-- Favourites Page -->
 
 {% block extra_title %} - Favourites {% endblock %}
 
@@ -47,7 +47,7 @@
                                         {% else %}
                                             <p class="text-black font-weight-bold"><i class="mr-1 fa-solid fa-xmark"></i>Out of Stock</p>
                                         {% endif %}
-                                   <!-- Remove Button Form -->
+                                   <!-- Remove item  Form -->
                                    <div>
                                     <form class="form " method="POST" action="{% url 'remove_favourite' favourite.product.id %}">
                                         {% csrf_token %}

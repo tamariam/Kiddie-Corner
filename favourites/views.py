@@ -22,7 +22,7 @@ def add_to_favourite(request, product_id):
         Favourite.objects.create(user=request.user, product=product)
         messages.success(request, f'{product.name} has been added to your favourites')
     return redirect('favourites')
-    
+
 
 def remove_favourite(request, product_id):
     """Remove a product from the user's favourites"""
@@ -35,5 +35,3 @@ def remove_favourite(request, product_id):
     else:
         messages.warning(request, f' Can not find {product.name} in your favourites')
     return redirect('favourites')
-
-

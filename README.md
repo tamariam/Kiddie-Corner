@@ -380,7 +380,12 @@ Duplicate Favorites: If the product is already in your favorites, you will not b
 
 - Managing Products on the Favorites Page
   - Adding to Bag: From the Favorites page, you can add a product to your bag with "Add To Bag" button if it is in stock. A message will notify you that the product has been added to your shopping bag, similar to the notification on the Shopping Bag page.
-   - Removing Items: You can also remove items from your favorites with "REMOVE" button. An appropriate message will notify you that the item has been removed from your favorites.
+   - Removing Items: You can also remove items from your favorites with "REMOVE" button. An appropriate message will notify you that the item has been removed from your favorites.This message will be displayed along with the shopping bag success message, encouraging you to proceed to the shopping bag and complete your purchase.
+
+![Favourites-add-message](/docs/features/favourites-add-message.png)
+
+![Favourites-remove-message](/docs/features/favourites-remove-message.png)
+
 
 
 
