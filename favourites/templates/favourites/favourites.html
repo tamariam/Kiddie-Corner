@@ -31,11 +31,11 @@
                         <div class="row  no-gutters">
                             {% if favourite.product.image %}
                             <div class="col-md-4">
-                                <img src="{{ favourite.product.image.url }}" class="card-img" alt="Product Image">
+                                <img src="{{ favourite.product.image.url }}" class="card-img " alt="Product Image">
                             </div>
                             {% else %}
                             <div class="col-md-4">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}placeholder.avif" alt="{{ product.name }} ">
+                                <img class="card-img-top  img-fluid" src="{{ MEDIA_URL }}placeholder.avif" alt="{{ favourite.product.name }} ">
                             </div>
                         {% endif %}
                             <div class="col-md-8">
@@ -43,7 +43,7 @@
                                     <h3 class="card-title p-1 text-center rounded">{{ favourite.product.name }}</h3>
                                     <p class="card-text font-weight-bold">Price: €{{ favourite.product.price }}</p>
                                     {% if favourite.product.in_stock %}
-                                            <p class="text-danger font-weight-bold" ><i class="mr-1 fa-solid fa-check"></i> In Stock</p>
+                                            <p class="stock font-weight-bold" ><i class="mr-1 fa-solid fa-check"></i> In Stock</p>
                                         {% else %}
                                             <p class="text-black font-weight-bold"><i class="mr-1 fa-solid fa-xmark"></i>Out of Stock</p>
                                         {% endif %}

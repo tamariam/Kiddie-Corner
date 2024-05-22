@@ -1,0 +1,13 @@
+/* styles for favourites page */
+
+.card{
+    background-color:#ffddd2;
+}
+
+.card-title{
+    background-color:#6a040f;
+    color:white;
+}
+.stock{
+    color: #660708;
+}
