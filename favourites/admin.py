@@ -9,6 +9,9 @@ class FavouriteAdmin(admin.ModelAdmin):
     """
     access the Category fields model in Django Admin panel
     """
+    fields = (
+        'user', 'product', 'added_on',
+      )
     list_display = (
         'user', 'product', 'added_on')
     search_fields = (
@@ -17,5 +20,5 @@ class FavouriteAdmin(admin.ModelAdmin):
     readonly_fields = (
         'added_on',
     )
-    
+
     ordering = ('-added_on',)
