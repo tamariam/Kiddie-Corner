@@ -21,6 +21,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Shopping-Bag](#shopping-bag)
     - [checkout Page](#checkout-page)
     - [Order Complete](#order-complete)
+    - [Favourites](#favourites)
     - [Footer](#footer)
 
 - [Testing](#testing)
@@ -118,6 +119,19 @@ To develop an innovative and user-friendly online toy store platform that caters
 ![checkout-success-mobile](/docs/wireframes/checkout-success-mobile.png)
 
 </details>
+
+
+![Favourites-Desktop](/docs/wireframes/favourite-desktop.png)
+
+
+<details>
+  <summary>Favourites-mobile (click to expand)</summary>
+
+![favourites-mobile](/docs/wireframes/favourites-mobile.png)
+
+</details>
+
+
 
 
 
@@ -254,7 +268,17 @@ Clicking on the "Special Offers" link in the main menu will direct you to the Sp
 
 After navigating to the shopping bag page, if no items have been added, an appropriate message will be displayed encouraging users to add products to their bag. This message will include a button that directs users to the products page.
 
-  ![empty-bag](/docs/features/empty-bag.png)
+  ![empty-bag](/docs/features/empty-bag-desktop.png)
+
+  
+ <details>
+  <summary>Empty-Bag-Mobile (click to expand)</summary>
+
+![empty-bag-mobile](/docs/features/empty-bag-mobile.png)
+
+</details>
+
+
 
 If there are items in the shopping bag, the page will display all item details including product name, quantity, and price. Users will have the ability to update the quantity or remove items using dedicated buttons. Additionally, there will be a separate section displaying a shopping summary, which includes information about the total cost of items and delivery charges.
 
@@ -332,6 +356,42 @@ You have the option to return to the home page by clicking the "Back To Home" bu
 
 </details>
 
+##  Favourites
+
+- Navigating to the Favorites Page
+Accessing the Page: Click the "Favorites" link located on the top navigation bar (second from the top right). This will redirect you to the Favorites page.
+Favorites Page Content: On the Favorites page, you will see the products you have marked as favorites. If no products have been added, a text will display indicating that your favorites bag is empty and encouraging you to add products. This message will include a link to the products page.
+
+![Favourites-Desktop](/docs/features/favourites-desktop.png)
+
+ <details>
+  <summary>Favourites-Mobile (click to expand)</summary>
+
+![Favourites--mobile](/docs/features/favourites-mobile.png)
+
+</details>
+
+- Adding Products to Favorites
+ On the product detail page, you can choose to add the product to your favorites with "Add To Favourites" Button. A message will notify you that the product has been added to the Favorites page.
+Duplicate Favorites: If the product is already in your favorites, you will not be able to add it again. A message will notify you that the product is already in your favorites.
+
+
+![Favourites-info-message](/docs/features/favourites-info-message.png)
+
+- Managing Products on the Favorites Page
+  - Adding to Bag: From the Favorites page, you can add a product to your bag with "Add To Bag" button if it is in stock. A message will notify you that the product has been added to your shopping bag, similar to the notification on the Shopping Bag page.
+   - Removing Items: You can also remove items from your favorites with "REMOVE" button. An appropriate message will notify you that the item has been removed from your favorites.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -394,7 +454,7 @@ Below are the Lighthouse test results for all pages
 <details>
   <summary>lighthouse-Testing-Home-Desktop (click to expand)</summary>
 
-![Footer-Desktop](./docs/testing/lighthouse/home-page-desktop.png)
+![Home-Desktop](./docs/testing/lighthouse/home-page-desktop.png)
 
 </details>
 
@@ -402,7 +462,7 @@ Below are the Lighthouse test results for all pages
 <details>
   <summary>lighthouse-Testing-Home-Mobile (click to expand)</summary>
 
-![Footer-Desktop](./docs/testing/lighthouse/home-page-mobile.png)
+![Home-Mobile](./docs/testing/lighthouse/home-page-mobile.png)
 
 </details>
 
@@ -524,6 +584,22 @@ Below are the Lighthouse test results for all pages
 
 </details>
 
+
+<details>
+  <summary>lighthouse-Testing-Favourites-Desktop(click to expand)</summary>
+
+![Favourites-Desktop](./docs/testing/lighthouse/favourites-desktop.png)
+
+</details>
+
+
+
+<details>
+  <summary>lighthouse-Testing-Favourites-Mobile(click to expand)</summary>
+
+![Favourites-Mobile](./docs/testing/lighthouse/favourites-mobile.png)
+
+</details>
 
 
 
