@@ -15,8 +15,11 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <h2 class="text-center mb-3 " >Favourites</h2> 
+<div class="container lato">
+    <h2 class="text-center mb-3  text-white bg-danger p-2 rounded" >My Favourites</h2> 
+    <div class="text-center">
+    <a href="{% url 'home' %}" class="btn text-uppercase font-weight-bold schoolbell bg-warning  ">Back to Home</a>
+    </div>
     <div class="row">
         <!-- Product Cards Column -->
         <div class="col-lg-12 my-3 ">
