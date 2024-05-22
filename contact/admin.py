@@ -10,12 +10,12 @@ class UserMessageAdmin(admin.ModelAdmin):
     access the Category fields model in Django Admin panel
     """
     fields = (
-        'name', 'email', 'sent_on', 'pending', 'complete',
+        'name', 'email', 'sent_on', 'status', 'complete',
          'message', 'subject',
 
     )
     list_display = (
-        'name', 'email', 'sent_on', 'pending', 'complete', 'subject',)
+        'name', 'email', 'sent_on', 'status', 'subject',)
     search_fields = (
         'email''name',)
 

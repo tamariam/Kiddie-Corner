@@ -1,46 +1,36 @@
 from django import forms
-from .models import Order
+from .models import UserMessage
 
 
-class CheckoutForm(forms.ModelForm):
+class ContactForm(forms.ModelForm):
     """
     This Form  takes payment details
     and complete an order
     """
     class Meta:
-        model = Order
+        model = UserMessage
         fields = (
-            'full_name',
-            'email', 'phone_number', 'country',
-            'postcode', 'town_or_city', 'street_address1',
-            'street_address2', 'county',
+         'name', 'email',
+         'message', 'subject',
         )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
-            'full_name': 'Full Name',
+            'name': 'Name',
             'email': 'Email',
-            'phone_number': 'Phone Number',
-            'country': 'Country',
-            'postcode': 'Postcode',
-            'town_or_city': 'Town or City',
-            'street_address1': 'Street_Address 1',
-            'street_address2': 'Sreet_Address 2',
-            'county': 'County',
+            'subject': 'Subject',
+            'message': 'Message',
+            
         }
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'country':
-                if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
-                else:
-                    placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
-                self.fields[field].widget.attrs[
-                    'aria-label'] = self.fields[field].label
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
             else:
-                self.fields[field].widget.attrs[
-                    'aria-label'] = 'select a country'
-            self.fields[field].widget.attrs['class'] = 'stripe-style'
+                placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs[
+                'aria-label'] = self.fields[field].label
+            self.fields[field].widget.attrs['class'] = 'form-style'
             self.fields[field].label = False
