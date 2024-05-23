@@ -379,12 +379,18 @@ Duplicate Favorites: If the product is already in your favorites, you will not b
 ![Favourites-info-message](/docs/features/favourites-info-message.png)
 
 - Managing Products on the Favorites Page
-  - Adding to Bag: From the Favorites page, you can add a product to your bag with "Add To Bag" button if it is in stock. A message will notify you that the product has been added to your shopping bag, similar to the notification on the Shopping Bag page.
-   - Removing Items: You can also remove items from your favorites with "REMOVE" button. An appropriate message will notify you that the item has been removed from your favorites.This message will be displayed along with the shopping bag success message, encouraging you to proceed to the shopping bag and complete your purchase.
+  - Adding to Bag: From the Favorites page, you can add a product to your bag with "Add To Bag" button if it is in stock. A message will notify you that the product has been added to your shopping bag, similar to the notification on the Shopping Bag page.There wil be also Button which navigates to favourites page.
 
-![Favourites-add-message](/docs/features/favourites-add-message.png)
+  ![Favourites-add-message](/docs/features/favourites-add-message.png)
+
+   - Removing Items: You can also remove items from your favorites with "REMOVE" button. An appropriate message will notify you that the item has been removed from your favorites.WIth  button which navigates to  favourites page.
 
 ![Favourites-remove-message](/docs/features/favourites-remove-message.png)
+
+When a user removes the last item from their favorites page, a message will be displayed indicating that the item has been removed. If there are items in the shopping bag, an additional message will be shown below, encouraging the user to proceed to the shopping bag and complete their purchase.
+
+![last-item-remove-message](/docs/features/empty%20-message-favourites.png)
+
 
 
 

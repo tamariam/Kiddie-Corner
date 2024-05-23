@@ -1,21 +1,69 @@
-
+{% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
+<!-- {% load crispy_forms_tags %} -->
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock%}
 
-<div class="container">
-    <div class="row ">
-<form class="form " method="POST" action="{% url 'contact_page'%}" id="contact-form" name="contact-form">
-    {% csrf_token %}
 
-    <fieldset class="rounded px-3 mb-5">
-        <legend class="fieldset-label ">Your Enquiry</legend>
-        {{ form.name | as_crispy_field }}
-        {{ form.email | as_crispy_field }}
-        {{ form.subject | as_crispy_field }}
-        {{ form.message | as_crispy_field }}
 
-</fieldset>
 
-</form>
+<!-- Checkout Page -->
+
+{% block extra_title %} - checkout {% endblock %}
+
+<!-- {% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %} -->
+
+{% block content %}
+<div class="container-fluid lato ">
+    <div class="col text-center ">
+        <h2 class="bg-primary text-white mb-5 rounded ">Your Enquiry</h2>
+    </div>
+   
+
+    <div class="row">
+        <!-- Product Cards Column -->
+             <div class="col-lg-6 mx-auto ">
+                <form class="form " method="POST" action="{% url 'contact_page'%}" id="contact-form" name="contact-form">
+                    {% csrf_token %}
+                    <fieldset class="rounded px-3 mb-2">
+                        {{ form.name | as_crispy_field }}
+                        {{ form.email | as_crispy_field }}
+                        {{form.subject| as_crispy_field}}
+                        {{form.message| as_crispy_field}}
+                      
+
+                    </fieldset>
+
+            </form>
+            <div class="d-flex justify-content-around  my-2" >
+            <div class="text-center ">
+                <button onclick="window.history.back();" class="btn btn-danger rounded " type="button">Go Back</button>
+            </div>
+            <div class="text-center ">
+                <button form="contact-form" id="contact-button" class="btn btn-success rounded ">
+
+                    <span> Send Message</span>
+                </button>
+            </div>
+            </div>
+            </div>
+            
+        
+            
+                 </div>
+
 </div>
-</div>
+
+{% endblock content %}
+
+
+
+
+

@@ -35,10 +35,16 @@
                     </p>
                 </div>
             </div>
+           
         {% endfor %}
+        <div class="text-center rounded  m-2">
+            <a href="{% url 'favourites' %}" class="btn btn-danger rounded text-center ">
+                <span class="text-uppercase  ">My Favourites</span>
+            </a>
+        </div>
     </div>
 {% endif %}
-    {% if grand_total and count and not on_profile_page %}
+    {% if grand_total and count and not on_profile_page and not favourites %}
         <div class=" text-dark py-2">
             <p class="px-3 font-weight-bold">Current Bag Items ({{ count }})</p>
         </div>
