@@ -22,6 +22,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [checkout Page](#checkout-page)
     - [Order Complete](#order-complete)
     - [Favourites](#favourites)
+    - [Contact Page](#contactipage)
     - [Footer](#footer)
 
 - [Testing](#testing)
@@ -128,6 +129,14 @@ To develop an innovative and user-friendly online toy store platform that caters
   <summary>Favourites-mobile (click to expand)</summary>
 
 ![favourites-mobile](/docs/wireframes/favourites-mobile.png)
+
+</details>
+
+
+<details>
+  <summary>Contact Page (click to expand)</summary>
+
+![contact-page](/docs/wireframes/contact-page.png)
 
 </details>
 
@@ -392,6 +401,25 @@ When a user removes the last item from their favorites page, a message will be d
 ![last-item-remove-message](/docs/features/empty%20-message-favourites.png)
 
 
+## Contact Page
+Users can contact the staff through the contact page. You can navigate to this page by clicking on the "Contact Us" link in the main navigation bar. On the contact page, there are fields to enter your name, email address, subject, and a text area for your message. You can send your message by clicking the "Send Message" button or cancel the message by clicking "Go Back," which will redirect you to the previous page. 
+
+![contact-page-Desktop](/docs/features/contact-page-desktop.png)
+
+<details>
+  <summary>Favourites-Mobile (click to expand)</summary>
+
+  ![contact-page-Mobile](/docs/features/contact-page-mobile.png)
+
+</details>
+
+After successfully sending the message, a notification will display, informing you that your message has been sent and that a staff member will contact you through the email address you provided.
+
+![message-sent](/docs/features/sent-message.png)
+
+
+
+
 
 
 
@@ -609,6 +637,21 @@ Below are the Lighthouse test results for all pages
   <summary>lighthouse-Testing-Favourites-Mobile(click to expand)</summary>
 
 ![Favourites-Mobile](./docs/testing/lighthouse/favourites-mobile.png)
+
+</details>
+
+
+<details>
+  <summary>lighthouse-Testing-contact-page-Mobile(click to expand)</summary>
+
+![Contact-Mobile](./docs/testing/lighthouse/contact-page-lh-mobile.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-contact-page-Desktop(click to expand)</summary>
+
+![Contact-Desktop](./docs/testing/lighthouse/contact-page-lh-desktop.png)
 
 </details>
 
