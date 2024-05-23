@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-<!-- {% load crispy_forms_tags %} -->
+
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
 {% endblock%}
 
 
@@ -44,10 +44,10 @@
             </form>
             <div class="d-flex justify-content-around  my-2" >
             <div class="text-center ">
-                <button onclick="window.history.back();" class="btn btn-danger rounded " type="button">Go Back</button>
+                <button onclick="window.history.back();" class="btn btn-danger rounded contact-btn " type="button">Go Back</button>
             </div>
             <div class="text-center ">
-                <button form="contact-form" id="contact-button" class="btn btn-success rounded ">
+                <button form="contact-form" id="contact-form" class="btn btn-success rounded contact-btn">
 
                     <span> Send Message</span>
                 </button>
