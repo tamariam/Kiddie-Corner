@@ -1,7 +1,7 @@
 from django.db import models
 
- 
-#Choises for usermessage status
+
+# Choises for usermessage status
 STATUS = (
     ("pending", "Pending"), ("done", "Done"),
     )
@@ -17,5 +17,3 @@ class UserMessage(models.Model):
 
     def __str__(self):
         return f"{self.name} "
-
-

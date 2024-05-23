@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.contrib import messages
 from .forms import CheckoutForm
 from shopping_bag.contexts import shopping_bag_contents
-import stripe 
+import stripe
 from django.conf import settings
 from products.models import Product
 from .models import Order, OrderLineItem

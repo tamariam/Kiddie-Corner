@@ -5,28 +5,16 @@
 <link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
 {% endblock%}
 
+<!-- Contact Page -->
 
-
-
-<!-- Checkout Page -->
-
-{% block extra_title %} - checkout {% endblock %}
-
-<!-- {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %} -->
+{% block extra_title %} - Contact {% endblock %}
 
 {% block content %}
 <div class="container-fluid lato ">
     <div class="col text-center ">
-        <h2 class="bg-primary text-white mb-5 rounded ">Your Enquiry</h2>
+        <h2 class="text-white bg-primary mb-5 rounded ">Your Enquiry</h2>
     </div>
    
-
     <div class="row">
         <!-- Product Cards Column -->
              <div class="col-lg-6 mx-auto ">
@@ -37,28 +25,21 @@
                         {{ form.email | as_crispy_field }}
                         {{form.subject| as_crispy_field}}
                         {{form.message| as_crispy_field}}
-                      
-
-                    </fieldset>
-
+                      </fieldset>
             </form>
             <div class="d-flex justify-content-around  my-2" >
             <div class="text-center ">
-                <button onclick="window.history.back();" class="btn btn-danger rounded contact-btn " type="button">Go Back</button>
+                <button onclick="window.history.back();" class="btn btn-danger rounded contact-btn font-weight-bold " type="button" id="go-back">Go Back</button>
             </div>
             <div class="text-center ">
-                <button form="contact-form" id="contact-form" class="btn btn-success rounded contact-btn">
+                <button form="contact-form" id="submit-contact-form" class="btn btn-warning font-weight-bold  rounded contact-btn">
 
                     <span> Send Message</span>
                 </button>
             </div>
             </div>
             </div>
-            
-        
-            
-                 </div>
-
+            </div>
 </div>
 
 {% endblock content %}

@@ -11,7 +11,7 @@ class UserMessageAdmin(admin.ModelAdmin):
     """
     fields = (
         'name', 'email', 'sent_on', 'status',
-         'message', 'subject',
+        'message', 'subject',
 
     )
     list_display = (
@@ -23,7 +23,7 @@ class UserMessageAdmin(admin.ModelAdmin):
         'sent_on', 'name',
         'email', 'subject', 'message',
     )
-    
+
     ordering = ('-sent_on',)
 
 # Register your models here.

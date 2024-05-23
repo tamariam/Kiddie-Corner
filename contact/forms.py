@@ -4,8 +4,7 @@ from .models import UserMessage
 
 class ContactForm(forms.ModelForm):
     """
-    This Form  takes payment details
-    and complete an order
+    This Form handles contact form submission
     """
     class Meta:
         model = UserMessage
@@ -20,9 +19,9 @@ class ContactForm(forms.ModelForm):
             'name': 'Name',
             'email': 'Email',
             'subject': 'Subject',
-            'message': 'Message',
-            
+            'message': 'Message',      
         }
+
         self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
@@ -32,5 +31,4 @@ class ContactForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs[
                 'aria-label'] = self.fields[field].label
-            self.fields[field].widget.attrs['class'] = 'form-style'
             self.fields[field].label = False
