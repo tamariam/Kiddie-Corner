@@ -19,7 +19,7 @@ class ContactForm(forms.ModelForm):
             'name': 'Name',
             'email': 'Email',
             'subject': 'Subject',
-            'message': 'Message',      
+            'message': 'Message',
         }
 
         self.fields['name'].widget.attrs['autofocus'] = True
