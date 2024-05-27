@@ -7,8 +7,6 @@
 
 {% block content %}
 <!-- Testimonials Page -->
-
-
 <div class="container-fluid lato">
     <h2 class="text-center mb-3 ">What Our Clients Think</h2>
     <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
@@ -23,7 +21,7 @@
                                     {% if "placeholder" in testimonial.featured_image.url %}
                                     <img src="{% static 'images/placeholder.jpg' %}" class="img-fluid rounded-circle" alt="placeholder image">
                                     {% else %}
-                                    <img src="{{ testimonial.featured_image.url }}" class="img-fluid rounded-circle" alt="{{ testimonial.name }}" crossorigin="anonymous">
+                                    <img src="{{ testimonial.featured_image.url | safe }}" class="img-fluid rounded-circle" alt="{{ testimonial.name }}" crossorigin="anonymous">
                                     {% endif %}
                                 </div>
                                 <div class="testimonial-text mb-3 ">
@@ -39,11 +37,12 @@
             {% endfor %}
         </div>
         <a class="carousel-control-prev " href="#testimonial-carousel" role="button" data-slide="prev">
-             </h4><i class="icon fa-solid fa-backward font-weight-bold mr-3 text-dark  "></i></h4>
+            <span class="sr-only">Previous</span>
+        </span><i class="icon fa-solid fa-backward font-weight-bold mr-3 text-dark  "></i></span>
         </a>
         <a class="carousel-control-next " href="#testimonial-carousel" role="button" data-slide="next">
-            <!-- <span class="carousel-control-next-icon" aria-hidden="false"></span> -->
-            </h4><i class="icon ml-3 fa-solid fa-forward font-weight-bold text-dark "></i></h4>
+            <span class="sr-only">Next</span>
+        </span><i class="icon ml-3 fa-solid fa-forward font-weight-bold text-dark "></i></span>
         </a>
     </div>
 </div>
