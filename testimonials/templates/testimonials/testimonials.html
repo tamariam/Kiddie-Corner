@@ -1,1 +1,27 @@
-<h3>juhuu</h3>
+
+ {% load static %}  
+
+<!-- Testimonials Page -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        {% for testimonial in testimonials %}
+        <div class="col-md-4">
+            <div class="card border-0 shadow testimonial-card">
+                <div class="card-body  text-center">
+                    {% if "placeholder" in testimonial.featured_image.url %}
+                    <img class="rounded menu-img"  src="{% static 'images/placeholder.jpg' %}" alt="placeholder image">
+                {% else %}
+                    <img class="rounded menu-img" src="{{ testimonial.featured_image.url }}" alt="{{testimonial.name}}" crossorigin="anonymous" >
+                {% endif %}
+                    <!-- <img src="{{ testimonial.featured_image.url }}" class="img-fluid rounded-circle mb-3" alt="Testimonial Image" style="width: 150px; height: 150px; object-fit: cover;"> -->
+                    <h5 class="card-title">{{ testimonial.name }}</h5>
+                    <p class="card-text profession">{{ testimonial.profession }}</p>
+                    <p class="card-text">{{ testimonial.testimonial }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
