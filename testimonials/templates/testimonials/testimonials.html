@@ -17,7 +17,7 @@
             <div class="carousel-item {% if forloop.first %} active {% endif %}">
                 <div class="row justify-content-center">
                     <div class="col-md-4 text-center rounded mx-auto">
-                        <div class="card mb-4 shadow-lg">
+                        <div class="card mb-4 shadow-lg p-0 ">
                             <div class="card-body">
                                 <div class="testimonial-avatar">
                                     {% if "placeholder" in testimonial.featured_image.url %}
@@ -49,4 +49,17 @@
 </div>
 
 {% endblock content %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+   document.addEventListener('keydown', function(event) {
+        if (event.key === 'Arrowleft') {
+            $('#testimonial-carousel').carousel('prev');
+        } else if (event.key === 'ArrowRight') {
+            $('#testimonial-carousel').carousel('next');
+        }
+    });
+</script>
+{% endblock %}
 
