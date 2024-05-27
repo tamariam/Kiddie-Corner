@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
  {% load static %}  
-
+ 
  {% block extra_css %}
 <link rel="stylesheet" href="{% static 'testimonials/css/testimonials.css' %}">
 {% endblock%}
@@ -27,7 +27,7 @@
                                 <div class="testimonial-text mb-3 ">
                                     <p class="testimonial-name">{{ testimonial.name }}</p>
                                     <p class="testimonial-profession">{{ testimonial.profession }}</p>
-                                    <p class="font-weight-bold">{{ testimonial.testimonial }}</p>
+                                    <p class="font-weight-bold">{{ testimonial.testimonial |safe  }}</p>
                                 </div>
                             </div>
                         </div>
@@ -38,11 +38,11 @@
         </div>
         <a class="carousel-control-prev " href="#testimonial-carousel" role="button" data-slide="prev">
             <span class="sr-only">Previous</span>
-        </span><i class="icon fa-solid fa-backward font-weight-bold mr-3 text-dark  "></i></span>
+        </span><i class="testimonial-icon fa-solid fa-backward font-weight-bold mr-3 text-dark  "></i></span>
         </a>
         <a class="carousel-control-next " href="#testimonial-carousel" role="button" data-slide="next">
             <span class="sr-only">Next</span>
-        </span><i class="icon ml-3 fa-solid fa-forward font-weight-bold text-dark "></i></span>
+        </span><i class="testimonial-icon ml-3 fa-solid fa-forward font-weight-bold text-dark "></i></span>
         </a>
     </div>
 </div>
@@ -51,7 +51,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script>
+<script defer>
    document.addEventListener('keydown', function(event) {
         if (event.key === 'Arrowleft') {
             $('#testimonial-carousel').carousel('prev');
