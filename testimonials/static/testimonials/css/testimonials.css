@@ -7,7 +7,7 @@ testimonial in a testimonial grid. */
 	background-color: #ffffff;
 	border-radius: 12px;
 	padding: 30px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* This class is defining the styling for the avatar image */
@@ -25,9 +25,6 @@ testimonial in a testimonial grid. */
 	object-fit: cover;
 }
 
-.testimonial-text {
-	margin-bottom: 20px;
-}
 
 .testimonial-name {
 	font-size: 20px;
@@ -36,14 +33,10 @@ testimonial in a testimonial grid. */
 	color: #333333;
 }
 
-.testimonial-role {
+.testimonial-profession {
 	font-size: 16px;
 	color: #666666;
 }
 
-/* This media query in CSS that targets screens with a maximum width of 600 pixels. */
-@media screen and (max-width: 600px) {
-	.testimonial-grid {
-		grid-template-columns: 1fr;
-	}
-}
+
+
