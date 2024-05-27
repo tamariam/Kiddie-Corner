@@ -23,6 +23,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Order Complete](#order-complete)
     - [Favourites](#favourites)
     - [Contact Page](#contactipage)
+    - [ Testimonials ](#testimonials)
     - [Footer](#footer)
 
 - [Testing](#testing)
@@ -141,6 +142,21 @@ To develop an innovative and user-friendly online toy store platform that caters
 </details>
 
 
+<details>
+  <summary>Testimonials-Page-Desktop (click to expand)</summary>
+
+![Testimonials-page-Desktop](/docs/wireframes/tesimonial-wireframe.png)
+
+</details>
+
+<details>
+  <summary>Testimonials-Page-Mobile (click to expand)</summary>
+
+![Testimonials-page-Mobile](/docs/wireframes/testimonial-mobile.png)
+
+</details>
+
+
 
 
 
@@ -156,9 +172,9 @@ To develop an innovative and user-friendly online toy store platform that caters
 # Features
 ## Navigation Bar 
 The navigation  bar designed with bootstrap adapts seamlessly to different screen sizes, ensuring a consistent user experience across desktops, tablets, and mobile devices.
-The navbar contains the business logo which links back to the homepage when clicked. There is also a Search bar that allows users to query the 'products' database. There are three icon links in the upper right of the navbar that link to the user favourites, user account/account management, and shopping bag features.The Menu Contains links to the Home, About, All Products, shop byu age, and special offers pages.
+The navbar contains the business logo which links back to the homepage when clicked. There is also a Search bar that allows users to query the 'products' database. There are three icon links in the upper right of the navbar that link to the user favourites, user account/account management, and shopping bag features.The Menu Contains links to the Home, About/testimonials, All Products, shop by age, special offers and contuct us pages.
 
-![navigation-Desktop](/docs/features/navigation-bar-desktop.png)
+![navigation-Desktop](/docs/features/new-navigation-bar.png)
 
 At smaller screen widths, the nav bar collapses into a burger-style dropdown menu to enhance user experience on mobile and tablet devices.
 
@@ -417,6 +433,24 @@ After successfully sending the message, a notification will display, informing y
 
 ![message-sent](/docs/features/sent-message.png)
 
+## Testimonials
+The Testimonials page can be accessed via the navigation bar. When you click on the "About" dropdown link, you can select "Testimonials" to navigate to the testimonials page.
+
+Testimonials are displayed in a carousel format, allowing users to browse through them easily. Each testimonial card includes the user's name, profession, image, and testimonial text. You can navigate to the next or previous testimonial by clicking the arrow buttons or using the keyboard arrow keys.
+
+
+  ![Testimonials-desktop](/docs/features/testimonials-desktop.png)
+
+  <details>
+  <summary>testimonial-Mobile (click to expand)</summary>
+
+  ![testimonials-Mobile](/docs/features/testimonials-mobile.png)
+
+</details>
+
+
+
+
 
 
 
@@ -652,6 +686,20 @@ Below are the Lighthouse test results for all pages
   <summary>lighthouse-Testing-contact-page-Desktop(click to expand)</summary>
 
 ![Contact-Desktop](./docs/testing/lighthouse/contact-page-lh-desktop.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-Testimonials-page-Desktop(click to expand)</summary>
+
+![Testimonials-Desktop](./docs/testing/lighthouse/testimonials-desktop.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-Testimonials-page-Mobile(click to expand)</summary>
+
+![Testimonials-Mobile](./docs/testing/lighthouse/testimonials-mobile-lh.png)
 
 </details>
 
