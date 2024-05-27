@@ -3,9 +3,19 @@
     <li class="nav-item active">
       <a class="orange nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="orange nav-link" href="/#about">About</a>
+    </li> -->
+    <li class="nav-item dropdown">
+      <a class="orange nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-expanded="false">
+        About Us
+      </a>
+      <div class="dropdown-menu bg-dark ">
+        <a class="dropdown-item text-warning" href="/#about">About Us</a>
+        <a class="dropdown-item text-warning" href="{% url 'testimonials' %}">Testimonials</a>
+</div>
     </li>
+ 
     <li class="nav-item">
       <a class="orange nav-link" href="{% url 'products' %}" aria-label="link to all products page">All Products</a>
     </li>
