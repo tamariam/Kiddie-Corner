@@ -8,40 +8,16 @@
 {% block content %}
 <!-- Testimonials Page -->
 
-<!-- 
-<div class="container-fluid">
-    <div class="row">
-    {% for testimonial in testimonials %}
-        <div class="col-md-4 text-center rounded mx-auto">
-            <div class="card mb-4 shadow-sm">
-                <div class="card-body">
-                    <div class="testimonial-avatar">
-                        {% if "placeholder" in testimonial.featured_image.url %}
-                            <img src="{% static 'images/placeholder.jpg' %}" class="img-fluid rounded-circle" alt="placeholder image">
-                        {% else %}
-                            <img src="{{ testimonial.featured_image.url }}" class="img-fluid rounded-circle" alt="{{ testimonial.name }}" crossorigin="anonymous">
-                        {% endif %}
-                    </div>
-                    <div class="testimonial-text mt-3">
-                        <p class="testimonial-name">{{ testimonial.name }}</p>
-                        <p class="testimonial-profession">{{ testimonial.profession }}</p>
-                        <p>{{ testimonial.testimonial }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-    </div>
-</div> -->
 
-<div class="container-fluid">
+<div class="container-fluid lato">
+    <h2 class="text-center mb-3 ">What Our Clients Think</h2>
     <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner mb-5 ">
             {% for testimonial in testimonials %}
             <div class="carousel-item {% if forloop.first %} active {% endif %}">
                 <div class="row justify-content-center">
                     <div class="col-md-4 text-center rounded mx-auto">
-                        <div class="card mb-4 shadow-sm">
+                        <div class="card mb-4 shadow-lg">
                             <div class="card-body">
                                 <div class="testimonial-avatar">
                                     {% if "placeholder" in testimonial.featured_image.url %}
@@ -53,7 +29,7 @@
                                 <div class="testimonial-text mb-3 ">
                                     <p class="testimonial-name">{{ testimonial.name }}</p>
                                     <p class="testimonial-profession">{{ testimonial.profession }}</p>
-                                    <p>{{ testimonial.testimonial }}</p>
+                                    <p class="font-weight-bold">{{ testimonial.testimonial }}</p>
                                 </div>
                             </div>
                         </div>
@@ -63,11 +39,11 @@
             {% endfor %}
         </div>
         <a class="carousel-control-prev " href="#testimonial-carousel" role="button" data-slide="prev">
-            <h4 > </h4><i class="fa-solid fa-arrow-left text-dark "></i></h4>
+             </h4><i class="icon fa-solid fa-backward font-weight-bold mr-3 text-dark  "></i></h4>
         </a>
-        <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+        <a class="carousel-control-next " href="#testimonial-carousel" role="button" data-slide="next">
             <!-- <span class="carousel-control-next-icon" aria-hidden="false"></span> -->
-            <h4 > </h4><i class="fa-solid fa-arrow-right text-dark "></i></h4>
+            </h4><i class="icon ml-3 fa-solid fa-forward font-weight-bold text-dark "></i></h4>
         </a>
     </div>
 </div>

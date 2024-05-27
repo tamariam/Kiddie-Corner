@@ -3,13 +3,16 @@
 
 /* This class is defining the styling for the container element that holds each
 testimonial in a testimonial grid. */
-.testimonial-container {
-	background-color: #ffffff;
-	border-radius: 12px;
+.carousel-inner {
+	background-color: #ffb703; 
+	border-radius: 20px;
 	padding: 30px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+.card-body{
+    height:380px ;
+}
 /* This class is defining the styling for the avatar image */
 .testimonial-avatar {
 	width: 100px;
@@ -37,6 +40,10 @@ testimonial in a testimonial grid. */
 	font-size: 16px;
 	color: #666666;
 }
+.icon{
+    font-size:30px;
+}
+
 
 
 
