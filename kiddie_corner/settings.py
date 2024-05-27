@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'cloudinary',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
     'checkout',
     'favourites',
     'contact',
+    'testimonials',
 
     'crispy_forms',
 ]
