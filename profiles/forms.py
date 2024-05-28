@@ -44,4 +44,5 @@ class UserProfileForm(forms.ModelForm):
             else:
                 self.fields[field].widget.attrs[
                     'aria-label'] = 'select a country'
+                self.fields[field].widget.attrs['class'] = 'rounded-0'
             self.fields[field].label = False
