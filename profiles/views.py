@@ -10,15 +10,16 @@ from django.contrib import messages
 def profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
     if request == "POST":
-        form = UserProfileForm(request.POST,instance=profile)
+        form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request,'Your Profile Updated')
+            messages.success(request, 'Your Profile Updated')
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
     context = {
         'form': form,
-        'orders':orders
+        'orders': orders,
+        'on_profile_page': True,
 
 
     }
