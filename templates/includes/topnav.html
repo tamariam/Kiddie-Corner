@@ -30,7 +30,7 @@
                     {% if request.user.is_superuser %}
                         <a href="" class="dropdown-item" aria-label="link to user favourites" aria-label="product management">Product Management</a>
                     {% endif %}
-                    <a href="" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                     <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="link to logout page">Logout</a>
                 {% else %}
                     <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="link to register page">Register</a>
