@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 # Create your models here.
 
 
@@ -27,4 +29,21 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.user.username
 
+    def save(self, *args, **kwargs):
+        """
+        pulls email and name from the user model
+        on creation if blank
+        """
+        if self.default_email == "":
+            self.default_email = self.user.email
+        super().save(*args, **kwargs)
     
+    @receiver(post_save, sender=User)
+    def create_or_update_user_profile(sender, instance, created, **kwargs):
+        """
+        Create or update the user profile
+        """
+        if created:
+            UserProfile.objects.create(user=instance)
+
+        instance.UserProfile.save()
