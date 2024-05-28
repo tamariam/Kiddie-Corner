@@ -7,7 +7,7 @@ from django_countries.fields import CountryField
 from decimal import Decimal
 
 from products.models import Product
-from .profile.models import UserProfile
+from profiles.models import UserProfile
 
 # Create your models here.
 

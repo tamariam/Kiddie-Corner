@@ -1,21 +1,21 @@
 <div class="collapse navbar-collapse" id="main-nav">
   <ul class="bangers navbar-nav mr-auto main-nav-navigation">
     <li class="nav-item active">
-      <a class="orange nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      <a class="orange nav-link" href="{% url 'home' %}" aria-label="home page link">Home <span class="sr-only">(current)</span></a>
     </li>
  
     <li class="nav-item">
       <a class="orange nav-link" href="{% url 'products' %}" aria-label="link to all products page">All Products</a>
     </li>
     <li class="nav-item dropdown">
-      <a class="orange nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+      <a class="orange nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false" ara-label="shop by age">
         Shop By Age
       </a>
       <div class="dropdown-menu bg-dark ">
-        <a class="dropdown-item text-warning" href="{% url 'products' %}?category=up_to_one_year">Up to 1 Year</a>
-        <a class="dropdown-item text-warning" href="{% url 'products' %}?category=1_2_years">1-2 Years</a>
-        <a class="dropdown-item text-warning" href="{% url 'products' %}?category=2_3_years">2-3 Years</a>
-        <a class="dropdown-item text-warning " href="{% url 'products' %}?category=3_plus_years">3 + Years</a>
+        <a class="dropdown-item text-warning" href="{% url 'products' %}?category=up_to_one_year" aria-label="up to 1 year">Up to 1 Year</a>
+        <a class="dropdown-item text-warning" href="{% url 'products' %}?category=1_2_years" aria-label="up to 1-2 year">1-2 Years</a>
+        <a class="dropdown-item text-warning" href="{% url 'products' %}?category=2_3_years" aria-label="up to 2-3 year">2-3 Years</a>
+        <a class="dropdown-item text-warning " href="{% url 'products' %}?category=3_plus_years" aria-label="up to 3+ year">3 + Years</a>
 </div>
     </li>
    
@@ -28,8 +28,8 @@
           About Us
         </a>
         <div class="dropdown-menu bg-dark ">
-          <a class="dropdown-item text-warning" href="/#about">About Us</a>
-          <a class="dropdown-item text-warning" href="{% url 'testimonials' %}">Testimonials</a>
+          <a class="dropdown-item text-warning" href="/#about" aria-label="about us">About Us</a>
+          <a class="dropdown-item text-warning" href="{% url 'testimonials' %}" aria-label="testimonials link">Testimonials</a>
   </div>
       </li>
       <li class="nav-item">
