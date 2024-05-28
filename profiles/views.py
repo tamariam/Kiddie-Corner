@@ -9,7 +9,7 @@ from django.contrib import messages
 
 def profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
-    if request == "POST":
+    if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
