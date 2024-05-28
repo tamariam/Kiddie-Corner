@@ -15,13 +15,34 @@
 {% block content %}
 <div class="container-fluid lato ">
     <div class="col text-center ">
-        <h2 class="bg-primary text-white mb-5 text-uppercase ">My profile</h2>
+        <h2 class="text-dark font-weight-bold text-white mb-5 text-uppercase ">My profile</h2>
     </div>
    
 
     <div class="row">
         <!-- Product Cards Column -->
-        <div class="col-lg-4">
+        <div class="col-lg-6 mx-auto">
+            <h3 class="text-center bg-danger  rounded text-light mb-3 ">My order History</h3>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="text-black font-weight-bold">Order Number:</td>
+                        <td>{{ order.order_number }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-black font-weight-bold">Order Date:</td>
+                        <td>{{ order.date}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-black font-weight-bold">Order Total:</td>
+                        <td>{{ order.grand_total }}</td>
+                    </tr>
+                   
+                
+                </tbody>
+            </table>
+        <!-- <div class="col-lg-6 "> -->
+            <p>Delivery Details</p>
            
             <form action="{%url 'profile'%}" method="post">
                         
@@ -43,14 +64,11 @@
 
                 
             </form>
-             <div class="col-lg-5">
-                <p>Order History</p>
-                
-            
-    </div>
 </div>
 </div>
+
 </div>
+
 {% endblock content %}
 
 
