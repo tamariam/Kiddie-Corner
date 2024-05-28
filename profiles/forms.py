@@ -1,37 +1,39 @@
 from django import forms
-from .models import Order
+from .models import UserProfile
 
 
-class CheckoutForm(forms.ModelForm):
+class UserProfileForm(forms.ModelForm):
     """
     This Form  takes payment details
     and complete an order
     """
     class Meta:
-        model = Order
+        model = UserProfile
         fields = (
-            'full_name',
-            'email', 'phone_number', 'country',
-            'postcode', 'town_or_city', 'street_address1',
-            'street_address2', 'county',
+            'default_email',
+            'default_phone_number',
+            'default_street_address1',
+            'default_street_address2',
+            'default_town_or_city',
+            'default_county',
+            'default_postcode',
+            'default_country',
         )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
-            'full_name': 'Full Name',
-            'email': 'Email',
-            'phone_number': 'Phone Number',
-            'country': 'Country',
-            'postcode': 'Postcode',
-            'town_or_city': 'Town or City',
-            'street_address1': 'Street_Address 1',
-            'street_address2': 'Sreet_Address 2',
-            'county': 'County',
+            'default_email': 'Email Address',
+            'default_phone_number': '(int. code) Phone Number',
+            'default_postcode': 'Postal Code',
+            'default_town_or_city': 'Town or City',
+            'default_street_address1': 'Street Address 1',
+            'default_street_address2': 'Street Address 2',
+            'default_county': 'County, State, or Locality',
         }
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'country':
+            if field != 'default_country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:
@@ -42,5 +44,4 @@ class CheckoutForm(forms.ModelForm):
             else:
                 self.fields[field].widget.attrs[
                     'aria-label'] = 'select a country'
-            self.fields[field].widget.attrs['class'] = 'stripe-style'
             self.fields[field].label = False
