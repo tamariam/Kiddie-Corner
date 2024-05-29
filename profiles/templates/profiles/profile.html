@@ -17,26 +17,21 @@
     <div class="col text-center ">
         <h2 class="text-dark font-weight-bold text-white mb-3 text-uppercase ">My profile</h2>
     </div>
-   
-
-    <div class="row">
+   <div class="row">
         <!-- Product Cards Column -->
         <div class="col-lg-6 mx-auto ">
             <h3 class="text-center bg-danger  rounded text-light mb-3 ">My order History</h3>
             <div class=" orders table-responsive">
             <table class="table  ">
-
-                <thead>
-                    <tr>
-                        <th>Order Number</th>
-                        <th>Date</th>
-                        <th>Items</th>
-                        <th>Order Total</th>
+            <thead>
+                 <tr>
+                    <th>Order Number</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Order Total</th>
                     </tr>
                 </thead>
-
-                <tbody>
-
+<tbody>
                     {% for order in orders %}
                     
                         <tr>
