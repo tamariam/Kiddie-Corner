@@ -10,6 +10,7 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = (
+            'default_name',
             'default_email',
             'default_phone_number',
             'default_street_address1',
@@ -23,6 +24,7 @@ class UserProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
+            'default_name':'Name',
             'default_email': 'Email Address',
             'default_phone_number': '(int. code) Phone Number',
             'default_postcode': 'Postal Code',
