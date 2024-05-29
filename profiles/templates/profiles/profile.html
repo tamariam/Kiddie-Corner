@@ -41,7 +41,7 @@
                     
                         <tr>
                             <td>
-                                <a href="{% url 'completed_orders' order.order_number %}"
+                                <a href="{% url 'completed_order' order.order_number %}"
                                 title="{{ order.order_number }}">
                                     {{ order.order_number|truncatechars:6 }}
                                 </a>
@@ -81,7 +81,7 @@
         <!-- <div class="col-lg-6 "> -->
             <h4 class="bg-danger rounded text-white p-2 text-center my-4">Delivery Details</h4>
            
-            <form action="{%url 'profile'%}" method="post">
+            <form action="{% url 'profile' %}" method="post">
                         
                 {% csrf_token %}
                 {{form|crispy}}

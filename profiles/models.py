@@ -26,7 +26,7 @@ class UserProfile(models.Model):
  
     def save(self, *args, **kwargs):
         """
-        pulls email and name from the user model
+        pulls email  from the user model
         on creation if blank
         """
         if self.default_email == "":
