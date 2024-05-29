@@ -95,7 +95,28 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        checkout_form = CheckoutForm()
+
+        # Attempt to prefill the Profile form #
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                checkout_form = CheckoutForm(initial={
+                    'full_name': profile.default_delivery_name,
+                    'email': profile.default_email,
+                    'phone_number': profile.default_phone_number,
+                    'country': profile.default_country,
+                    'postcode': profile.default_postcode,
+                    'town_or_city': profile.default_town_or_city,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'county': profile.default_county,
+                })
+
+            except UserProfile.DoesNotExist:
+                checkout_form = CheckoutForm()
+        else:
+            checkout_form = CheckoutForm()
+
         template = 'checkout/checkout.html'
         context = {
             'checkout_form': checkout_form,
