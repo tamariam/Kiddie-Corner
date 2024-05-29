@@ -5,6 +5,7 @@ from shopping_bag.contexts import shopping_bag_contents
 import stripe
 from django.conf import settings
 from products.models import Product
+from profiles.models import UserProfile
 from .models import Order, OrderLineItem
 from django.views.decorators.http import require_POST
 import json
@@ -107,7 +108,13 @@ def checkout_success(request, order_number):
     '''successfull checkouts'''
     save_info = request.session.get('save-info')
     order = get_object_or_404(Order, order_number=order_number)
-    
+    if request.user.is_authenticated:
+        #attach the user sprofile to the order
+        profile = UserProfile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
+
+
     messages.success(request, f'Your order processed successfully, a confirmation email will be sent to{order.email}')
     if 'bag' in request.session:
         del request.session['bag']
