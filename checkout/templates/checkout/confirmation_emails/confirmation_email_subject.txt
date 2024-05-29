@@ -1,0 +1,1 @@
+Thanks for shopping at kiddie Corner - Order reference {{ order.order_number }}
