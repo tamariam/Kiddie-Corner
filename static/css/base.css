@@ -207,5 +207,26 @@ background-color: #023047;
   width:165px !important;
 }
 
+.main-header{
+  font-size:22px;
+}
 
+.h3{
+  font-size:20px;
+}
 
+.h4{
+  font-size:18px;
+}
+
+@media (min-width: 569px) {
+  .main-header{
+  font-size:28px;
+  }
+  .h3{
+    font-size:24px;
+  }
+  .h4{
+    font-size:22px;
+  }
+}

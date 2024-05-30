@@ -24,6 +24,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Favourites](#favourites)
     - [Contact Page](#contactipage)
     - [ Testimonials ](#testimonials)
+    - [My Account](#my-account)
     - [Footer](#footer)
 
 - [Testing](#testing)
@@ -155,6 +156,12 @@ To develop an innovative and user-friendly online toy store platform that caters
 ![Testimonials-page-Mobile](/docs/wireframes/testimonial-mobile.png)
 
 </details>
+
+
+![Profile-page](/docs/wireframes/profile-page.png)
+
+
+
 
 
 
@@ -448,6 +455,42 @@ Testimonials are displayed in a carousel format, allowing users to browse throug
 
 </details>
 
+## My Account
+Registered users can access their profile page to check order details or update delivery informations by following these steps:
+Click on the user icon in the navigation bar. This will open a dropdown menu.
+- If You Are a Registered User:
+Select "My Account" from the dropdown menu to go to your profile page.
+- If You Are Not Registered:
+You can register an account from the dropdown menu options.
+- If you are logged in, you can log out from the site using the logout  link provided in the dropdown menu.
+
+
+  ![myaccount-dropdown](/docs/features/myacccount-dropdown.png)
+
+Once you are on your account page, you can manage your previous orders:
+
+
+- All your previous orders will be listed on your account page.
+View Order Details:
+
+- Click on the order number to be redirected to the checkout_success page, where you can see the specific details of the order.
+
+
+  ![profile-desktop](/docs/features/myaccount-desktop.png)
+
+  <details>
+  <summary>profile-Mobile (click to expand)</summary>
+
+  ![profile-Mobile](/docs/features/myaccount-mobile.png)
+
+</details>
+
+- Click "Update Information" to update your delivery details.
+After successfully updating, a message will be displayed to notify you that the information was updated.
+
+![information-updated](/docs/features/profile-updated-message.png)
+
+
 
 
 
@@ -703,6 +746,19 @@ Below are the Lighthouse test results for all pages
 
 </details>
 
+<details>
+  <summary>lighthouse-Testing-Profile-page-Mobile(click to expand)</summary>
+
+![Profile-Page-Mobile](./docs/testing/lighthouse/profile-mobile.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-Profile-page-Desktop(click to expand)</summary>
+
+![Profile-Page-Desktop](./docs/testing/lighthouse/profile-desktop.png)
+
+</details>
 
 
 
