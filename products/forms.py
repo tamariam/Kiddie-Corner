@@ -7,7 +7,11 @@ class ProductForm(forms.ModelForm):
     """
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = (
+            'category', 'name', 'sku', 'price',
+            'rating', 'in_stock', 'has_sale', 'description',
+            'image',
+        )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -22,8 +26,8 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = category_friendly_names
 
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black text-light'
-            self.fields['name'].widget.attrs['readonly'] = True
+            field.widget.attrs['class'] = 'border-black text-dark'
+            self.fields['name'].widget.attrs['readonly'] = False
 
 
 

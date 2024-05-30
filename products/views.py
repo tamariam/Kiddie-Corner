@@ -58,6 +58,14 @@ def product_detail(request, product_id):
 def add_product(request):
     """ view to add product
     """
-    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'product added successfully')
+        else:
+            messages.error(request, 'faild product submission, please make sure the form is valid and try again')
+    else:
+        form = ProductForm()
     
     return render(request, 'products/add_product.html', {'form': form})
