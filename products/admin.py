@@ -19,6 +19,7 @@ class ProductAdmin(admin.ModelAdmin):
     access the Product fields model in Admin panel
     """
     list_display = (
+        'id',
         'name', 'category', 'description', 'in_stock',
         'rating', 'image_url',
         'price', 'sku', 'image',)

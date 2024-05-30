@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+<div class="container">
+<form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <div class="text-right">
+        <a class="sensical-button" href="{% url 'products'  %}">Cancel</a>
+        <button class="sensical-button" type="submit">edit Product</button>
+    </div>
+</form>
+</div>
+{% endblock %}
