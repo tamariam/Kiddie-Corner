@@ -1,1 +1,14 @@
-<h3>juhuu</h3>
+{%extends 'base.html'%}
+
+{% block content %}
+ 
+<form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <div class="text-right">
+        <a class="sensical-button" href="{% url 'products' %}">Cancel</a>
+        <button class="sensical-button" type="submit">Add Product</button>
+    </div>
+</form>
+
+{% endblock %}
