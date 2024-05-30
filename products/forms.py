@@ -15,13 +15,13 @@ class ProductForm(forms.ModelForm):
         Initialise the form attributes
         """
 
-        # taken from boutique ado walk through 
+        # taken from boutique ado walk through  to get friendly names
         categories = Category.objects.all()
         category_friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
         self.fields['category'].choices = category_friendly_names
 
-        for field_name, field in self.field.items():
+        for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black text-light'
             self.fields['name'].widget.attrs['readonly'] = True
 

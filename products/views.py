@@ -3,6 +3,7 @@ from .models import Product, Category
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from .forms import ProductForm
 
 
 def all_products(request):
@@ -52,3 +53,11 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html',  context)
+
+
+def add_product(request):
+    """ view to add product
+    """
+    form = ProductForm()
+    
+    return render(request, 'products/add_product.html', {'form': form})
