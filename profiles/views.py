@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import UserProfileForm
 from .models import UserProfile
@@ -9,24 +9,50 @@ from checkout.models import Order
 # Create your views here.
 
 @login_required
+# def profile(request):
+#     if not request.user.is_superuser:
+#         profile = get_object_or_404(UserProfile, user=request.user)
+#         if request.method == 'POST':
+#             form = UserProfileForm(request.POST, instance=profile)
+#             if form.is_valid():
+#                 form.save()
+#                 messages.success(request, 'Your Profile Updated')
+#             else:
+#                 messages.error(request, 'invalid form sabmision')
+#         else:
+#             form = UserProfileForm(instance=profile)
+#         orders = profile.orders.all()
+#     else:
+#         messages.error(request, 'ups')
+#         context = {
+#             'form': form,
+#             'orders': orders,
+#             'on_profile_page': True,
+#         }
+#     return render(request, 'profiles/profile.html', context)
+
 def profile(request):
-    profile = get_object_or_404(UserProfile, user=request.user)
-    if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=profile)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your Profile Updated')
+    if not request.user.is_superuser:
+        profile = get_object_or_404(UserProfile, user=request.user)
+        if request.method == 'POST':
+            form = UserProfileForm(request.POST, instance=profile)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Your Profile Updated')
+            else:
+                messages.error(request, 'Invalid form submission')
         else:
-            messages.error(request, 'invalid form sabmision')
+            form = UserProfileForm(instance=profile)
+        orders = profile.orders.all()
+        context = {
+            'form': form,
+            'orders': orders,
+            'on_profile_page': True,
+        }
+        return render(request, 'profiles/profile.html', context)
     else:
-        form = UserProfileForm(instance=profile)
-    orders = profile.orders.all()
-    context = {
-        'form': form,
-        'orders': orders,
-        'on_profile_page': True,
-    }
-    return render(request, 'profiles/profile.html', context)
+        messages.error(request, 'as a staff member you are not allowed to see this page')
+        return redirect('home') 
 
 
 def completed_order(request, order_number):

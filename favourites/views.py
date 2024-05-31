@@ -7,21 +7,30 @@ from django.contrib import messages
 
 
 def favourites(request):
-    favourites = Favourite.objects.filter(user=request.user)
-    return render(request, 'favourites/favourites.html', {'favourites': favourites})
+    if not request.user.is_superuser:
+        favourites = Favourite.objects.filter(user=request.user)
+        return render(request, 'favourites/favourites.html', {'favourites': favourites})
+    else:
+        messages.info(request, 'as a staff member you are not allowed to view this page')
+        return redirect('products')
 
 
 def add_to_favourite(request, product_id):
     '''view to add product in favourites
     '''
-    product = get_object_or_404(Product, id=product_id)
-    # Check if the product is already in favourites list
-    if Favourite.objects.filter(user=request.user, product=product).exists():
-        messages.info(request, f'{product.name} is already in your favourites')
+    if not request.user.is_superuser:
+        product = get_object_or_404(Product, id=product_id)
+        # Check if the product is already in favourites list
+        if Favourite.objects.filter(user=request.user, product=product).exists():
+            messages.info(request, f'{product.name} is already in your favourites')
+        else:
+            Favourite.objects.create(user=request.user, product=product)
+            messages.success(request, f'{product.name} has been added to your favourites')
+        return redirect('favourites')
     else:
-        Favourite.objects.create(user=request.user, product=product)
-        messages.success(request, f'{product.name} has been added to your favourites')
-    return redirect('favourites')
+        messages.info(request,'ass a staff member you are not allowed to add products to the favourites')
+        return redirect('home')
+
 
 
 def remove_favourite(request, product_id):
