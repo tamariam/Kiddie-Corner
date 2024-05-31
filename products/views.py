@@ -63,7 +63,7 @@ def add_product(request):
         if form.is_valid():
             product = form.save()
             messages.success(request, 'product added successfully')
-            return redirect(reverse('product_detail',  args=[product]))
+            return redirect(reverse('product_detail',  args=[product.id]))
         else:
             messages.error(request, 'faild product submission, please make sure the form is valid and try again')
     else:
@@ -94,5 +94,5 @@ def delete_product(request, product_id):
     """ up a quantity of the specified product to the shopping bag """
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.success(request,  f" { product.name } successsfully removed  from your bag")
+    messages.success(request,  f" Product  { product.name } successsfully deleted")
     return redirect(reverse('products'))

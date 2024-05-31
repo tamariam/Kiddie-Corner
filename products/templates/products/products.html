@@ -76,6 +76,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Allows staff to edit and delete items -->
+                    {% if user.is_superuser %}
+
+                    <div class="text-center">
+
+                        <a class="m-3 btn  text-warning  " href="{% url 'edit_product' product.id %}" aria-label="edit product">Edit</a>  |  
+                        <a class="btn  text-danger m-3 " href="{% url 'delete_product' product.id %}" aria-label="delete product">Delete</a>
+                    
+                    </div>
+
+                  {% endif %}
                                 <div class="card-footer p-3 d-flex justify-content-center">
                                     <a href="{% url 'product_detail' product.id %}" class="btn btn-danger text-center btn" aria-label="link to product detail">Product Details</a>
                                 </div>
