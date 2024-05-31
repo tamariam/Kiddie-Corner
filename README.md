@@ -300,7 +300,16 @@ Clicking on the "Special Offers" link in the main menu will direct you to the Sp
 
  To access the shopping bag page, click on the cart icon located on the top right side of the page.
 
-  ![shopping-cart-icon](/docs/features/shopping-cart-icon.png)
+  ![shopping-bag-icon](/docs/features/shopping-cart-icon.png)
+
+   - Staff Members do not have permission to view shopping bag page or add product to shopping bag.when they try to acces this page/add product to shopping bag , appropriate message will dislay and they will be redirected  to home page.
+
+     ![restricti-staff-members](/docs/features/restrict-staff-member.png)
+
+       ![restricti-staff-members](/docs/features/restrict-staff-2.png)
+
+
+
 
 After navigating to the shopping bag page, if no items have been added, an appropriate message will be displayed encouraging users to add products to their bag. This message will include a button that directs users to the products page.
 
@@ -328,7 +337,6 @@ If there are items in the shopping bag, the page will display all item details i
 </details>
 
 When items are added to the shopping bag, approrpaiete message  will be displayed to user, also the color of the navigation cart link will change, indicating that items are present. Additionally, the cart link will display the total price of the items in the bag(for desktop screen)
- 
  
 ![shopping-bag-item-added](/docs/features/add-tobag-message.png)
 
@@ -406,6 +414,14 @@ Favorites Page Content: On the Favorites page, you will see the products you hav
 ![Favourites--mobile](/docs/features/favourites-mobile.png)
 
 </details>
+
+  - Staff members are not allowed to add products to favourites page or see the Favourites page itself. When they try to access the page, an appropriate message will notify them, and they will be redirected to the Home page.
+    
+    ![restrict-staff-members](/docs/features/restrict-staff-member.png)
+
+      
+    ![restrict-staff-members](/docs/features/restrict-staff-member-1.png)
+
 
 - Adding Products to Favorites
  On the product detail page, you can choose to add the product to your favorites with "Add To Favourites" Button. A message will notify you that the product has been added to the Favorites page.
