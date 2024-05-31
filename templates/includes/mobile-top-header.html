@@ -8,16 +8,16 @@
         </a>
         <div>
 <li class="dropdown-menu border-0" aria-labelledby="user-options">
-    {% if request.user.is_authenticated %}
+        {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
             <a href="{% url 'add_product' %}" class="dropdown-item" aria-label="link to product management">Product Management</a>
         {% endif %}
         <a href="{% url 'profile' %}" class="dropdown-item" aria-label="link to myprofile page" >My Account</a>
         <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="link to logout page">Logout</a>
-    {% else %}
+        {% else %}
         <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="link to register page">Register</a>
         <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="link to user login page">Login</a>
-    {% endif %}
+        {% endif %}
 </li>
 </li>
 <li class="col-2 text-center list-inline-item d-block d-lg-none">

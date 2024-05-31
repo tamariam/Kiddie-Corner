@@ -21,7 +21,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'name', 'category', 'description', 'in_stock',
-        'rating', 'image_url',
+        'rating',
         'price', 'sku', 'image',)
     search_fields = (
         'category', 'name',
