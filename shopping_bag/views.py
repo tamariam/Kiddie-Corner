@@ -4,15 +4,15 @@ from products.models import Product
 
 
 def shopping_bag(request):
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         return render(request, 'shopping_bag/bag.html')
     else:
-        messages.info(request,'as a staff member you are not allowed to see this page')
+        messages.info(request, 'as a staff member you are not allowed to see this page')
         return redirect('home') 
 
 
 def add_to_bag(request, item_id):
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         """ Add a quantity of the specified product to the shopping bag """
         product = get_object_or_404(Product, pk=item_id)
         quantity = int(request.POST.get('quantity'))

@@ -2,14 +2,21 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid lato ">
+    <div class="col text-center ">
+        <h2 class="text-white bg-primary mb-3 rounded ">Add Product</h2>
+    </div>
+   <div class="row">
+    <div class="col-lg-6 mx-auto ">
 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form | crispy }}
-    <div class="text-right">
-        <a class="sensical-button" href="{% url 'products' %}">Cancel</a>
-        <button class="sensical-button" type="submit">Add Product</button>
+    <div class="text-center my-3">
+        <a class="btn btn-danger" href="{% url 'products' %}">Cancel</a>
+        <button class="btn btn-success" type="submit">Add Product</button>
     </div>
 </form>
+</div>
+</div>
 </div>
 {% endblock %}

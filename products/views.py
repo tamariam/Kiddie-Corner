@@ -60,43 +60,54 @@ def product_detail(request, product_id):
 def add_product(request):
     """ view to add product
     """
-    if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            product = form.save()
-            messages.success(request, 'product added successfully')
-            return redirect(reverse('product_detail',  args=[product.id]))
+    if request.user.is_staff:
+        if request.method == 'POST':
+            form = ProductForm(request.POST, request.FILES)
+            if form.is_valid():
+                product = form.save()
+                messages.success(request, 'product added successfully')
+                return redirect(reverse('product_detail',  args=[product.id]))
+            else:
+                messages.error(request, 'faild product submission, please make sure the form is valid and try again')
         else:
-            messages.error(request, 'faild product submission, please make sure the form is valid and try again')
+            form = ProductForm()
+        
+        return render(request, 'products/add_product.html', {'form': form})
     else:
-        form = ProductForm()
-    
-    return render(request, 'products/add_product.html', {'form': form})
+        messages.error(request, 'You are not allowed to view this page')
+        return redirect('home')
 
 
 @login_required
 def edit_product(request, product_id):
     """ view to add product
     """
-    product = get_object_or_404(Product, pk=product_id)
-    if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'product edited successfully')
-            return redirect(reverse('product_detail',  args=[product.id]))
+    if  request.user.is_staff:
+        product = get_object_or_404(Product, pk=product_id)
+        if request.method == 'POST':
+            form = ProductForm(request.POST, request.FILES, instance=product)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'product edited successfully')
+                return redirect(reverse('product_detail',  args=[product.id]))
+            else:
+                messages.error(request, 'faild product update, please make sure the form is valid and try again')
         else:
-            messages.error(request, 'faild product update, please make sure the form is valid and try again')
+            form = ProductForm(instance=product)
+        
+        return render(request, 'products/edit_product.html', {'form': form, 'product': product})
     else:
-        form = ProductForm(instance=product)
-    
-    return render(request, 'products/edit_product.html', {'form': form, 'product': product})
+        messages.error(request, 'You are not allowed to change  product details')
+        return redirect('home')
 
 
 @login_required
 def delete_product(request, product_id):
-    """ up a quantity of the specified product to the shopping bag """
-    product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request,  f" Product  { product.name } successsfully deleted")
-    return redirect(reverse('products'))
+    """ delete product"""
+    if request.user.is_staff:
+        product = get_object_or_404(Product, pk=product_id)
+        product.delete()
+        messages.success(request,  f" Product  { product.name } successsfully deleted")
+        return redirect(reverse('products'))
+    else:
+        messages.error(request, 'You are not allowed to delete product')

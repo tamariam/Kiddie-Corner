@@ -7,7 +7,7 @@ from django.contrib import messages
 
 
 def favourites(request):
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         favourites = Favourite.objects.filter(user=request.user)
         return render(request, 'favourites/favourites.html', {'favourites': favourites})
     else:
@@ -18,7 +18,7 @@ def favourites(request):
 def add_to_favourite(request, product_id):
     '''view to add product in favourites
     '''
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         product = get_object_or_404(Product, id=product_id)
         # Check if the product is already in favourites list
         if Favourite.objects.filter(user=request.user, product=product).exists():

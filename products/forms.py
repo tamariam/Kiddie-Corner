@@ -26,7 +26,7 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = category_friendly_names
 
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black text-dark'
+            field.widget.attrs['class'] = 'border-black text-dark bg-white'
             self.fields['name'].widget.attrs['readonly'] = False
 
 

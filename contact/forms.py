@@ -32,3 +32,5 @@ class ContactForm(forms.ModelForm):
             self.fields[field].widget.attrs[
                 'aria-label'] = self.fields[field].label
             self.fields[field].label = False
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'text light bg-white'

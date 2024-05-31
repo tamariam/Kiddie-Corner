@@ -6,7 +6,7 @@ from django.contrib import messages
 
 
 def contact_page(request):
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         if request.method == 'POST':
             form = ContactForm(data=request.POST)
             form.save(commit=False)
