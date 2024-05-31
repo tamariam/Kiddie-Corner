@@ -92,12 +92,6 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """ up a quantity of the specified product to the shopping bag """
     product = get_object_or_404(Product, pk=product_id)
-    bag = request.session.get('bag', {})
-    if item_id in bag:
-        del bag[item_id]
-        messages.success(request,  f" { product.name } successsfully removed  from your bag")
-
-        request.session['bag'] = bag
-        return redirect(reverse('shopping_bag'))
-    else:
-        return HttpResponse('ups',  status=404)
+    product.delete()
+    messages.success(request,  f" { product.name } successsfully removed  from your bag")
+    return redirect(reverse('products'))
