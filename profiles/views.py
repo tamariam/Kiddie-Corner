@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .forms import UserProfileForm
 from .models import UserProfile
 from django.contrib import messages
@@ -7,7 +8,7 @@ from checkout.models import Order
 
 # Create your views here.
 
-
+@login_required
 def profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
