@@ -51,7 +51,7 @@ def profile(request):
         }
         return render(request, 'profiles/profile.html', context)
     else:
-        messages.error(request, 'as a staff member you are not allowed to see this page')
+        messages.error(request, 'as a staff member  you do not have permission to view this page')
         return redirect('home') 
 
 

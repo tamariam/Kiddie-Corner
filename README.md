@@ -25,6 +25,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Contact Page](#contactipage)
     - [ Testimonials ](#testimonials)
     - [My Account](#my-account)
+    - [Product Management](#product-management)
     - [Footer](#footer)
 
 - [Testing](#testing)
@@ -159,6 +160,9 @@ To develop an innovative and user-friendly online toy store platform that caters
 
 
 ![Profile-page](/docs/wireframes/profile-page.png)
+
+![add-edit-product](/docs/wireframes/add-edit-product.png)
+
 
 
 
@@ -491,6 +495,79 @@ After successfully updating, a message will be displayed to notify you that the 
 ![information-updated](/docs/features/profile-updated-message.png)
 
 
+## Product Management
+
+- Add Product
+
+If a staff member is logged in, they have the ability to go to the Product Management page by clicking the account dropdown link and selecting Product Management. This redirects them to the Add Product page, where staff members can add products.
+
+![add-product](/docs/features/add-product-desktop.png)
+
+  <details>
+  <summary>add-product-mobile (click to expand)</summary>
+
+  ![add-product-Mobile](/docs/features/add-product-mobile.png)
+
+</details>
+
+If the product is added successfully, an appropriate success message will be displayed.
+
+![product-add-message](/docs/features/product-addded-message.png)
+
+If there is any error during the product addition process, an appropriate error message will be displayed.
+
+
+![product-add-message](/docs/features/failed-add.png)
+
+
+- Edit Product
+
+On the Product Detail and on the Products page, each product has the ability to be edited or deleted (only for staff members). When a staff member clicks Edit, they will be redirected to the same page as the Add Product page, where staff members can change product details. 
+
+
+![edit-delete-option-on-product-details-page](/docs/features/edit-delete-product-detail.png) 
+
+
+![edit-delete-option-on-product-details-page](/docs/features/edit-delete-products.png)
+
+
+
+![edit-product-page-desktop](/docs/features/edit-product-desktop.png)
+
+  <details>
+  <summary>edit-product-mobile (click to expand)</summary>
+
+  ![edit-product-Mobile](/docs/features/edit-product-mobile.png)
+
+</details>
+
+If the update is successful, an appropriate message will display.
+
+![product-edit-message](/docs/features/product-edited-success-message.png)
+
+If there is any error during the product edit process, an appropriate error message will be displayed.
+
+![product-edit-message-failed](/docs/features/roduct-update-failed%20-message.png)
+
+- Delete Product
+
+A staff member can delete a product by simply clicking on the Delete link on the Product Detail or Products page. When the product is deleted, the staff member will be notified by a success message.
+
+
+![product-delete-message](/docs/features/product-deleted-message.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -760,6 +837,43 @@ Below are the Lighthouse test results for all pages
 
 </details>
 
+
+<details>
+  <summary>lighthouse-Testing-Add-product-page-Desktop(click to expand)</summary>
+
+![Add-Product-Page-Desktop](./docs/testing/lighthouse/add-product-desktop.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-Edit-product-page-Mobile(click to expand)</summary>
+
+![edit-Product-Page-Mobile](./docs/testing/lighthouse/add-product-lighthouse.png)
+
+</details>
+
+
+<details>
+  <summary>lighthouse-Testing-edit-product-page-Desktop(click to expand)</summary>
+
+![edit-Product-Page-Desktop](./docs/testing/lighthouse/edit-product-desktop.png)
+
+</details>
+
+
+<details>
+  <summary>lighthouse-Testing-edit-product-page-Mobile(click to expand)</summary>
+
+![edit-Product-Page-Mobile](./docs/testing/lighthouse/edit-product-mobile.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-edit-product-page-Desktop(click to expand)</summary>
+
+![edit-Product-Page-Desktop](./docs/testing/lighthouse/edit-product-desktop.png)
+
+</details>
 
 
 

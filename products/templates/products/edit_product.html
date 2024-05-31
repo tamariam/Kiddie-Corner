@@ -4,7 +4,7 @@
 
 <div class="container fluid lato ">
     <div class="col text-center ">
-        <h2 class="text-white bg-primary mb-3 rounded ">Edit Product</h2>
+        <h2 class="main-header text-white bg-primary mb-5 rounded ">Edit Product</h2>
     </div>
    <div class="row">
     <div class="col-lg-6 mx-auto ">
@@ -13,7 +13,7 @@
     {{ form | crispy }}
     <div class="text-center my-3">
         <a class="btn btn-danger" href="{% url 'products'  %}">Cancel</a>
-        <button class="btn btn-success" type="submit">edit Product</button>
+        <button class="btn btn-warning" type="submit">Edit Product</button>
     </div>
 </form>
 </div>

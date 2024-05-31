@@ -7,7 +7,7 @@ def shopping_bag(request):
     if not request.user.is_staff:
         return render(request, 'shopping_bag/bag.html')
     else:
-        messages.info(request, 'as a staff member you are not allowed to see this page')
+        messages.info(request, 'As a staff member You do not have permission to view this page')
         return redirect('home') 
 
 
@@ -29,7 +29,7 @@ def add_to_bag(request, item_id):
         request.session['bag'] = bag
         return redirect(redirect_url)
     else:
-        messages.info(request,'ass a staff member you are not allowed to add items in bage')
+        messages.info(request, 'ass a staff member you are not allowed to add items in the  bag')
         return redirect('home') 
 
 

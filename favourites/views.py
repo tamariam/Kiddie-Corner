@@ -12,7 +12,7 @@ def favourites(request):
         return render(request, 'favourites/favourites.html', {'favourites': favourites})
     else:
         messages.info(request, 'as a staff member you are not allowed to view this page')
-        return redirect('products')
+        return redirect('home')
 
 
 def add_to_favourite(request, product_id):
