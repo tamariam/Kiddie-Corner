@@ -218,7 +218,13 @@ background-color: #023047;
 .h4{
   font-size:18px;
 }
-
+/* styles for signup forms */
+.form-control{
+  background-color: #ffffff !important;
+}
+.cancel-btn{
+width:95px;
+}
 @media (min-width: 569px) {
   .main-header{
   font-size:28px;

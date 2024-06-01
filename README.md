@@ -572,6 +572,11 @@ A staff member can delete a product by simply clicking on the Delete link on the
 
 ![product-delete-message](/docs/features/product-deleted-message.png)
 
+  - If anyone other than staff members attempts to access the add/edit/delete/pages functionality, they will be redirected to the home page and presented with an appropriate message indicating that access is restricted.
+
+![user-not -allowed](/docs/features/user-not-allowed-message.png)
+
+
 
 
 
