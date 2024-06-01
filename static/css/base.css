@@ -225,6 +225,9 @@ background-color: #023047;
 .cancel-btn{
 width:95px;
 }
+.form-container{
+  height:50vh !important;
+}
 @media (min-width: 569px) {
   .main-header{
   font-size:28px;

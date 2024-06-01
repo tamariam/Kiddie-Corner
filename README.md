@@ -896,6 +896,52 @@ Below are the Lighthouse test results for all pages
 
 </details>
 
+<details>
+  <summary>lighthouse-Testing-SignUp-page-Desktop(click to expand)</summary>
+
+![edit-Signup-Page-Desktop](./docs/testing/lighthouse/signup-desktop.png)
+
+</details>
+
+
+<details>
+  <summary>lighthouse-Testing-SignUp-page-Mobile(click to expand)</summary>
+
+![edit-Signup-Page-Mobile](./docs/testing/lighthouse/signup-mobile.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-logout-page-Desktop(click to expand)</summary>
+
+![edit-logout-Page-Desktop](./docs/testing/lighthouse/logout-desktop.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-logout-page-Mobile(click to expand)</summary>
+
+![edit-logout-Page-Mobile](./docs/testing/lighthouse/logout-mobile.png)
+
+</details>
+
+<details>
+  <summary>lighthouse-Testing-login-page-Desktop(click to expand)</summary>
+
+![edit-logout-Page-Desktop](./docs/testing/lighthouse/sign-in-desktop.png)
+
+</details>
+
+
+<details>
+  <summary>lighthouse-Testing-login-page-Mobile(click to expand)</summary>
+
+![edit-logout-Page-Mobile](./docs/testing/lighthouse/sign-in-mobile.png)
+
+</details>
+
+
+
 
 
 
