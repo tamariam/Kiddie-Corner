@@ -14,6 +14,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Colour Pallete](#colour-pallete)
 - [Features](#Features)
     - [Navigation Bar](#navigation-bar)
+    - [Account Management](#account-management)
     - [Homepage](#homepage)
     - [Products-page](#products-page)
     - [Product-Details-Page](#product-details-page)
@@ -198,6 +199,52 @@ In the main menu, there is a dropdown link titled "Shop by Age" where you can se
 Located in the top navigation bar, there is a search bar that allows you to search for products based on their name or description.
 
 ![navigation-mobile](/docs/features/search.png)
+
+## Account Management 
+Login/Register/Logout:
+ Users can access the account dropdown menu where they have the choice to login or register.
+
+ ![dropdown-account](/docs/features/dropdown-account.png)
+
+  If logged in, the option to logout is available. 
+
+  
+ ![dropdown-account](/docs/features/myacccount-dropdown.png)
+
+ 
+ Upon clicking the register option, users are redirected to the sign-up page.
+
+ ![signup-page](/docs/features/signup.png)
+
+  If the provided email or username already exists, users are notified, and they are prompted to choose a different one.
+
+   ![email-username-exists](/docs/features/email-already-registered.png)
+
+After filling out the required fields and clicking sign up, a confirmation message is displayed indicating that a verification link has been sent to the provided email address.Upon clicking the verification link received via email users are rediurected to the page where they should confirm their email address. 
+
+ ![email-sent](/docs/features/confirm-email.png)
+
+After confirming their email address users are notified that their email has been confirmed, and they can proceed to sign in.
+
+ ![email-confirmed](/docs/features/confirmed-email.png)
+
+
+ For already registered users, clicking the account dropdown/login link redirects them to the sign-in page where they provide their account details. After filling out the form and clicking sign in, users are logged in, and an appropriate message is displayed confirming their login.
+ 
+ 
+ ![login-page](/docs/features/login.png)
+
+  ![login-message](/docs/features/login-message.png)
+
+
+To log out, logged in users can click the logout link in the account dropdown menu. They are redirected to the logout page where they confirm their decision. Upon successful logout, a message notifies users that they have been logged out. Each page also includes a cancel button for users to cancel their actions and be redirected to the home page.
+ 
+ 
+ ![logout-page](/docs/features/logout.png)
+
+  ![logout-page](/docs/features/sign-out-message.png)
+
+- More extensive account functionalities were implemented in the previous project (Project 4). To avoid duplicating efforts and to focus on new features, the decision was made to prioritize other aspects of the project while maintaining essential account management capabilities.
 
 
 
