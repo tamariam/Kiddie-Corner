@@ -118,3 +118,23 @@
     
 {% endblock %}
 
+{% block postloadjs %}
+{{ block.super }}
+
+<script>
+
+$(document).ready(function() {
+            $('#available-products').change(function() {
+                if ($(this).is(':checked')) {
+                    $('.out-of-stock').hide();
+                    $('.in-stock').show();
+                } else {
+                    $('.in-stock, .out-of-stock').show();
+                }
+            });
+        });
+
+
+</script>
+
+{%  endblock %}
