@@ -7,7 +7,7 @@
         </div>
         </a>
         <div>
-<li class="dropdown-menu border-0" aria-labelledby="user-options">
+<div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
             <a href="{% url 'add_product' %}" class="dropdown-item" aria-label="link to product management">Product Management</a>
@@ -18,7 +18,7 @@
         <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="link to register page">Register</a>
         <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="link to user login page">Login</a>
         {% endif %}
-</li>
+</div>
 </li>
 <li class="col-2 text-center list-inline-item d-block d-lg-none">
     <a href="{% url 'home' %}" class="nav-link text-info " aria-label="link to home page">
