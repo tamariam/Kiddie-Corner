@@ -33,10 +33,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-tamariam-kiddiecorner-pmgxf0gq0yq.ws-eu114.gitpod.io', 'https://kiddie-corner-77bf42039400.herokuapp.com/']
+
+ALLOWED_HOSTS = ['8000-tamariam-kiddiecorner-pmgxf0gq0yq.ws-eu114.gitpod.io', 'kiddie-corner-77bf42039400.herokuapp.com']
 
 
 # Application definition
