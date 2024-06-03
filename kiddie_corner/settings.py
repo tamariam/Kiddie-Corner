@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 
-ALLOWED_HOSTS = ['8000-tamariam-kiddiecorner-pmgxf0gq0yq.ws-eu114.gitpod.io', 'kiddie-corner-77bf42039400.herokuapp.com']
+ALLOWED_HOSTS = ['8000-tamariam-kiddiecorner-pmgxf0gq0yq.ws-eu114.gitpod.io', 'https://kiddie-corner-d9bc0a883cc2.herokuapp.com/']
 
 
 # Application definition
@@ -63,8 +63,11 @@ INSTALLED_APPS = [
     'testimonials',
     'profiles',
 
+    # other
+    'django_countries',
     'crispy_forms',
     'storages',
+    
 ]
 
 MIDDLEWARE = [
@@ -194,7 +197,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
