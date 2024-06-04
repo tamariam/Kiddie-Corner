@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     'django_countries',
     'crispy_forms',
     'storages',
-    
+  
 ]
 
 MIDDLEWARE = [
@@ -239,7 +239,7 @@ STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 DEFAULT_FROM_EMAIL = 'kiddiecorner@example.com'
 
 
-#Email
+# Email settings Configuration
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

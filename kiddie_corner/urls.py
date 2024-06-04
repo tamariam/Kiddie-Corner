@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import error_404
 
 
 urlpatterns = [
@@ -32,3 +33,6 @@ urlpatterns = [
     path('profiles/', include('profiles.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Set custom handler for 404 errors to redirect to 'custom_404'
+handler404 = 'kiddie_corner.views.error_404'
