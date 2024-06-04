@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="error-container fill-screen container p-3">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <h1 class="card-title">500 - Server Error</h1>
+            <p class="card-text">Something went wrong on our end. Please try again later.</p>
+            <button onclick="window.history.back();" class="btn btn-outline-danger text-white" type="button">Go Back</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

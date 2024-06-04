@@ -218,6 +218,10 @@ background-color: #023047;
 .h4{
   font-size:18px;
 }
+/* styles for error pages */
+.error-container{
+  height:50vh;
+}
 /* styles for signup forms */
 .form-control{
   background-color: #ffffff !important;

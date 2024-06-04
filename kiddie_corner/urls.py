@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import error_404
+from .views import error_404, error_500
 
 
 urlpatterns = [
@@ -34,5 +34,6 @@ urlpatterns = [
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# Set custom handler for 404 errors to redirect to 'custom_404'
+# Set custom handler for 404 and 500 errors 
 handler404 = 'kiddie_corner.views.error_404'
+handler500 = 'kiddie_corner.views.error_500'
