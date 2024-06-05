@@ -19,11 +19,9 @@
     <div class="d-flex flex-column align-items-center pb-2 ">
         <h3 class="yellow bangers p-2"> Site Map </h3>
     <a class="px-2 footer-link  lato text-light" href="{url 'home'}" aria-label="link to home page">Home</a>
-    <a class="px-2 footer-link text-white  lato mt-3" href="{url 'home'}" aria-label="link to about page">About</a>
-    <a class="px-2 footer-link text-light  lato mt-3"  href="{url 'home'}" aria-label="link to all products page">Webstore</a>
-    <a class="px-2 footer-link text-warning  lato mt-3"  href="{url 'home'}" aria-label="link to special offers">Special Offers</a>
-    <a class="px-2 footer-link text-light  lato mt-3"  href="{url 'home'}" aria-label="link to privacy policy">Privacy Policy</a>
-    <a class="px-2 footer-link text-light  lato  mt-3"  href="{url 'home'}" aria-label="link to  terms and conditions">Terms & Conditions</a>
+    <a class="px-2 footer-link text-white  lato mt-3" href="/#about" aria-label="link to about page">About</a>
+    <a class="px-2 footer-link text-light  lato mt-3"  href="{url 'products'}" aria-label="link to all Toys page">Webstore</a>
+    <a class="px-2 footer-link text-warning  lato mt-3"  href="{% url 'products' %}?has_sale=True" aria-label="link to special offers">Special Offers</a>
     </div>
     </div>
   </div>
