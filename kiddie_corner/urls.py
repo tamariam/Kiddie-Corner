@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import error_404, error_500
+from django.views.generic.base import TemplateView
 
 
 urlpatterns = [
@@ -31,6 +31,11 @@ urlpatterns = [
     path('contact_page/', include('contact.urls')),
     path('testimonials/', include('testimonials.urls')),
     path('profiles/', include('profiles.urls')),
+    path(
+        "robots.txt",
+        TemplateView.as_view(
+            template_name="robots.txt", content_type="text/plain")
+        ),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
