@@ -62,7 +62,6 @@ INSTALLED_APPS = [
     'profiles',
 
     # other
-    'django_countries',
     'crispy_forms',
     'storages',
   
