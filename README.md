@@ -12,6 +12,9 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Database Schema](#Database-schema)
     - [Typography](#typography)
     - [Colour Pallete](#colour-pallete)
+    - [SEO](#seo)
+      - [keywords](#keywords)
+      - [Robots.txt and sitemap.xml](#Robots.txt-and-sitemap.xml)
 - [Features](#Features)
     - [Navigation Bar](#navigation-bar)
     - [Account Management](#account-management)
@@ -164,6 +167,21 @@ To develop an innovative and user-friendly online toy store platform that caters
 
 ![add-edit-product](/docs/wireframes/add-edit-product.png)
 
+## SEO
+Each page shows an extra title after the store name to assist help with SEO.
+
+### Keywords
+
+The selected keywords are the result of thorough research and analysis, incorporating insights from both keyword research tools and analysis of similar websites in the children's toy industry.  These keywords will effectively target the audience and drive visibility and engagement for my website.
+- Started with broad seed keywords such as "children's toys" and "kids toys" to generate initial keyword ideas.
+- Used keyword research tools to expand the list by identifying related terms, synonyms, and long-tail variations.
+- Narrowed down the list based on relevance, search volume, competition, and alignment with our brand and product offerings. 
+  
+### Robots.txt and sitemap.xml
+Sitemap and robots.txt files have been added to the site's root to help with SEO.
+ To ensure that the robots.txt file is recognized as a text file rather than an HTML file within my project, i jhave taken the following steps:
+ -  added the URL path at the project level to ensure that the robots.txt file is properly recognized.
+ -  Due to the initialization of the template in the path, i had to move the robots.txt file into  templates folder to ensure it functions correctly.
 
 
 
