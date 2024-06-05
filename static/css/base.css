@@ -220,11 +220,11 @@ background-color: #023047;
 }
 /* styles for error pages */
 .error-container{
-  height:50vh;
+  height:50vh !important;
 }
 
 .server-error-container{
-  height:70vh;
+  height:50vh !important;
 }
 /* styles for signup forms */
 .form-control{
