@@ -20,6 +20,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Navigation Bar](#navigation-bar)
     - [Account Management](#account-management)
     - [Homepage](#homepage)
+    -[Footer](#footer)
     - [Products-page](#products-page)
     - [Product-Details-Page](#product-details-page)
     - [Special-Offers](#special-offers)
@@ -295,6 +296,27 @@ The home page features a main background image to catch users eye, with a button
 ![Homepage - mobile](/docs/features/mobile-home-4.png)
 
 </details>
+
+## Footer
+
+The footer of the Kiddie Corner website provides essential information and offers additional ways to connect with the store staff. Users can also subscribe to the newsletter to receive updates and news via email.
+ ![Footer-Desktop](/docs/features/footer.png)
+
+ 
+ <details>
+  <summary>Footer-Mobile (click to expand)</summary>
+
+![footer-Tab](/docs/features/footer-tablet.png)
+
+</details>
+
+ <details>
+  <summary>Footer-Mobile (click to expand)</summary>
+
+![footer-mobile](/docs/features/footer-mobile.png)
+
+</details>
+
 
 ## Products-Page
 
