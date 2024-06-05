@@ -222,6 +222,10 @@ background-color: #023047;
 .error-container{
   height:50vh;
 }
+
+.server-error-container{
+  height:70vh;
+}
 /* styles for signup forms */
 .form-control{
   background-color: #ffffff !important;

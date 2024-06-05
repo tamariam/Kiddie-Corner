@@ -1,9 +1,10 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<div class="error-container fill-screen container p-3">
-    <div class="bellow-nav">
-            <h2>500 - Server Error</h2>
+<div class="server-error-container fill-screen container p-3">
+    <div class="bellow-nav bg-white">
+            <h2 class="bg-primary">500 - Server Error</h2>
+            <hr>
             <p class="font-weight-bold text-dark">Something went wrong on our end. Please try again later.</p>
             <button onclick="window.history.back();" class="btn btn-danger text-white" type="button">Go Back</button>
     </div>
