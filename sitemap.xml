@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/bag/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/?category=up_to_one_year</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/?category=1_2_years</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/?category=2_3_years</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/?category=3_plus_years</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/?has_sale=True</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/testimonials/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/contact_page/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/5/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/6/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/7/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/9/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/10/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/11/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/12/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/13/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/14/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/15/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/16/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/products/8/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/5/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/6/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/7/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/9/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/10/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/11/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/12/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/13/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/14/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/15/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/16/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://kiddie-corner-d9bc0a883cc2.herokuapp.com/favourites/add_to_favourite/8/</loc>
+  <lastmod>2024-06-05T12:35:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
