@@ -236,6 +236,15 @@ width:95px;
 .form-container{
   height:50vh !important;
 }
+
+/* Mailchimp */
+#mc_embed_signup {
+  background: #fff;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+
+}
+
 @media (min-width: 569px) {
   .main-header{
   font-size:28px;
