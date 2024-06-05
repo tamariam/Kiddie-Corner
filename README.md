@@ -15,6 +15,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [SEO](#seo)
       - [keywords](#keywords)
       - [Robots.txt and sitemap.xml](#Robots.txt-and-sitemap.xml)
+    - [E-commeerce  business model](#e-commerce-business-model)
 - [Features](#Features)
     - [Navigation Bar](#navigation-bar)
     - [Account Management](#account-management)
@@ -183,8 +184,11 @@ Sitemap and robots.txt files have been added to the site's root to help with SEO
  -  added the URL path at the project level to ensure that the robots.txt file is properly recognized.
  -  Due to the initialization of the template in the path, i had to move the robots.txt file into  templates folder to ensure it functions correctly.
 
+## E-commerce Business Model
 
+ Kiddie Corner is a B2C e-commerce application. Selling directly to consumers means that the site is designed to sell quickly, on impulse, and in smaller quantities.The website is not yet intend to sell to other businesses. For this reason, a large amount of the functionality is focused on the user experience and the ability to purchase products quickly and effectively
 
+## Marketing Strategy
 
 
 
