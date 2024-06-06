@@ -4,8 +4,8 @@ from .models import UserProfile
 
 class UserProfileForm(forms.ModelForm):
     """
-    This Form  takes payment details
-    and complete an order
+    Form for handling the user's profile data including personal information
+    and address details.
     """
     class Meta:
         model = UserProfile
@@ -41,5 +41,9 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black  rounded-0  form-input'
+            self.fields[field].widget.attrs['class'] = (
+                                                        'border-black'
+                                                        'rounded-0 '
+                                                        'form-input'
+                                                    )
             self.fields[field].label = False

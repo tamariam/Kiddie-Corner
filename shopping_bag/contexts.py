@@ -5,6 +5,7 @@ from products.models import Product
 
 
 def shopping_bag_contents(request):
+    """Calculate the contents and totals for the shopping bag."""
     bag_items = []
     total = 0
     count = 0

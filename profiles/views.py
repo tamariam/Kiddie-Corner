@@ -5,33 +5,12 @@ from .models import UserProfile
 from django.contrib import messages
 from checkout.models import Order
 
-
 # Create your views here.
 
-@login_required
-# def profile(request):
-#     if not request.user.is_superuser:
-#         profile = get_object_or_404(UserProfile, user=request.user)
-#         if request.method == 'POST':
-#             form = UserProfileForm(request.POST, instance=profile)
-#             if form.is_valid():
-#                 form.save()
-#                 messages.success(request, 'Your Profile Updated')
-#             else:
-#                 messages.error(request, 'invalid form sabmision')
-#         else:
-#             form = UserProfileForm(instance=profile)
-#         orders = profile.orders.all()
-#     else:
-#         messages.error(request, 'ups')
-#         context = {
-#             'form': form,
-#             'orders': orders,
-#             'on_profile_page': True,
-#         }
-#     return render(request, 'profiles/profile.html', context)
 
+@login_required
 def profile(request):
+    '''This vie renders profile page with form and order details'''
     if not request.user.is_superuser:
         profile = get_object_or_404(UserProfile, user=request.user)
         if request.method == 'POST':
@@ -51,11 +30,13 @@ def profile(request):
         }
         return render(request, 'profiles/profile.html', context)
     else:
-        messages.error(request, 'as a staff member  you do not have permission to view this page')
-        return redirect('home') 
+        messages.error(request, 'As a staff member  you do not have '
+                                'permission to view this page')
+        return redirect('home')
 
 
 def completed_order(request, order_number):
+    '''This view renders completed order details '''
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

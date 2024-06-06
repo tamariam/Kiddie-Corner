@@ -1,16 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock%}
 
+<!-- Profile Page -->
 
-
-
-<!-- Checkout Page -->
-
-{% block extra_title %} - account {% endblock %}
-
+{% block extra_title %} - My Account {% endblock %}
 
 {% block content %}
 <div class="container-fluid lato">
@@ -18,7 +15,7 @@
         <h2 class="main-header text-dark font-weight-bold text-white mb-4 text-uppercase ">My Account</h2>
     </div>
    <div class="row">
-        <!-- Product Cards Column -->
+        <!-- Order Details-->
         <div class="col-lg-6 mx-auto ">
             <h3 class="h3 text-center bg-danger  rounded text-light mb-3 p-1 ">My order History</h3>
             <div class=" orders table-responsive bg-white">
@@ -31,19 +28,16 @@
                     <th>Order Total</th>
                     </tr>
                 </thead>
-<tbody>
+                <tbody>
                     {% for order in orders %}
-                    
-                        <tr>
+                         <tr>
                             <td>
                                 <a href="{% url 'completed_order' order.order_number %}"
                                 title="{{ order.order_number }}" class="text-danger font-weoght-bold">
                                     {{ order.order_number|truncatechars:6 }}
                                 </a>
                             </td>
-                            
                             <td>{{ order.date }}</td>
-                            
                             <td>
                                 <ul class="list-unstyled">
 
@@ -60,20 +54,17 @@
                                         </li>
 
                                     {% endfor %}
+
                                 </ul>
                             </td>
-
                             <td>€{{ order.grand_total }}</td>
-
                         </tr>
-
                     {% endfor %}
-                
                 </tbody>
-
             </table>
             </div>
-        <!-- <div class="col-lg-6 "> -->
+
+            <!-- Update Details -->
             <h4 class="h4 bg-danger rounded text-white p-2 text-center my-4">Delivery Details</h4>
            
             <form action="{% url 'profile' %}" method="post">
@@ -84,21 +75,15 @@
                 <div class="text-center">
                     <button type="submit" class="update-btn btn btn-lg btn-danger border border-dark px-5 ml-3 mt-3">Update details</button>
                 </div>
-
                 <p class="small text-dark my-3 text-center">
-
                     <span class="icon">
                         <i class="fas fa-exclamation-circle"></i>
                     </span>
                     <span>Warning by clicking "Update Details" your informartion will be over written</span>
-
                 </p>
-
-                
             </form>
-</div>
-</div>
-
+        </div>
+    </div>
 </div>
 
 {% endblock content %}

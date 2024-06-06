@@ -1,18 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 <!-- Shopping Bag Page -->
 
-{% block extra_title %} - Shopping_Bag {% endblock %}
+{% block extra_title %} - Shopping Bag {% endblock %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
 
 {% block content %}
 <div class="container ">
@@ -29,16 +21,14 @@
                                 <img src="{{ item.product.image.url }}" class="card-img" alt="Product Image">
                             </div>
                             {% else %}
-
                             <div class="col-md-4">
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}placeholder.avif" alt="{{ product.name }} ">
                             </div>
-                        {% endif %}
+                            {% endif %}
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h3 class="card-title p-1 text-center rounded">{{ item.product.name }}</h3>
                                     <p class="card-text font-weight-bold">Price: €{{ item.product.price }}</p>
-                                    
                                     <!-- Quantity Selection Form -->
                                     <form class="form update-form" method="POST" action="{% url 'update_bag' item.item_id %}">
                                         {% csrf_token %}
@@ -88,8 +78,8 @@
                     </div>
                     {% endif %}
              </div>
-
-        <!-- Bag Summary Column -->
+        
+             <!-- Bag Summary Column -->
         <div class="col-lg-4 ">
             <div class="col-sm-12 col-md-12 col-lg-12 bg-white rounded text-center bag-summary-card mb-3  pt-2">
               
