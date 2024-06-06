@@ -1,5 +1,7 @@
+<!-- Footer -->
 <div class="container-fluid">
   <div class="row  justify-content-around">
+    <!-- contact details -->
 <div class="lato col-12  col-lg-4 col-md-6 text-center text-white"> 
   <h2 class="bangers yellow logo my-0">Kiddie<i class=" m-3 text-danger fa-brands fa-earlybirds"></i>Corner</h2>
   <p>4 Vakhushti street </p>
@@ -12,18 +14,16 @@
     </a>
     </div>
 </div>
-<!-- <div class="mt-2 col-lg-4 col-md-6  text-center text-white"> 
-<p class="purpose mt-2 text-center text-white">This site was created for assessment purposes only!</p>
-</div> -->
 
+  <!-- Mailchimp  form -->
 <div class="col-lg-4 col-md-6">
-  <h2 class="text-white text-center">Subscribe!</h2>
+<h2 class="text-white text-center">Subscribe!</h2>
   <p class="text-white text-center">Get exclusive offers and discount codes by subscribing to our monthly newsletter</p>
   <div id="mc_embed_shell">
 <div id="mc_embed_signup">
-  <form action="https://herokuapp.us22.list-manage.com/subscribe/post?u=d562ba3c14cf41503606d7737&amp;id=cf5ba0c4f7&amp;f_id=004fcfe1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+  <form action="https://herokuapp.us22.list-manage.com/subscribe/post?u=d562ba3c14cf41503606d7737&amp;id=cf5ba0c4f7&amp;f_id=004fcfe1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"></form>
           <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-          <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
+          <div class="mc-field-group mx-auto"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
       <div id="mce-responses" class="clear foot">
           <div class="response" id="mce-error-response" style="display: none;"></div>
           <div class="response" id="mce-success-response" style="display: none;"></div>
@@ -34,23 +34,26 @@
   </div>
       <div class="optionalParent">
           <div class="clear foot">
-              <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+              <input  type="submit" name="subscribe" id="mc-embedded-subscribe" class="button mx-auto" value="Subscribe">
               <p style="margin: 0px auto;"><a href="http://eepurl.com/iRn3Tw" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
           </div>
       </div>
   </div>
-</form>
 </div>
-<p class="text-white text-center">This site was created for assessment purposes only!</p>
+<p class="text-white text-center my-3">This site was created for assessment purposes only!</p>
 </div>
+
+<!-- Sitemap -->
 <div class="col-lg-4 col-md-12 text-white"> 
   <div class="d-flex flex-column align-items-center pb-2 ">
       <h3 class="yellow bangers p-2"> Site Map </h3>
-  <a class="px-2 footer-link  lato text-light" href="{url 'home'}" aria-label="link to home page">Home</a>
+  <a class="px-2 footer-link  lato text-light" href="{% url 'home' %}" aria-label="link to home page">Home</a>
   <a class="px-2 footer-link text-white  lato mt-3" href="/#about" aria-label="link to about page">About</a>
-  <a class="px-2 footer-link text-light  lato mt-3"  href="{url 'products'}" aria-label="link to all Toys page">Webstore</a>
+  <a class="px-2 footer-link text-light  lato mt-3"  href="{% url 'products' %}" aria-label="link to all Toys page">Webstore</a>
   <a class="px-2 footer-link text-warning  lato mt-3"  href="{% url 'products' %}?has_sale=True" aria-label="link to special offers">Special Offers</a>
-  </div>
+  <a class="px-2 footer-link  lato text-light lato mt-3" href="{% url 'testimonials' %}" aria-label="link to Testimonials page">Testimonials</a>
+  <a class="px-2 footer-link  lato text-light lato mt-3" href="{% url 'contact_page' %}" aria-label="link to home page">Contuct Us</a>
+</div>
   </div>
 </div>
 <div class="footer-bottom p-2 row d-flex flex-column justify-content-center align-items-center">
@@ -74,12 +77,12 @@
 </div>
 </div>
 
-
 <!-- Mailchimp scripts -->
 
 {% block postloadjs %}
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-<script type="text/javascript">
+
+<script  src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script >
   (function($) {
       window.fnames = new Array();
       window.ftypes = new Array();

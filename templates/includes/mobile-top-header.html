@@ -1,12 +1,11 @@
-
+<!-- Top navigation visable only on smaller screens -->
 <ul class="mobile-nav col-12 ">
 <li class=" col-2 list-inline-item dropdown d-block d-lg-none">
-    <a class="icon-mobile text-info nav-link" href="#" aria-label="link to my account " id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="icon-mobile text-info nav-link" href="#" aria-label="link to my account " id="user-option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
         </div>
         </a>
-        <div>
 <div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
@@ -22,7 +21,7 @@
 </li>
 <li class="col-2 text-center list-inline-item d-block d-lg-none">
     <a href="{% url 'home' %}" class="nav-link text-info " aria-label="link to home page">
-        <h2><i class="logo-mobile text-danger fa-brands fa-earlybirds"></i></h2>
+        <div><i class="logo-mobile text-danger fa-brands fa-earlybirds"></i></div>
     </a>
 </li>
 <li class="col-2 list-inline-item dropdown d-block d-lg-none">

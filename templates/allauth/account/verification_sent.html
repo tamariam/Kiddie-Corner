@@ -13,9 +13,6 @@
 </div>
 {% endblock %}
 
-
-
-    
-    {% if user.is_authenticated %}
-    {% include "account/snippets/already_logged_in.html" %}
-    {% endif %}
+{% if user.is_authenticated %}
+{% include "account/snippets/already_logged_in.html" %}
+{% endif %}

@@ -1,7 +1,10 @@
+/* General rule*/
 html {
   scroll-behavior: smooth;
 }
-/* fonts */
+
+/* /* Font Family Classes :
+Add these classes to elements to apply specific font families  */ 
 .schoolbell{
   font-family: "Schoolbell", cursive;
   font-weight: 400;
@@ -57,13 +60,7 @@ body{
   display:contents;
 }
 
-/*  Media query to adjust the minimum width of the icons list container on larger screens */
-@media (min-width: 992px) {
-  .icons-list{
-    min-width:336px !important;
-  }
-}
- .form-control{
+.form-control{
     box-shadow: none;
     outline: none;
     background-color:#f0f8ff ;
@@ -73,16 +70,20 @@ body{
     box-shadow: none;
     background-color: #ffff;
   }
+
   .list-inline-item{
     font-size:18px;
   }
+
   .main-nav-navigation{
     font-size:22px;
     letter-spacing:1.5px;
   }
+
   .logo{
     font-size:40px;
    }
+
   .logo-mobile{
     font-size:40px;
   }
@@ -103,10 +104,12 @@ body{
   .banner-icon{
     font-size:37px;
   }
+
 /* give style to home page sections */
   .features{
     width:220px;
   }
+
   .about-text{
     background-color: #008000;
   }
@@ -123,7 +126,6 @@ body{
 }
 
 /* give styles to footer */
-
 .social-icon{
   font-size:37px;
   color:#fca311;
@@ -154,6 +156,7 @@ header,footer{
 .product-card{
 background-color: #023047;
 }
+
 .sale-mark {
   position: absolute;
   top:-15px;
@@ -166,6 +169,7 @@ background-color: #023047;
 .btn-div{
   height:100px;
 }
+
 /* styles for shopping-bag page */
 .bag-summary-card{
   height:400px;
@@ -174,7 +178,6 @@ background-color: #023047;
 .card-button{
   width:200px;
 }
-
 
 .message-rule {
   width: 80%;
@@ -197,7 +200,6 @@ background-color: #023047;
   z-index: 9991;
 }
 
-
 .toast-scroll {
   max-height:250px;
   overflow-y:scroll;
@@ -218,6 +220,7 @@ background-color: #023047;
 .h4{
   font-size:18px;
 }
+
 /* styles for error pages */
 .error-container{
   height:50vh !important;
@@ -226,13 +229,16 @@ background-color: #023047;
 .server-error-container{
   height:50vh !important;
 }
+
 /* styles for signup forms */
 .form-control{
   background-color: #ffffff !important;
 }
+
 .cancel-btn{
 width:95px;
 }
+
 .form-container{
   height:50vh !important;
 }
@@ -242,17 +248,29 @@ width:95px;
   background: #fff;
   clear: left;
   font: 14px Helvetica, Arial, sans-serif;
-
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
 }
 
+/* media queries */
 @media (min-width: 569px) {
   .main-header{
   font-size:28px;
   }
+
   .h3{
     font-size:24px;
   }
+
   .h4{
     font-size:22px;
+  }
+
+}
+
+/*  Media query to adjust the minimum width of the icons list container on larger screens */
+@media (min-width: 992px) {
+  .icons-list{
+    min-width:336px !important;
   }
 }

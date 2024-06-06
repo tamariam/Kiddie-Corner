@@ -1,4 +1,7 @@
 {% load static %}
+
+<!-- Top navigation visable only on larger screens -->
+ 
 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-lg-center text-center text-lg-left">
     <a href="{% url 'home' %}" class="nav-link main-logo-link" aria-label="link to Home page">
         <h2 class="bangers yellow logo my-0">Kiddie<i class=" m-3 text-danger fa-brands fa-earlybirds"></i>Corner</h2>
@@ -18,6 +21,7 @@
 </div>
 <div class="col-12 col-lg-4 my-auto py-3 py-lg-2">
     <ul class="icons-list list-inline list-unstyled text-lg-center my-0 mx-auto">
+        <!-- account section -->
         <li class="list-inline-item dropdown">
             <a class="yellow nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
@@ -28,7 +32,7 @@
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
-                        <a href="{% url 'add_product' %}" class="dropdown-item" aria-label="link to user favourites" aria-label="product management">Product Management</a>
+                    <a href="{% url 'add_product' %}" class="dropdown-item" aria-label="link to user favourites" aria-label="product management">Product Management</a>
                     {% endif %}
                     <a href="{% url 'profile' %}" class="dropdown-item">My Account</a>
                     <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="link to logout page">Logout</a>
@@ -38,18 +42,18 @@
                     {% endif %}
             </div>
         </li>
+        <!-- Favourites -->
         <li class="list-inline-item dropdown">
             <a class="yellow text-bold nav-link" href="#" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <div class="text-center">
-                    {% if users_wishlist %}
+                    {% if favourites %}
                     <div><i class="fa-solid fa-heart icon fa-beat-fade"
                             style="--fa-beat-fade-opacity: 0.75; --fa-beat-fade-scale: 1.075;"></i>
                     </div>
                     {% else %}
                     <div><i class="fa-solid fa-heart icon "></i></div>
                     {% endif %}
-
                     <p class="my-0 ">Favourites</p>
                 </div>
             </a>
@@ -62,6 +66,7 @@
                 {% endif %}
             </div>
         </li>
+        <!-- shopping bag -->
         <li class="list-inline-item">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link yellow " href="{% url 'shopping_bag' %}">
                 <div class="text-center">
@@ -78,6 +83,6 @@
         </li>
     </ul>
 </div>
-</div>
+
 
     
