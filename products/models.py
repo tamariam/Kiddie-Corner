@@ -6,12 +6,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Category(models.Model):
-
-    """
-    models for product categories
-
-    """
-
+    """ models for product categories """
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -38,7 +33,9 @@ class Product(models.Model):
     description = models.TextField(max_length=1024, default="")
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(upload_to='products/', null=True, blank=True)
-    rating = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+    rating = models.DecimalField(
+        max_digits=5, decimal_places=2,
+        blank=True, null=True)
     has_sale = models.BooleanField(default=False)
 
     def __str__(self):

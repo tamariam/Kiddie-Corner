@@ -3,8 +3,8 @@ from .models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
-    """ form  for admins for  crud functionality 
-    """
+    """Form for managing product data by administrators."""
+
     class Meta:
         model = Product
         fields = (
@@ -18,20 +18,14 @@ class ProductForm(forms.ModelForm):
         """"
         Initialise the form attributes
         """
-
         # taken from boutique ado walk through  to get friendly names
         categories = Category.objects.all()
-        category_friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
+        category_friendly_names = [
+            (c.id, c.get_friendly_name())
+            for c in categories
+        ]
 
         self.fields['category'].choices = category_friendly_names
-
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black text-dark bg-white'
             self.fields['name'].widget.attrs['readonly'] = False
-
-
-
-
-     
-
-    

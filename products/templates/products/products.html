@@ -3,32 +3,23 @@
 
 {% block extra_title %} - Toys {% endblock %}
 
-
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
+
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">All Toys</h2>
                 <hr class="w-50 mb-1 bg-danger ">
             </div>
-           
-
-        </div>
+           </div>
         <div class="row">
             <div class="col-12 text-center">
             <input type="checkbox" id="available-products">
             <label class="mb-3" for="available-products">Available Toys Only</label>
             </div>
         </div>
-        <div class="row ">
+        <div class="row "> 
+            <!--Render product cards with dynamic content-->
             <div class="col-10 offset-1 mb-3 lato">
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
@@ -38,7 +29,6 @@
                         {% else %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 out-of-stock">
                             {% endif %}
-                        <!-- <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3"> -->
                             <div class="card product-card h-100 border-bottom ">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
@@ -49,7 +39,6 @@
                                     <img class="card-img img-fluid" src="{{ MEDIA_URL }}placeholder.avif" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
-                                
                                 <div class="card-body  pt-0 border-0 text-left">
                                     {% if product.has_sale %}
                                     <span class="sale-mark text-dark bg-warning">Sale</span>
@@ -72,43 +61,37 @@
                                             <p class="text-white font-weight-bold"><i class="mr-1 fa-solid fa-xmark"></i>Out of Stock</p>
                                             {% endif %}
                                             </div>
-                                           
-                                        </div>
+                                           </div>
                                     </div>
                                 </div>
                                 <!-- Allows staff to edit and delete items -->
                     {% if user.is_superuser %}
 
                     <div class="text-center">
-
                         <a class="m-3 btn  text-warning  " href="{% url 'edit_product' product.id %}" aria-label="edit product">Edit</a>  |  
                         <a class="btn  text-danger m-3 " href="{% url 'delete_product' product.id %}" aria-label="delete product">Delete</a>
-                    
                     </div>
 
                   {% endif %}
-                                <div class="card-footer p-3 d-flex justify-content-center">
+                            <div class="card-footer p-3 d-flex justify-content-center">
                                     <a href="{% url 'product_detail' product.id %}" class="btn btn-danger text-center btn" aria-label="link to product detail">Product Details</a>
                                 </div>
                             </div>
                         </div>
+                        <!--  Add empty columns for layout spacing -->
                         {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                            </div>
+                            <div class="col-12 d-sm-none mb-5"></div>
                         {% endif %}                        
                         {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                            </div>
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5"></div>
+                            
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5"></div>
                                
-                            </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                               
-                            </div>
+                            <div class="col-12 d-none d-xl-block mb-5"></div>
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -133,7 +116,6 @@ $(document).ready(() => {
                 }
             });
         });
-
 
 </script>
 

@@ -8,9 +8,10 @@ from .forms import ProductForm
 
 
 def all_products(request):
+    """This View renders all products  """
     products = Product.objects.all()
     query = None
-    category_filter = None  # Initialize category filter variable
+    category_filter = None
     has_sale_filter = request.GET.get('has_sale')
 
     if has_sale_filter == 'True':
@@ -24,29 +25,32 @@ def all_products(request):
                 return redirect(reverse('products'))
 
             # Define filter criteria for search query
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = (
+                    Q(name__icontains=query) |
+                    Q(description__icontains=query)
+            )
             products = products.filter(queries)
 
         if 'category' in request.GET:
             category_filter = request.GET['category']
-            if category_filter:  # Ensure category filter is not empty
+            if category_filter:
                 # Filter products by category
                 products = products.filter(category__name=category_filter)
 
-    # Retrieve all categories for rendering in template
     categories = Category.objects.all()
 
     context = {
         'products': products,
-        'categories': categories,  # Pass all categories to template
+        'categories': categories,
         'query': query,
-        'category_filter': category_filter,  # Pass category filter value to template
+        'category_filter': category_filter,
     }
 
     return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
+    """This view renders product detail page"""
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
@@ -65,13 +69,16 @@ def add_product(request):
             form = ProductForm(request.POST, request.FILES)
             if form.is_valid():
                 product = form.save()
-                messages.success(request, 'product added successfully')
+                messages.success(request, 'Product added successfully')
                 return redirect(reverse('product_detail',  args=[product.id]))
             else:
-                messages.error(request, 'faild product submission, please make sure the form is valid and try again')
+                messages.error(
+                    request,
+                    'Faild product submission, please make '
+                    'sure the form is valid and try again'
+                    )
         else:
             form = ProductForm()
-        
         return render(request, 'products/add_product.html', {'form': form})
     else:
         messages.error(request, 'You are not allowed to view this page')
@@ -82,32 +89,45 @@ def add_product(request):
 def edit_product(request, product_id):
     """ view to add product
     """
-    if  request.user.is_staff:
+    if request.user.is_staff:
         product = get_object_or_404(Product, pk=product_id)
         if request.method == 'POST':
             form = ProductForm(request.POST, request.FILES, instance=product)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'product edited successfully')
+                messages.success(request, 'Product edited successfully')
                 return redirect(reverse('product_detail',  args=[product.id]))
             else:
-                messages.error(request, 'faild product update, please make sure the form is valid and try again')
+                messages.error(
+                    request,
+                    'Faild product update, please '
+                    'make sure the form is valid and try again'
+                    )
         else:
             form = ProductForm(instance=product)
-        
-        return render(request, 'products/edit_product.html', {'form': form, 'product': product})
+        return render(
+                    request,
+                    'products/edit_product.html',
+                    {'form': form, 'product': product})
     else:
-        messages.error(request, 'You are not allowed to change  product details')
+        messages.error(
+                       request,
+                       'You are not allowed '
+                       'to change  product details'
+                    )
         return redirect('home')
 
 
 @login_required
 def delete_product(request, product_id):
-    """ delete product"""
+    """ delete product view"""
     if request.user.is_staff:
         product = get_object_or_404(Product, pk=product_id)
         product.delete()
-        messages.success(request,  f" Product  { product.name } successsfully deleted")
+        messages.success(
+                        request,
+                        f" Product  {product.name} successsfully deleted"
+                    )
         return redirect(reverse('products'))
     else:
         messages.error(request, 'You are not allowed to delete product')
