@@ -191,6 +191,9 @@ Sitemap and robots.txt files have been added to the site's root to help with SEO
 
 ## Marketing Strategy
 
+ As a small business Kiddie-Corner has limited budget for marketing.So i use cheaper ways To effectively reach page audience and create a lasting connection with  customers. I decide to  implement two key marketing techniques: a Facebook business page and a newsletter signup form.
+  -  Using Facebook to pump out content and drive traffic is the first and most straightforward. The use of paid ads allows the business to target specific demographics and increase brand awareness. The use of social media is also a great way to get feedback from customers and to help with customer service. There is an image of the Facebook page in the features section below and a link to the page here  [Facebook](https://www.facebook.com/profile.php?id=61560273074359). 
+  - The second method would then be sending regular news letters to the mailing list obtained via the mailchimp form. The newsletter would contain links to recent articles on  children toys, the latest products and the highly sought after special offers and promotions. This would help with brand awareness building a community around the brand.
 
 
 
@@ -300,9 +303,17 @@ The home page features a main background image to catch users eye, with a button
 ## Footer
 
 The footer of the Kiddie Corner website provides essential information and offers additional ways to connect with the store staff. Users can also subscribe to the newsletter to receive updates and news via email.
- ![Footer-Desktop](/docs/features/footer.png)
-
  
+ Footer is present on all pages. It contains three main sections, and a copyright section at the bottom.
+
+The three sections typical to both desktop and mobile are:
+
+- address and Social Media Links
+- Newsletter Sign Up
+- Sitemap
+
+![Footer-Desktop](/docs/features/footer.png)
+
  <details>
   <summary>Footer-Mobile (click to expand)</summary>
 
@@ -316,6 +327,12 @@ The footer of the Kiddie Corner website provides essential information and offer
 ![footer-mobile](/docs/features/footer-mobile.png)
 
 </details>
+
+I have included a screenshot of the Facebook page in case Facebook decides to remove link because it is not a real business at this stage. [facebook](https://www.facebook.com/profile.php?id=61560273074359)
+
+
+![facebook](/docs/features/facebook-page.png)
+
 
 
 ## Products-Page
@@ -738,6 +755,9 @@ A staff member can delete a product by simply clicking on the Delete link on the
 
 
 
+
+
+
 ## Footer
 
 # Testing
@@ -1085,13 +1105,13 @@ For either method, you will need to install any applicable packages found within
 
 You can clone the repository by following these steps:
 
-1. Go to the [GitHub repository](https://github.com/tamariam/restaurant-Tamariam)
+1. Go to the [GitHub repository](https://github.com/tamariam/Kiddie-Corner)
 2. Locate the Code button above the list of files and click it
 3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
 4. Open Git Bash or Terminal
 5. Change the current working directory to the one where you want the cloned directory
 6. In your IDE Terminal, type the following command to clone my repository:
-  `git clone https://github.com/tamariam/restaurant-Tamariam`  then press Enterr.
+  `git clone https://github.com/tamariam/Kiddie-Corner`  then press Enterr.
 
 ### Forking the Repository
 
