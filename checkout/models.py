@@ -13,6 +13,10 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """"
+    Model to keep a record of all customer orders
+    """
+
     ORDER_STATUS = (
         ('Received', 'Order Received'),
         ('Processing', 'Order Processing'),
@@ -28,7 +32,9 @@ class Order(models.Model):
         )
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name="orders")
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True,
+                                     related_name="orders")
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -42,14 +48,19 @@ class Order(models.Model):
     shipping_cost = models.DecimalField(max_digits=10,
                                         decimal_places=2,
                                         null=False, default=0)
-    shipping_method = models.CharField(max_length=20, choices=SHIPPING_METHOD, null=False, blank=False, default='standard') 
+    shipping_method = models.CharField(max_length=20, choices=SHIPPING_METHOD,
+                                       null=False, blank=False,
+                                       default='standard')
     order_total = models.DecimalField(max_digits=10,
                                       decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10,
                                       decimal_places=2, null=False, default=0)
     original_bag = models.TextField(null=False, blank=False, default='')
-    order_status = models.CharField(max_length=50, null=False, choices=ORDER_STATUS, default='received')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    order_status = models.CharField(max_length=50, null=False,
+                                    choices=ORDER_STATUS,
+                                    default='received')
+    stripe_pid = models.CharField(max_length=254, null=False,
+                                  blank=False, default='')
 
     class Meta:
         ordering = ('-date',)
@@ -84,7 +95,7 @@ class Order(models.Model):
 
     def save(self, *args, **kwargs):
         """"
-         add order number if there is not.
+        add order number if there is not.
         """
         if not self.order_number:
             self.order_number = self._generate_order_number()

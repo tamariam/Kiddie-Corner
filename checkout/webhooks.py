@@ -11,7 +11,7 @@ import stripe
 @require_POST
 def webhook(request):
     """Listen for webhooks from Stripe"""
-    # Setup stripe api key 
+    # Setup stripe api key
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -52,5 +52,4 @@ def webhook(request):
 
     # Call the event handler with the event
     response = event_handler(event)
-
     return response

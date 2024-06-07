@@ -29,11 +29,11 @@ def add_to_favourite(request, product_id):
         if Favourite.objects.filter(user=request.user,
                                     product=product).exists():
             messages.info(request, f'{product.name} '
-                          'is already in your favourites')
+                          f'is already in your favourites')
         else:
             Favourite.objects.create(user=request.user, product=product)
             messages.success(request, f'{product.name} has been added  '
-                             'to your favourites')
+                             f'to your favourites')
         return redirect('favourites')
     else:
         messages.info(request, 'As a staff member you are  '
@@ -46,11 +46,11 @@ def remove_favourite(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     favourites = Favourite.objects.filter(user=request.user, product=product)
     messages.success(request, f'{product.name} has been '
-                     'removed from your favourites')
+                     f'removed from your favourites')
 
     if favourites.exists():
         favourites.delete()
     else:
         messages.warning(request, f' Can not find {product.name}  '
-                         'in your favourites')
+                         f'in your favourites')
     return redirect('favourites')

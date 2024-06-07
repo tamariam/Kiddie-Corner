@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import HttpResponse
 from django.contrib import messages
 from .forms import CheckoutForm
 from shopping_bag.contexts import shopping_bag_contents
@@ -11,11 +12,13 @@ from profiles.forms import UserProfileForm
 from django.views.decorators.http import require_POST
 import json
 
-# Create your views here.
-
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    This view  takes in the checkout data and
+    stores it in the user's session
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -30,8 +33,12 @@ def cache_checkout_data(request):
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
-        
+
 def checkout(request):
+    """
+    This view that renders the checkout page and gets the
+    payment form data from the profile
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -49,15 +56,14 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
         }
-        
-        checkout_form = CheckoutForm(form_data)  
+
+        checkout_form = CheckoutForm(form_data)
         if checkout_form.is_valid():
             checkout_form.save()
             order = checkout_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order_stripe_pid = pid
             order.original_bag = json.dumps(bag)
-            
             for item_id, quantity in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -72,20 +78,22 @@ def checkout(request):
                         """
                         One of the products in your bag wasn't
                         found in our database.
-                    
                         """)
                     )
                     order.delete()
                     return redirect(reverse('shopping_bag'))
-            #save info to users profile
+            # save info to users profile
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
-            messages.error('There is error in your Form,please make sure everything is correct ')
+            messages.error('There is error in your Form,please '
+                           'make sure everything is correct ')
     else:
-        bag = request.session.get('bag', {})   
+        bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "Your shopping bag is  empty, please choose items to purchase")
+            messages.error(request, "Your shopping bag is  empty, "
+                           "please choose items to purchase")
             return redirect(reverse('products'))
         current_bag = shopping_bag_contents(request)
         total = current_bag['grand_total']
@@ -96,7 +104,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the Profile form #
+        # Attempt to prefill the Profile form
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -127,7 +135,11 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    '''successfull checkouts'''
+    """
+    This view that renders the checkout success page
+    and saves shipping details to the profile if the
+    user checks the save info box
+    """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     if request.user.is_authenticated:
@@ -151,10 +163,10 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Your order processed successfully, a confirmation email will be sent to{order.email}')
+    messages.success(request, f'Your order processed successfully, '
+                     f'a confirmation email will be sent to {order.email}')
     if 'bag' in request.session:
         del request.session['bag']
 
     template = 'checkout/checkout_success.html'
     return render(request, template, {'order': order})
-
