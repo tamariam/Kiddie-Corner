@@ -1,13 +1,11 @@
 from django.contrib import admin
 from .models import UserMessage
 
-# Register your models here.
-
 
 @admin.register(UserMessage)
 class UserMessageAdmin(admin.ModelAdmin):
     """
-    access the Category fields model in Django Admin panel
+    access the UserMessage fields model in Django Admin panel
     """
     fields = (
         'name', 'email', 'sent_on', 'status',
@@ -25,5 +23,3 @@ class UserMessageAdmin(admin.ModelAdmin):
     )
 
     ordering = ('-sent_on',)
-
-# Register your models here.

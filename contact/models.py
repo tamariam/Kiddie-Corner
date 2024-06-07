@@ -7,8 +7,9 @@ STATUS = (
 
 
 class UserMessage(models.Model):
-    '''Model for Contact page
-    '''
+    """
+    Model for Contact page
+    """
     name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     sent_on = models.DateTimeField(auto_now_add=True)

@@ -9,7 +9,7 @@
     background-color: white;
 }
 
- .stripe-style, select{
+.stripe-style, select{
     border-radius: 0px!important;
     margin-bottom: 6px!important;
     border: 1px solid #000!important;
@@ -36,14 +36,15 @@ select option {
     width: 100%;
 } 
 
+/* Stules for checkout success page */
 .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
 
 .table td {
-    word-wrap: break-word; /* Ensures long words break to fit within the cell */
-    word-break: break-all; /* Ensures long words break to fit within the cell */
+    word-wrap: break-word; 
+    word-break: break-all; 
     overflow-wrap: break-word; 
 }
 

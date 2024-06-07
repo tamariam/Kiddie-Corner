@@ -12,4 +12,3 @@ class TestimonialAdmin(admin.ModelAdmin):
         'name', 'profession',)
     search_fields = (
         'name',)
-

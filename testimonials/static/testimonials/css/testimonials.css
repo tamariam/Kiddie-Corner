@@ -1,8 +1,7 @@
+/* stles for testimonial page */
 
-
-
-/* This class is defining the styling for the container element that holds each
-testimonial in a testimonial grid. */
+ /* styles for  container  that holds each
+testimonial in a testimonial grid.  */
 .carousel-inner {
 	background-color: #ffb703; 
 	border-radius: 20px;
@@ -10,7 +9,7 @@ testimonial in a testimonial grid. */
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* This class is defining the styling for the avatar image */
+/* styling for the avatar image */
 .testimonial-avatar {
 	width: 100px;
 	height: 100px;
@@ -25,7 +24,6 @@ testimonial in a testimonial grid. */
 	object-fit: cover;
 }
 
-
 .testimonial-name {
 	font-size: 20px;
 	font-weight: bold;
@@ -36,6 +34,7 @@ testimonial in a testimonial grid. */
 	font-size: 16px;
 	color: #c21a1ac2;
 }
+
 .testimonial-icon{
     font-size:30px;
 }

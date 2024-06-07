@@ -4,5 +4,7 @@ from .models import Testimonial
 
 
 def testimonials(request):
+    """This view renders Testimonials page """
     testimonials = Testimonial.objects.all()
-    return render(request, 'testimonials/testimonials.html', {'testimonials': testimonials})
+    return render(request, 'testimonials/testimonials.html',
+                  {'testimonials': testimonials})

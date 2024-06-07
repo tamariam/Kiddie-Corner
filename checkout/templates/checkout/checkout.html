@@ -1,26 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock%}
 
-
-
-
 <!-- Checkout Page -->
 
 {% block extra_title %} - checkout {% endblock %}
-
 
 {% block content %}
 <div class="container-fluid lato ">
     <div class="col text-center ">
         <h2 class="bg-primary text-white mb-5 text-uppercase ">Chekout</h2>
     </div>
-   
-
     <div class="row">
-        <!-- Product Cards Column -->
+        <!-- Product Details -->
         <div class="col-lg-4">
             {% if bag_items %}
                 {% for item in bag_items %}
@@ -34,12 +29,7 @@
                                     <h3 class="card-title bg-primary text-white p-1 text-center rounded">{{ item.product.name }}</h3>
                                     <p class="card-text font-weight-bold">Price: €{{ item.product.price }}</p>
                                     <p class="card-text font-weight-bold">Quantity:{{ item.quantity }}</p>
-                                    
-                                    <!-- Quantity Selection Form -->
-                                    
-                                    <!-- Remove Button Form -->
-                                  
-                            </div>
+                                </div>
                         </div>
                     </div>
                     </div>
@@ -47,6 +37,7 @@
 
                     {% endif %}
              </div>
+             <!-- Checkout Form  -->
              <div class="col-lg-5">
                 <form class="form " method="POST" action="{% url 'checkout'%}" id="payment-form" name="payment-form">
                     {% csrf_token %}
@@ -92,8 +83,7 @@
                         <input type="hidden" value="{{'client_secret'}}" name="client_secret">
 
                     </fieldset>
-
-            </form>
+        </form>
             <div class="text-center text-lg-right my-2">
                 <button form="payment-form" id="submit-button" class="btn btn-success submit-btn">
 
@@ -118,7 +108,7 @@
                  </div>
 
         <!-- Bag Summary Column -->
-        <div class="col-lg-3">
+        <section class="col-lg-3">
             <div class="col-sm-12 col-md-12 col-lg-12 bg-white rounded text-center bag-summary-card mb-3  pt-2">
               
                 <div class="text-center">
@@ -158,12 +148,13 @@
                 </div>
                
             </div>
-        </div>
+        </section>
     </div>
 </div>
 {% endblock content %}
 
 {% block postloadjs %}
+
 {{ block.super }}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}

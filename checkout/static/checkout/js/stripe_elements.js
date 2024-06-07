@@ -1,7 +1,14 @@
+/**Adapted from stripe card element docs https://stripe.com/docs/payments/card-element?client=html and
+/ https://stripe.com/docs/payments/accept-card-payments?platform=web&ui=elements using the boutique ado
+/ project as a guide.
+*/
+
 $(document).ready(function() {
+    // Stripe related references
     const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
     const clientSecret = $('#id_client_secret').text().slice(1, -1);
     const errorDiv = $("#error-message");
+    const stripe = Stripe(stripePublicKey);
 
     // Ensure stripePublicKey is valid
     if (!stripePublicKey) {
@@ -9,9 +16,9 @@ $(document).ready(function() {
         return;
     }
 
-    const stripe = Stripe(stripePublicKey);
-
     let elements = stripe.elements();
+
+    // Card styles
     let style = {
         base: {
             color: '#000',
@@ -66,7 +73,6 @@ $(document).ready(function() {
         card.update({ 'disabled': true });
         $('#submit-button').attr({ 'disabled': true });
         let saveInfo = Boolean($('#id-save-info').attr('checked'));
-        // From using {% csrf_token %} in the form
         let csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
         let postData = {
             'csrfmiddlewaretoken': csrfToken,

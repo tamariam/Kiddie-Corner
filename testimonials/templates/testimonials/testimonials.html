@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
  {% load static %}  
  
- {% block extra_css %}
+{% block extra_css %}
 <link rel="stylesheet" href="{% static 'testimonials/css/testimonials.css' %}">
 {% endblock%}
 
@@ -9,7 +9,7 @@
 
 {% block content %}
  <!-- Testimonials page" -->
-<div class="container-fluid lato">
+<section class="container-fluid lato">
     <h2 class="text-center mb-3 ">What Our Clients Think</h2>
     <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner mb-5 ">
@@ -40,20 +40,20 @@
         </div>
         <a class="carousel-control-prev " href="#testimonial-carousel" role="button" data-slide="prev" aria-label="previous">
             <span class="sr-only">Previous</span>
-        </span><i class="testimonial-icon fa-solid fa-backward font-weight-bold mr-3 text-dark  "></i></span>
+        <span><i class="testimonial-icon fa-solid fa-backward font-weight-bold mr-3 text-dark  "></i></span>
         </a>
         <a class="carousel-control-next " href="#testimonial-carousel" role="button" data-slide="next" aria-label="next">
             <span class="sr-only">Next</span>
-        </span><i class="testimonial-icon ml-3 fa-solid fa-forward font-weight-bold text-dark "></i></span>
+        <span><i class="testimonial-icon ml-3 fa-solid fa-forward font-weight-bold text-dark "></i></span>
         </a>
     </div>
-</div>
+</section>
 
 {% endblock content %}
 
 {% block postloadjs %}
 {{ block.super }}
-<script defer>
+<script >
    document.addEventListener('keydown', function(event) {
         if (event.key === 'Arrowleft') {
             $('#testimonial-carousel').carousel('prev');

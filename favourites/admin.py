@@ -7,7 +7,7 @@ from .models import Favourite
 @admin.register(Favourite)
 class FavouriteAdmin(admin.ModelAdmin):
     """
-    access the Category fields model in Django Admin panel
+    access the Favourite fields model in Django Admin panel
     """
     fields = (
         'user', 'product', 'added_on',

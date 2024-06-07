@@ -10,8 +10,9 @@
 {% block extra_title %} - Order Complete{% endblock %}
 
 {% block content %}
+
+<!--Order Confirmation/Order details -->
 <div class="basket-bg container">
-    
     <div class="row">
         <div class="col-12 text-center mt-3">
             <h1 class="text-center"><span class="sr-only">Check Icon</span><i class="fa-solid fa-thumbs-up"></i></h1>
@@ -93,8 +94,7 @@
             </div>
         </div>
     </div>
-
-    <div class="row mt-4">
+<div class="row mt-4">
         <div class="col-12 text-center">
             {% if from_profile %}
                 <a href="{% url 'profile' %}" class="btn btn-primary mb-3 ">Return to  My Profile</a>
@@ -104,4 +104,5 @@
         </div>
     </div>
 </div>
+
 {% endblock content %}
