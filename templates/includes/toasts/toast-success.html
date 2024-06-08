@@ -1,9 +1,7 @@
-
-<div class="toast  border-3 bg-warning border-dark" role="alert" aria-live="assertive" aria-atomic="true" data-delay="{% if count %}10000{% else %}10000{% endif %}">
-    
+<!-- Toast success -->
+<div class="toast  border-3 bg-warning border-dark" role="alert" aria-live="assertive" aria-atomic="true" data-delay="{% if count %}10000{% else %}5000{% endif %}">
     <div class="toast-header bg-success text-light padding-2  border-3">
         <span class="mr-auto font-weight-bold text-black text-uppercase">Success</span>
-
         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -11,11 +9,11 @@
     <div class="toast-body bg-danger text-white font-weight-bold">
         {{ message }}
     </div>
+     <!-- Section for favorite items if they exist -->
     {% if favourites.exists %}
     <div class="text-dark py-2">
         <p class="px-3 font-weight-bold">Favorite Items ({{ favourites.count }})</p>
     </div>
-    
     <div class="toast-scroll px-3">
         {% for item in favourites %}
             <div class="row pb-0">
@@ -35,7 +33,6 @@
                     </p>
                 </div>
             </div>
-           
         {% endfor %}
         <div class="text-center rounded  m-2">
             <a href="{% url 'favourites' %}" class="btn btn-danger rounded text-center ">
@@ -44,12 +41,12 @@
         </div>
     </div>
 {% endif %}
+
+<!-- Section for current bag items -->
     {% if grand_total and count and not on_profile_page and not favourites %}
         <div class=" text-dark py-2">
             <p class="px-3 font-weight-bold">Current Bag Items ({{ count }})</p>
         </div>
-        
-
         <div class="toast-scroll px-3">
             {% for item in bag_items %}
                 <div class="row pb-0">
@@ -77,12 +74,13 @@
         </div>
         <div class="row ">
             <div class="col  bg-black">
-                <strong>
-                    <p class="m-2">
+                <p>
+                    <strong class="m-2">
                         Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}:
                         <span class="float-right">€{{ total|floatformat:2 }}</span>
-                    </p>
-                </strong>
+                    </strong>
+                </p>
+                <!-- Link to view shopping bag -->
                 <div class="text-center rounded  m-2">
                     <a href="{% url 'shopping_bag' %}" class="btn btn-danger rounded-0">
                         <span class="text-uppercase  ">view shopping bag</span>
@@ -93,8 +91,6 @@
                         spend <span class="font-weight-bold">€{{ free_shipping_delta }}</span> more for free  shipping!
                     </p>
                 {% endif %}
-
-                
             </div>
         </div>
     {% endif %}

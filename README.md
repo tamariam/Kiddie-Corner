@@ -1,5 +1,7 @@
 # Kiddie Corner
 
+![am-i-responsive](/docs/features/amiresponsive.png)
+
 
 Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortless toy shopping. Here, users can easily navigate through our extensive collection, tailored for different age groups, ensuring a seamless shopping experience for every visitorThis intuitive interface allows users to explore toys suitable for various ages with ease.
 
@@ -32,6 +34,8 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [ Testimonials ](#testimonials)
     - [My Account](#my-account)
     - [Product Management](#product-management)
+    - [404-Page not found](#Page-not-found)
+    - [ 505-server error](#server-error)
 
 
 - [Testing](#testing)
@@ -683,6 +687,13 @@ A staff member can delete a product by simply clicking on the Delete link on the
   - If anyone other than staff members attempts to access the add/edit/delete/pages functionality, they will be redirected to the home page and presented with an appropriate message indicating that access is restricted.
 
 ![user-not -allowed](/docs/features/user-not-allowed-message.png)
+
+
+## 404  Page not Found Page
+This error shows when a user types a URL into the browser which does not exist within the app's domain.
+
+![404-error](/docs/features/404.png)
+
 
 
 
