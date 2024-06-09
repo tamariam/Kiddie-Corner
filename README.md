@@ -64,7 +64,47 @@ To develop an innovative and user-friendly online toy store platform that caters
 
 ## User Stories and Epics
 
--  As a **site user** I want  **to navigate through landing page** so that **i can easily access various sections**
+Epic 1 
+- As a **developer** I can **install Django and essential libraries**,
+so that I can **quickly set up a robust development environment and kickstart my web projects with confidence**..
+- As a **developer** I want to **deploy the website on Heroku** so that i can  **test its functionality in a live environment and make the completed site accessible to the public**.
+- As a **Developer** i want to **validate my HTML, CSS, Python, and JavaScript code and perform Lighthouse audits to ensure that my web application is compliant with standards, performs well, and provides a good user experience.**
+
+Epic 2
+- As a **site user** I want  **to navigate through landing page** so that **i can easily access various sections**
+- As a **user** I can **register my account** so that  **I can log in and log out in my account.**
+- as a **user** i can **login**  to ** use all features of site**
+- As a **user**, I want to  **be able to see a comprehensive list of all products**  so that I can **select the ones I want to buy**
+- As a **user**, I want  **to find products by category** so that I **can easily browse and locate items without manually searching through the entire product list**.
+- As a **user**, I want to **easily identify special offers** so that I **can make efficient purchasing decisions and take advantage of savings**.
+- As a **user**, I want to **view detailed product information** so that I can **check the details and make informed purchase decisions**.
+- As a **user**, I want to have ability **view only available products** so that I can **focus on browsing and purchasing items that are currently in stock.**
+- As a **user**, I want to **search for products by their name or description** so that I can **quickly find specific items without browsing through all products**.
+- as a **user** i can **add Products to Shopping bag**  to **easily manage my selections before purchase**
+- as a **user** I want  **to remove an item from my shopping bag**  So that I can **adjust my cart contents before proceeding to checkout**
+- as a **user** I want to **view the items in my shopping bag** So that I can **review  my selected items all together**.
+- As a  **User** I want to **see the total amount of my purchases** So that I can  **review the cost of my items before completing my order**.
+- As a **user**  i want to  **make  checkout  quickly and easily ** so that **I can make a purchase without unnecessary delays**
+- as a **user**  i want to get  **feedback about  checkout completition** , so that **Feel confident that the checkout process is finished**
+- as a **user** I want to be able to **select the quantity of a product**
+So that I can **specify how many of the item I wish to purchase**
+- As **user**, I want to **send a message to the staff through a contact form**
+so that I can **inquire about products, orders, or other concerns without needing to make a phone call**.
+- As a **user**, I want to **remove products from the favorites page** so that I can **manage my favorite products easily and keep the list up-to-date**.
+- As a **user**, I want to **add products to my favorites** so that I  **do not spend time looking for favourite products again**.
+- As a **registered user,** I want to **access and manage my order details on the My Account page**, so that I can easily **track my purchases, view specific order details, and update my delivery information**.
+- As a **registered user,** I want to **update my delivery information** on the My Account page,
+so that **my orders are delivered to the correct address**.
+- As a **user**, I want to **see testimonials** so that I can **read the experiences  from other customers and feel confident about making a purchase**.
+
+
+Epic 3
+- as a **staff member** i want **to delete product**  so that I can **remove outdated or unnecessary items from the inventory**.
+- as a **staff member** i can  **edit products** So that I can update product details as needed.
+- As a **staff member**, I want to **add a product**, So that I can efficiently **manage inventory and streamline the product addition process**.
+
+
+
 
 ## Wireframes
 [Home-page-desktop](./docs/wireframes/home-page-desktop.png)
