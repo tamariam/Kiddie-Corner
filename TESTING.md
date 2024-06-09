@@ -8,8 +8,109 @@
 
 
 # Testing
-## Lighthouse
+## Manual Testing
+Throughout the development process, each user story was thoroughly tested to ensure correct functionality and a positive user experience. Here's a summary of the testing conducted:
+* ### Setting up Working Environment
+* Package Installation: Necessary packages were successfully installed to set up the development environment.
+* Deployment: The site was successfully deployed to ensure accessibility for users.
+* ### User Experience
+* Users can navigate through the landing page and access different sections of the website.
+* Users can register their accounts by filling out the registration form with valid information and submitting it. Upon successful submission, a new account is created, and a confirmation message is displayed.
+* Users can log in to the website by entering valid login credentials into the login form. Upon successful authentication, the user gains access to all features of the site.
+* Users can view a  list of all products by navigating to the products page. The list displays all  products along with their relevant details, providing users with an overview of the available offerings.
+* Users can view detailed information about each product by clicking on the product listing. All relevant details, including descriptions, specifications, and images, are displayed accurately, allowing users to make informed purchase decisions.
+* Users can easily find products by browsing through categories using the category filters. The products are filtered correctly based on the selected categories, allowing users to locate items of interest without manually searching through the entire product list.
+* Users can easily identify special offers while browsing product listings. Special offer labels are clearly indicated, helping users make efficient purchasing decisions and take advantage of savings.
+* Users can quickly find specific items by searching for products using the search bar. Relevant products are displayed, making it convenient to locate desired items without browsing through all products.
+* Users can focus on browsing and purchasing items that are currently in stock by applying the filter to view only available products.
+* Users can easily add products to their shopping bag by clicking on the "Add to Shopping Bag" button. This allows users to manage their selections before making a purchase.
+* Users can adjust their bag contents by removing items from the shopping bag as needed. This feature provides flexibility in managing selected items before proceeding to checkout.
+* Users can review all selected items together in the shopping bag, providing an overview of their chosen products before proceeding to checkout.
+* Users can review the cost of their items before completing their order by viewing the total amount of purchases displayed in the shopping bag.
+* Users can make a purchase without unnecessary delays by quickly and easily completing the checkout process.
+* Users receive feedback upon completing the checkout process, ensuring they feel confident that their order has been successfully processed.
+* Users can easily specify the quantity of a product they wish to purchase, allowing for flexibility in their shopping experience.
+* Users can inquire about products, orders, or other concerns by sending a message to the staff through the contact form, eliminating the need for making a phone call.
+* Users can add products to their favorites, allowing them to quickly access their favorite products without spending time searching for them again.
+* Users can easily manage their favorite products by removing items from the favorites page, keeping the list up-to-date.
+* Registered users can easily track their purchases, view specific order details, and update delivery information on the My Account page, providing convenience and control over their orders.
+* Registered users can update their delivery information on the My Account page, ensuring that their orders are delivered to the correct address.
+* Users can read experiences from other customers in the testimonials section, which helps build confidence in making a purchase.
 
+### Staff Management
+* Staff members can delete outdated or unnecessary items from the inventory, keeping the product list up-to-date.
+* Staff members can update product details as needed, ensuring that the product information is accurate and current.
+* Staff members can  manage inventory by adding new products, streamlining the product addition process.
+
+More detailed testing was conducted during the manual testing phase,using related acceptance criteria and tasks.Described bellow.
+
+1.  Landing Page
+* Confirmed that all navigation links (e.g., Home, Products, Categories, Contact) are working correctly and lead to the intended pages.
+Verified that the site's layout is responsive on different devices (desktop, tablet, mobile).
+Visuals and Readability:
+Checked that the landing page is visually appealing with clear fonts and well-organized sections.
+Ensured all images and banners load correctly.
+2. Special Offers:
+* Verified that special offers are prominently displayed and correctly labeled.
+3. Registration Page
+* Form Validation:
+Tested form validation for different input fields (e.g., email format, password strength).
+Confirmed that error messages are displayed for invalid inputs.
+* Account Creation:
+Successfully registered new accounts using various valid inputs.
+Ensured that confirmation messages are displayed upon successful registration.
+3.  Login Page
+* Tested login functionality with valid and invalid credentials.
+Confirmed that users are redirected to their account dashboard upon successful login.
+Verified that appropriate error messages are displayed for incorrect credentials.
+4. Loogout Page
+* Ensured that after logging out, users no longer have access to features that require authentication unless they log in again.
+5.  Product Listing Page
+* Product Display:
+Checked that all products are displayed with correct details (name, price, description).
+Ensured that pagination works correctly for long lists of products.
+6.  Category Filters:
+* Verified that products can be filtered by category, and the results are updated dynamically.
+Search Functionality:
+Confirmed that the search bar returns relevant results based on product name or description.
+7.  Product Detail Page
+* Checked that detailed information for each product is displayed correctly.
+Verified that images, specifications, and reviews load correctly.
+Tested the "Add to Bag" button to ensure products are added to the shopping bag.
+Confirmed that a success message is displayed after adding a product to the bag.
+8.   Shopping Bag Page
+* Verified that users can view all items in their shopping bag.
+Tested the functionality to remove items from the shopping bag.
+Ensured that the total cost is updated correctly when items are added or removed.
+Confirmed that users can select and update the quantity of each product in the bag.
+Checked that the subtotal for each product and the total amount are recalculated correctly.
+9.  Checkout Page
+* Verified that users can review their selected items, quantities, and total cost before proceeding.
+Tested the checkout process to ensure it is easy  without unnecessary delays.
+Confirmed that users receive feedback upon completing the checkout, including order confirmation details.
+10.  My Account Page
+* Confirmed that users can access to their order details,  updating delivery information.
+11.  Contact Page
+* Tested the functionality of the contact form by sending messages to the staff.
+Verified that confirmation messages are displayed after form submission.
+12.   Favorites Page
+* Confirmed that users can add products to their favorites list.
+Verified that users can remove products from their favorites list and that the list updates accordingly.
+confirmed that only logged in users(but no staff members) can add products to the favourites  and view favourites page.
+13.  Testimonials Page
+* Checked that users can view testimonials from other customers.
+Verified that testimonials are displayed correctly and enhance user confidence in making purchases.
+14.  Product Management
+* Confirmed that staff members can add, edit, and delete products from the inventory.
+Ensured that only staff members can access the admin dashboard and that regular users are restricted from accessing it.
+- More Testing 
+  - Also  Checked  and confirmed all internal links throughout the page to ensure they are not broken.
+  - Ensured external links open in a new window.
+  -  Ensure the page layout adjusts correctly on different devices.
+  - I checked this project using DevTools' device toolbar and confirmed that it looks responsive on all screen types.
+  - all sections are readeble and easy to understand.
+  - I Tested that  links  on footer page works  and opens in new window.
+  - I've tested each button to ensure they perform their designated tasks with excellence.
 
 ### Lighthouse testing
 

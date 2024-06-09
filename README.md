@@ -36,10 +36,10 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Product Management](#product-management)
     - [404-Page not found](#Page-not-found)
     - [ 505-server error](#server-error)
+- [Future Development](#future-development)
 
 
 - [Testing](#testing)
-    - [lighthouse](#lighthouse)
 - [Deployment](#dployment)
    - [Heroku Deployment](#heroku-deployment)
    - [ElephantSQL Database](#elephantsql-database)
@@ -64,13 +64,13 @@ To develop an innovative and user-friendly online toy store platform that caters
 
 ## User Stories and Epics
 
-Epic 1 
+Epic-1  : Work Environment Setup
 - As a **developer** I can **install Django and essential libraries**,
 so that I can **quickly set up a robust development environment and kickstart my web projects with confidence**..
 - As a **developer** I want to **deploy the website on Heroku** so that i can  **test its functionality in a live environment and make the completed site accessible to the public**.
 - As a **Developer** i want to **validate my HTML, CSS, Python, and JavaScript code and perform Lighthouse audits to ensure that my web application is compliant with standards, performs well, and provides a good user experience.**
 
-Epic 2
+Epic-2 :User Experience
 - As a **site user** I want  **to navigate through landing page** so that **i can easily access various sections**
 - As a **user** I can **register my account** so that  **I can log in and log out in my account.**
 - as a **user** i can **login**  to ** use all features of site**
@@ -98,7 +98,7 @@ so that **my orders are delivered to the correct address**.
 - As a **user**, I want to **see testimonials** so that I can **read the experiences  from other customers and feel confident about making a purchase**.
 
 
-Epic 3
+Epic-3 : Staff Management
 - as a **staff member** i want **to delete product**  so that I can **remove outdated or unnecessary items from the inventory**.
 - as a **staff member** i can  **edit products** So that I can update product details as needed.
 - As a **staff member**, I want to **add a product**, So that I can efficiently **manage inventory and streamline the product addition process**.
@@ -250,6 +250,8 @@ Sitemap and robots.txt files have been added to the site's root to help with SEO
 
 ## Colour Pallete
 
+
+[Back to top](#contents)
 
 # Features
 ## Navigation Bar 
@@ -734,7 +736,26 @@ This error shows when a user types a URL into the browser which does not exist w
 
 ![404-error](/docs/features/404.png)
 
+# Future Development
 
+Despite the pressing deadlines, it was not possible to implement all  features within the current project.i In future updates, i plan to incorporate the following user stories :
+
+Add Testimonials
+Introduce the ability for staff members to add testimonials directly from the product management page. 
+
+Social Media  Verification
+Integrate social media account sign-in functionality for easy  login process for users. This will allow users to sign in to their accounts using their preferred social media platforms.
+
+Display Product Quantity
+Implement a feature that displays the remaining quantity of each product in stock, providing users with real-time information about product availability. This will empower users to make informed purchasing decisions based on current stock levels.
+
+Reset Password
+Introduce a password reset functionality for registered users, allowing them to easily reset their passwords in case they forget them. 
+
+
+## Testing
+
+I have included testing details in a separate document called  [Testing](TESTING.md)
 
 
 
