@@ -5,8 +5,6 @@
   - [fixed Bugs](#fixed-bugs)
   - [Unfixed Bugs](#unfixed-bugs)
 
-
-
 # Testing
 ## Manual Testing
 Throughout the development process, each user story was thoroughly tested to ensure correct functionality and a positive user experience. Here's a summary of the testing conducted:

@@ -19,7 +19,7 @@ def favourites(request):
                       'not allowed to view this page')
         return redirect('home')
 
-
+@login_required
 def add_to_favourite(request, product_id):
     '''view to add product in favourites
     '''
@@ -41,6 +41,7 @@ def add_to_favourite(request, product_id):
         return redirect('home')
 
 
+@login_required
 def remove_favourite(request, product_id):
     """Remove a product from the user's favourites"""
     product = get_object_or_404(Product, id=product_id)

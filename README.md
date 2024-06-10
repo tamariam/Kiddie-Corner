@@ -103,10 +103,10 @@ Epic-3 : Staff Management
 - as a **staff member** i can  **edit products** So that I can update product details as needed.
 - As a **staff member**, I want to **add a product**, So that I can efficiently **manage inventory and streamline the product addition process**.
 
-
-
-
 ## Wireframes
+
+ I used [Balsamique](https://balsamiq.com/) to create wireframes for my project.These were adapted and improved upon throughout the development process.The wireframes encompass the main pages of the project, with each page extending the base HTML structure that includes navigation and footer elements.Mainly The wireframes display designs for desktop and mobile views. On mobile  screens, elements are arranged from top to bottom for readability and usability. Tablet screens  resemble the mobile version thats why  I decided not to create separate tablet wireframes. . These wireframes offer a clear visual representation of device differences, with most pages following the desktop layout.
+
 [Home-page-desktop](./docs/wireframes/home-page-desktop.png)
 
 <details>
@@ -240,18 +240,43 @@ Sitemap and robots.txt files have been added to the site's root to help with SEO
   - The second method would then be sending regular news letters to the mailing list obtained via the mailchimp form. The newsletter would contain links to recent articles on  children toys, the latest products and the highly sought after special offers and promotions. This would help with brand awareness building a community around the brand.
 
 
-
-
 ## Database Schema
 
+I used [lucid.app](https://lucid.app/) to create database schema for my project .The e-Commerce store  includes seven  models which we can define in 3 categorys:
+1. Product Models:
+- Category: Organizes products into distinct categories, enhancing navigation and product discovery for users.
+- Product: Captures detailed information about each product, including pricing, descriptions, stock status, and user ratings. It also supports user favorites and sale indicators.
+2. Purchase Models:
+- Order: Manages customer orders, tracking essential details such as customer information, order status, and shipping methods. This ensures efficient order processing.
+- OrderLineItem: Allows staff members to make changes to each order by detailing specific products included in the order.
+3. Additional Models:
+- UserMessage: Facilitates user communication via a contact form.
+- UserProfile: Maintains user-specific details, including default delivery addresses and order history, to provide a personalized and better shopping experience.
+- Testimonial: Stores customer testimonials, including feedback and optional images, to build credibility and trust in the products and services offered.
+
+![Database-Schema](/docs/erd-diagram.png)
 
 ## Typography
 
+I utilized a combination of fonts to achieve both aesthetic appeal and optimal readability in this project:
+
+- Lato: Chosen as the primary font, Lato was employed across all pages. Its consistent usage ensures uniformity and clarity throughout the website's interface.
+
+- Schoolbell and Bangers: Given the playful nature of the store, I opted to incorporate these fonts to exude a lively and dynamic essence.
 
 ## Colour Pallete
 
+![Color-Pallete](docs/color-pallete.png)
 
-[Back to top](#contents)
+* The color palette was chosen with [coolers](https://coolors.co/) and consists of 4 simple colours as seen above.
+A dark bluecolor was chosen for the header and footer backgrounds. These darker tones were complemented by lighter colours such as yellow and orange, imparting  visual interest. Furthermore, a light grey shade was utilized as the background for the body content, providing  optimal readability and user engagement.
+Alongside these colors, standard Bootstrap colors are used for buttons, links, and to highlight certain text and messages.
+Adapting the above throughout the development process. The final list of colors used has been placed in contasr grid to check contrast scores.
+![Color gird](docs/contrast-grid.png.png)
+
+
+
+[Back to top](#target-audience)
 
 # Features
 ## Navigation Bar 
@@ -756,86 +781,6 @@ Introduce a password reset functionality for registered users, allowing them to 
 ## Testing
 
 I have included testing details in a separate document called  [Testing](TESTING.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Deployment
 
