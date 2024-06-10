@@ -804,6 +804,166 @@ Also make sure you create Procfile and requirements.txt file.
 6. Find button **Deploy Branch** at the bottom of page.
 7. After clicking **Deploy Branch** button it will take few minutes to deploy site and you will have ability to view it  clicking on **view** button.
 
+
+### **AWS S3 Bucket**
+
+The below works on the assumption that you already have an account with [AWS](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fus-east-1.console.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26region%3Dus-east-1%26skipRegion%3Dtrue%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-1_5ebca9aa1f981aaf&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&forceMobileApp=0&code_challenge=tXaJuB6g7gFkIttyTd75shZNQrYlt0B3-zdaKPesuQI&code_challenge_method=SHA-256) and are already signed in.
+
+1. Create a new S3 bucket:
+    * Click "Services" in the top left-hand corner of the landing page, click on "Storage" then click "S3."
+    * Click "Create bucket."
+    * Give the bucket a unique name:
+        * Will form part of the URL (in the case of this project, I called the S3 bucket pp5-vapeshop)
+    * Select the nearest location:
+        * For me, this was EU (Frankfurt) eu-central-1.
+    * Under the "Object Ownership" section, select "ACLS enabled"
+    * Under the "Block Public Access settings for this bucket" section, untick "Block all public access" and tick the box to acknowledge that this will make the bucket public.
+    * Click "Create bucket."
+1. Amend Bucket settings:
+    * Bucket Properties: -
+       * Click on the bucket name to open the bucket.
+       * Click on the "Properties" tab.
+       * Under the "Static website hosting" section, click "Edit."
+       * Under the "Static website hosting" section select "Enable".
+       * Under the "Hosting type" section ensure "Host a static website" is selected.
+       * Under the "Index document" section enter "index.html".
+       * Click "Save changes."
+    * Bucket Permissions: -
+       * Click on the "Permissions" tab.
+       * Scroll down to the "CORS configuration" section and click edit.
+       * Enter the following snippet into the text box:
+
+       ```JSON
+            [
+                {
+                    "AllowedHeaders": [
+                    "Authorization"
+                    ],
+                    "AllowedMethods": [
+                    "GET"
+                    ],
+                    "AllowedOrigins": [
+                    "*"
+                    ],
+                    "ExposeHeaders": []
+                }
+            ]
+        ```
+
+       * Click "Save changes."
+       * Scroll back up to the "Bucket Policy" section and click "Edit."
+       * Take note of the "Bucket ARN" click on the "Policy Generator" button to open the AWS policy generator in a new tab.
+       * In the newly opened tab under Step 1 "Select Policy Type" select "S3 Bucket Policy." from the drop down menu.
+       * Under Step 2 "Add Statement(s)" enter " * " in the "Principal" text box.
+       * From the "s3:Action" drop down menu select "s3:GetObject".
+       * Enter the "ARN" noted from the bucket policy page into the "Amazon Resource Name (ARN)" text box.
+       * Click "Add Statement."
+       * Under Step 3 "Generate Policy" click "Generate Policy."
+       * Copy the resultant policy and paste it into the bucket policy text box on the previous tab.
+       * In the same text box add "/*" to the end of the resource key to allow access to all resources in this bucket.
+       * Click "Save changes."
+       * When back on the buckets permissions tab, scroll down to the "Access Control List" section and click "Edit."
+       * enable "List" for "Everyone (public access)", tick the box to accept that "I understand the effects of these changes on my objects and buckets."  and click "Save changes."
+
+1. Create AWS static files User and assign to S3 Bucket:
+    * Create "User Group": -
+        * Click "Services" in the top left-hand corner of the landing page, from the left side of the menu click on "Security, Identity, & Compliance" and select "IAM" from the right side of the menu.
+        * Under "Access management" click "User Groups."
+        * Click "Create Group."
+        * Enter a user name (in the case of this project, I called the user group "manage-pp5-vapeshop").
+        * Scroll to the bottom of the page and click "Create Group."
+    * Create permissions policy for the new user group: -
+        * Click "Policies" in the left-hand menu.
+        * Click "Create Policy."
+        * Click "Import managed policy."
+        * Search for "AmazonS3FullAccess", select this policy, and click "Import".
+        * Click "JSON" under "Policy Document" to see the imported policy
+        * Copy the bucket ARN from the bucket policy page and paste it into the "Resource" section of the JSON snippet. Be sure to remove the default value of the resource key ("*") and replace it with the bucket ARN.
+        * Copy the bucket ARN a second time into the "Resource" section of the JSON snippet. This time, add "/*" to the end of the ARN to allow access to all resources in this bucket.
+        * Click "Next: Tags."
+        * Click "Next: Review."
+        * Click "Review Policy."
+        * Enter a name for the policy (in the case of this project, I called the policy "pp5-vapeshop-policy").
+        * Enter a description for the policy.
+        * Click "Create Policy."
+    * Attach Policy to User Group: -
+        * Click "User Groups" in the left-hand menu.
+        * Click on the user group name created during the above step.
+        * Select the "Permissions" tab.
+        * click "Attach Policy."
+        * Search for the policy created during the above step, and select it.
+        * Click "Attach Policy."
+    * Create User: -
+        * Click "Users" in the left-hand menu.
+        * Click "Add user."
+        * Enter a "User name" (in the case of this project, I called the user "pp5-vapeshop-staticfiles-user").
+        * Select "Programmatic access" and "AWS Management Console access."
+        * Click "Next: Permissions."
+        * Select "Add user to group."
+        * Select the user group created during the above step.
+        * Click "Next: Tags."
+        * Click "Next: Review."
+        * Click "Create user."
+        * Take note of the "Access key ID" and "Secret access key" as these will be needed to connect to the S3 bucket.
+        * Click "Download .csv" to download the credentials.
+        * Click "Close."
+
+1. Install required packages to used AWS S3 Bucket in Django:
+    * ```pip install boto3```
+    * ```pip install django-storages```
+1. Add 'storages' to the bottom of the installed apps section of settings.py file:
+
+   ```python
+    INSTALLED_APPS = [
+    …,
+        'storages'
+    …,
+   ]
+   ```
+   1. Link S3 Bucket to Django Project by adding the following to the settings.py file:
+
+    ``` python
+        # its important to keep the AWS keys secret so we use environment variables which will be added to Heroku later
+        # Cache control
+        AWS_S3_OBJECT_PARAMETERS = {
+           'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+           'CacheControl': 'max-age=94608000',
+        }
+        # Bucket config
+        AWS_STORAGE_BUCKET_NAME = '{Bucket name}' # name of your bucket
+        AWS_S3_REGION_NAME = '{Region name}' # region of your bucket
+        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+        # Static and media files
+        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+        STATICFILES_LOCATION = 'static'
+        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+        MEDIAFILES_LOCATION = 'media'
+
+        # Override static and media URLs in production
+        STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+        MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
+## Stripe
+
+* Open a [Stripe](https://dashboard.stripe.com/register) Account
+
+* Log in and click on 'Developers
+
+* Navigate to API keys
+
+* Copy the the publishable and secret keys
+
+Back in the Developers section on Stripe stripe navigate to webhooks and click create endpoint.
+
+Create a webhook for all events in Stripe and save the key
+
+* Add the webhook key to your environment variables and test using the Stripe events log.
+
+
+
 ###  ElephantSQL Database
 
 This project uses [ElephantSQL](https://www.elephantsql.com) for the PostgreSQL Database.
@@ -854,7 +1014,7 @@ To create a copy of the repository for viewing and editing without affecting the
   * Django all auth was used to handle user authentication and related tasks i.e. sign in, sign up, sign out.
 * Heroku
   * Used to deploy the page and make it publicly available.
-* Heroku PostgreSQL
+* ElephantSQL
   * Used for the database during development and in deployment.
 * HTML
   * HTML was the base language used to layout the skeleton of all templates.
@@ -862,17 +1022,25 @@ To create a copy of the repository for viewing and editing without affecting the
   * Custom CSS used to style the page and make the appearance look a little more unique.
 * Javascript
   * I have used JavaScript to automatically hide displayed messages after a few seconds.
-* Bootstrap 5.0.1
+* Bootstrap(vesrion 4.4.1 )
   * Used to style HTML and CSS
-* Font awesome
+* Font Awesome
   * All icons throughout the page.
+* Stripe
+ * Kiddie Corner utilised Stripe to manage secure payments
+* JavaScript 
+  * was used to implement interactivity and manipulatethe DOM from the front end.
+
+
 
   # Credits
-
+*  Boutique Ado
+ * Many elements of the the e-commerce part of this project have been adapted from the Code Institute's "Boutique Ado" Code-through Project.
 * [Balsamiq](https://balsamiq.com/wireframes/) was used to create the wireframes.
 * [lucid.app](https://lucid.app/users/login#/login) was used to create ERD
 * The site was developed using [gitpod](https://www.gitpod.io/).
 * [GitHub](https://github.com/) was used to store my repository.
+* [gitpod](https://www.gitpod.io/) was used as the primary development enviroment.
 * Responsive screenshot made using [amiresponsive.com](https://ui.dev/amiresponsive)
 * [Article on writing good user stories](https://www.industriallogic.com/blog/as-a-developer-is-not-a-user-story/)
 * [coolers.co](https://coolors.co/603f3f-a0acca-e4b67c-de9f13-000000) was used to generate color scheme.
@@ -880,6 +1048,7 @@ To create a copy of the repository for viewing and editing without affecting the
 * Fonts were taken from [Google Fonts](https://fonts.google.com/)
 * Images:
   * for all images used for site  taken from [pixels.com](https://www.pexels.com/) 
+  * Tiny PNG to resizing larger image files
 * Multiple videos sourced from youtube :
     * [django-wednesdays](https://www.youtube.com/watch?v=HHx3tTQWUx0&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy)
     * [Learn Django - Class-Based Views series](https://youtu.be/ScteNE1jB4g)
@@ -888,11 +1057,11 @@ To create a copy of the repository for viewing and editing without affecting the
     * [Code Institute Learning Platform](https://codeinstitute.net/)
     * [Django Documentation](https://docs.djangoproject.com/en/3.2/)
     * [Bootstrap Documentation](https://getbootstrap.com/)
-
+    * AI to generate description text for products.
 
 # Acknowledgements
 
-This site was developed as a fourth portfolio project for the [Code Institute](https://codeinstitute.net/global/) course in Full Stack Software Development. I would like to thank the following for all of the support throughout the development phase.
+This site was developed as a final portfolio project for the [Code Institute](https://codeinstitute.net/global/) course in Full Stack Software Development. I would like to thank the following for all of the support throughout the development phase.
 
 * The Code Institute community, including Tutor Support, Student Care and the Slack Community.
 * My mentor, [David Bowers](https://www.linkedin.com/in/dnlbowers/) for providing me with advice throughout the development process.
