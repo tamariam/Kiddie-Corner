@@ -122,6 +122,7 @@ Ensured that only staff members can access the admin dashboard and that regular 
 Below are the Lighthouse test results for all pages
 
 ## Home Page
+_Poroduct detail Page Wireframe_<br>
 <details>
   <summary>lighthouse-Testing-Home-Desktop (click to expand)</summary>
 
@@ -516,12 +517,9 @@ After addressing these issues, the site deployed without any problem.
 
 This absence of a runtime file for Python's version was causing the issue with email sending and user registration. Once the runtime file was added, the email functionality and user registration worked as expected.
 
-
-
 ### Unfixed Bugs
 
 There is no unfixed bugs.
-
 
 [Back to Readme](README.md)
 

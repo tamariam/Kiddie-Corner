@@ -2,8 +2,16 @@
 
 ![am-i-responsive](/docs/features/amiresponsive.png)
 
-
 Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortless toy shopping. Here, users can easily navigate through our extensive collection, tailored for different age groups, ensuring a seamless shopping experience for every visitorThis intuitive interface allows users to explore toys suitable for various ages with ease.
+Please use the link below to view the deployed project. If you wish to make a mock purchase, you can use the following details: 
+
+* Card Number: 4242424242424242
+* Exp Date: Any (future) date using the format MM/YY
+* CVN = any 3 digit number
+* Postcode = any 5 numerals
+
+Any payments made using an actual payment card will fail and the card will not be charged. No orders made will be fulfilled.
+[Live project: Sensical.ie](https://kiddie-corner-d9bc0a883cc2.herokuapp.com/)
 
 # Table of Contents
 - [Planning and Design](#planning-and-design)
@@ -16,7 +24,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [Colour Pallete](#colour-pallete)
     - [SEO](#seo)
       - [keywords](#keywords)
-      - [Robots.txt and sitemap.xml](#Robots.txt-and-sitemap.xml)
+      - [Robots.txt and sitemap.xml](#robotstxt-and-sitemapxml)
     - [E-commeerce  business model](#e-commerce-business-model)
 - [Features](#Features)
     - [Navigation Bar](#navigation-bar)
@@ -30,18 +38,18 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
     - [checkout Page](#checkout-page)
     - [Order Complete](#order-complete)
     - [Favourites](#favourites)
-    - [Contact Page](#contactipage)
+    - [Contact Page](#contact-page)
     - [ Testimonials ](#testimonials)
     - [My Account](#my-account)
     - [Product Management](#product-management)
     - [404-Page not found](#Page-not-found)
     - [ 505-server error](#server-error)
 - [Future Development](#future-development)
-
-
 - [Testing](#testing)
-- [Deployment](#dployment)
+- [Deployment](#deployment)
    - [Heroku Deployment](#heroku-deployment)
+   - [AWS](aws)
+   - [Stripe](stripe)
    - [ElephantSQL Database](#elephantsql-database)
    - [Forking the Repository](#forking-the-repository)
    - [Cloning The Repository](#cloning-the-repository)
@@ -49,9 +57,7 @@ Welcome to Kiddie Corner, a dynamic Django-powered website designed for effortle
 - [Credits](#credits)
 - [Acknowledgements](#acknowledgements)
 
-I have included testing details in a separate document called [testing](TESTING.md).
-
-# Planning and desigtn
+# Planning and design
 ## Target Audience
 - Parents and Guardians
 - Family Members and Relatives
@@ -63,6 +69,9 @@ I have included testing details in a separate document called [testing](TESTING.
 To develop an innovative and user-friendly online toy store platform that caters to various age groups, offering a curated selection of toys, while providing seamless functionality for both customers and shop owners to browse, shop, and manage products efficiently
 
 ## User Stories and Epics
+
+To assist the AGILE process, I have created several user stories to help me plan and implement the project. These will help me prioritize the features and functionality of the site and ensure that I am delivering an MVP by the deadline.Firstly I start creating epics which were broken down into user stories, each representing a specific feature. I utilized the MoSCoW prioritization (Must have, Should have, Could have, Won't have) to categorize and prioritize each user story based on its importance.
+For better planning and estimation, I assigned labels and story points to each user story, considering factors such as time and difficulty. This approach helped me gauge the relative effort required for different tasks and maintain a clear sense of priority. Also every user story includes acceptance criteria and associated tasks.Also I found it beneficial to transition to organizing my work into sprints with milestones. I structured the project into ten sprints  milestones. By grouping related user stories into each milestone, I could efficiently tackle tasks in a more focused manner.
 
 Epic-1  : Work Environment Setup
 - As a **developer** I can **install Django and essential libraries**,
@@ -97,7 +106,6 @@ so that I can **inquire about products, orders, or other concerns without needin
 so that **my orders are delivered to the correct address**.
 - As a **user**, I want to **see testimonials** so that I can **read the experiences  from other customers and feel confident about making a purchase**.
 
-
 Epic-3 : Staff Management
 - as a **staff member** i want **to delete product**  so that I can **remove outdated or unnecessary items from the inventory**.
 - as a **staff member** i can  **edit products** So that I can update product details as needed.
@@ -105,18 +113,20 @@ Epic-3 : Staff Management
 
 ## Wireframes
 
- I used [Balsamique](https://balsamiq.com/) to create wireframes for my project.These were adapted and improved upon throughout the development process.The wireframes encompass the main pages of the project, with each page extending the base HTML structure that includes navigation and footer elements.Mainly The wireframes display designs for desktop and mobile views. On mobile  screens, elements are arranged from top to bottom for readability and usability. Tablet screens  resemble the mobile version thats why  I decided not to create separate tablet wireframes. . These wireframes offer a clear visual representation of device differences, with most pages following the desktop layout.
+I used [Balsamique](https://balsamiq.com/) to create wireframes for my project.These were adapted and improved upon throughout the development process.The wireframes encompass the main pages of the project, with each page extending the base HTML structure that includes navigation and footer elements.Mainly The wireframes display designs for desktop and mobile views. On mobile  screens, elements are arranged from top to bottom for readability and usability. Tablet screens  resemble the mobile version thats why  I decided not to create separate tablet wireframes. . These wireframes offer a clear visual representation of device differences, with most pages following the desktop layout.
 
-[Home-page-desktop](./docs/wireframes/home-page-desktop.png)
+_Home Page Wireframes_<br>
+![Home-page-desktop](./docs/wireframes/home-page-desktop.png)
 
 <details>
   <summary>Homepage - Mobile (click to expand)</summary>
 
 ![Homepage - mobile-wireframe](/docs/wireframes/home-page-mobile.png)
 
-</details>
+</details><br>
+_Allproducts Page Wireframes_<br>
 
-[products-page-desktop](./docs/wireframes/all-products-desktop.png)
+![products-page-desktop](./docs/wireframes/all-products-desktop.png)
 
 <details>
   <summary>allproducts - tablet (click to expand)</summary>
@@ -130,30 +140,28 @@ Epic-3 : Staff Management
 
 ![allproducts-mobile-wireframe](/docs/wireframes/products-mobile.png)
 
-</details>
+</details><br>
+_product detail Page Wireframes_<br>
 
-
-[product-detail-page-desktop](./docs/wireframes/product-detail.png)
+![product-detail-page-desktop](./docs/wireframes/product-detail.png)
 
 <details>
   <summary>product-detail- mobile (click to expand)</summary>
 
 ![product-detail-mobile-wireframe](/docs/wireframes/product-details-mobile.png)
 
-</details>
-
-
+</details></br>
+_Shopping bag Page Wireframes_<br>
 
 ![Shopping-Bag-Desktop-wireframe](/docs/wireframes/shopping-bag-desktop.png)
-
-
 
 <details>
   <summary>shopping-bag-mobile (click to expand)</summary>
 
 ![Shopping-Bag-Mobile-wireframe](/docs/wireframes/shopping-bag-mobile.png)
 
-</details>
+</details></br>
+_Checkout Bag Page Wireframe_<br>
 
 ![checkout-page-Desktop](/docs/wireframes/checkout-desktop.png)
 
@@ -162,8 +170,8 @@ Epic-3 : Staff Management
 
 ![checkout-page-mobile](/docs/wireframes/checkout-mobile.png)
 
-</details>
-  
+</details><br>
+_Checkout Success page Wireframes_<br>
 
 ![checkout-success-Desktop](/docs/wireframes/checkout-success-desktop.png)
 
@@ -172,46 +180,42 @@ Epic-3 : Staff Management
 
 ![checkout-success-mobile](/docs/wireframes/checkout-success-mobile.png)
 
-</details>
+</details></br>
+
+_Favourites page Wireframes_<br>
 
 
 ![Favourites-Desktop](/docs/wireframes/favourite-desktop.png)
-
 
 <details>
   <summary>Favourites-mobile (click to expand)</summary>
 
 ![favourites-mobile](/docs/wireframes/favourites-mobile.png)
 
-</details>
+</details><br>
+_Contact us Page Wireframes_<br>
 
-
-<details>
-  <summary>Contact Page (click to expand)</summary>
 
 ![contact-page](/docs/wireframes/contact-page.png)
-
-</details>
-
-
-<details>
-  <summary>Testimonials-Page-Desktop (click to expand)</summary>
+<br>
+_Testimonials Page Wireframe_<br>
 
 ![Testimonials-page-Desktop](/docs/wireframes/tesimonial-wireframe.png)
-
-</details>
 
 <details>
   <summary>Testimonials-Page-Mobile (click to expand)</summary>
 
 ![Testimonials-page-Mobile](/docs/wireframes/testimonial-mobile.png)
 
-</details>
+</details></br>
+_Profile Page Wireframe_<br>
 
+![Profile-page](/docs/wireframes/profile-page.png)<br>
 
-![Profile-page](/docs/wireframes/profile-page.png)
+_add/edit page Wireframe_<br>
 
-![add-edit-product](/docs/wireframes/add-edit-product.png)
+![add-edit-product](/docs/wireframes/add-edit-product.png)<br>
+_edit_product-Page Wireframe_
 
 ## SEO
 Each page shows an extra title after the store name to assist help with SEO.
@@ -235,7 +239,7 @@ Sitemap and robots.txt files have been added to the site's root to help with SEO
 
 ## Marketing Strategy
 
- As a small business Kiddie-Corner has limited budget for marketing.So i use cheaper ways To effectively reach page audience and create a lasting connection with  customers. I decide to  implement two key marketing techniques: a Facebook business page and a newsletter signup form.
+As a small business Kiddie-Corner has limited budget for marketing.So i use cheaper ways To effectively reach page audience and create a lasting connection with  customers. I decide to  implement two key marketing techniques: a Facebook business page and a newsletter signup form.
   -  Using Facebook to pump out content and drive traffic is the first and most straightforward. The use of paid ads allows the business to target specific demographics and increase brand awareness. The use of social media is also a great way to get feedback from customers and to help with customer service. There is an image of the Facebook page in the features section below and a link to the page here  [Facebook](https://www.facebook.com/profile.php?id=61560273074359). 
   - The second method would then be sending regular news letters to the mailing list obtained via the mailchimp form. The newsletter would contain links to recent articles on  children toys, the latest products and the highly sought after special offers and promotions. This would help with brand awareness building a community around the brand.
 
@@ -274,9 +278,7 @@ Alongside these colors, standard Bootstrap colors are used for buttons, links, a
 Adapting the above throughout the development process. The final list of colors used has been placed in contasr grid to check contrast scores.
 ![Color gird](docs/contrast-grid.png.png)
 
-
-
-[Back to top](#target-audience)
+[Back to top](#table-of-contents)
 
 # Features
 ## Navigation Bar 
@@ -298,6 +300,7 @@ Located in the top navigation bar, there is a search bar that allows you to sear
 ![navigation-mobile](/docs/features/search.png)
 
 ## Account Management 
+
 Login/Register/Logout:
  Users can access the account dropdown menu where they have the choice to login or register.
 
@@ -308,43 +311,37 @@ Login/Register/Logout:
   
  ![dropdown-account](/docs/features/myacccount-dropdown.png)
 
- 
- Upon clicking the register option, users are redirected to the sign-up page.
+Upon clicking the register option, users are redirected to the sign-up page.
 
  ![signup-page](/docs/features/signup.png)
 
   If the provided email or username already exists, users are notified, and they are prompted to choose a different one.
 
-   ![email-username-exists](/docs/features/email-already-registered.png)
+  ![email-username-exists](/docs/features/email-already-registered.png)
 
 After filling out the required fields and clicking sign up, a confirmation message is displayed indicating that a verification link has been sent to the provided email address.Upon clicking the verification link received via email users are rediurected to the page where they should confirm their email address. 
 
- ![email-sent](/docs/features/confirm-email.png)
+![email-sent](/docs/features/confirm-email.png)
 
 After confirming their email address users are notified that their email has been confirmed, and they can proceed to sign in.
 
- ![email-confirmed](/docs/features/confirmed-email.png)
+![email-confirmed](/docs/features/confirmed-email.png)
 
 
  For already registered users, clicking the account dropdown/login link redirects them to the sign-in page where they provide their account details. After filling out the form and clicking sign in, users are logged in, and an appropriate message is displayed confirming their login.
  
  
- ![login-page](/docs/features/login.png)
+![login-page](/docs/features/login.png)
 
-  ![login-message](/docs/features/login-message.png)
-
+![login-message](/docs/features/login-message.png)
 
 To log out, logged in users can click the logout link in the account dropdown menu. They are redirected to the logout page where they confirm their decision. Upon successful logout, a message notifies users that they have been logged out. Each page also includes a cancel button for users to cancel their actions and be redirected to the home page.
  
- 
- ![logout-page](/docs/features/logout.png)
+![logout-page](/docs/features/logout.png)
 
-  ![logout-page](/docs/features/sign-out-message.png)
+![logout-page](/docs/features/sign-out-message.png)
 
 - More extensive account functionalities were implemented in the previous project (Project 4). To avoid duplicating efforts and to focus on new features, the decision was made to prioritize other aspects of the project while maintaining essential account management capabilities.
-
-
-
 
 ## Delivery Banner
 
@@ -355,7 +352,6 @@ The website features a prominent delivery banner positioned at the top of the he
 ## Homepage
 
 The home page features a main background image to catch users eye, with a button placed in the middle of the banner. Clicking this button takes user to the All Products page. Below that there is Highlighted Features and under that section there's a section about us with a small description of the page. Additionally, users can find age-specific links that lead to toys tailored for different age groups..
-
 
 ![Homepage-Desktop](/docs/features/dekstop-home-1.png)
 
@@ -375,7 +371,7 @@ The home page features a main background image to catch users eye, with a button
 
 The footer of the Kiddie Corner website provides essential information and offers additional ways to connect with the store staff. Users can also subscribe to the newsletter to receive updates and news via email.
  
- Footer is present on all pages. It contains three main sections, and a copyright section at the bottom.
+Footer is present on all pages. It contains three main sections, and a copyright section at the bottom.
 
 The three sections typical to both desktop and mobile are:
 
@@ -386,7 +382,7 @@ The three sections typical to both desktop and mobile are:
 ![Footer-Desktop](/docs/features/footer.png)
 
  <details>
-  <summary>Footer-Mobile (click to expand)</summary>
+  <summary>Footer-Tablet (click to expand)</summary>
 
 ![footer-Tab](/docs/features/footer-tablet.png)
 
@@ -404,8 +400,6 @@ I have included a screenshot of the Facebook page in case Facebook decides to re
 
 ![facebook](/docs/features/facebook-page.png)
 
-
-
 ## Products-Page
 
 When you click on "All Products" in the navigation bar, you will be directed to the product listing page where you can view all available products. Each product entry on this page includes:
@@ -417,7 +411,6 @@ When you click on "All Products" in the navigation bar, you will be directed to 
 - Clickable Image: You can also click directly on the product image to navigate to the product details page.
 
 ![Products-Page-Desktop](/docs/features/allproducts-page.png)
-
 
 <details>
   <summary>Products-page- Mobile (click to expand)</summary>
@@ -432,7 +425,6 @@ When you click on "All Products" in the navigation bar, you will be directed to 
 
 - If no image is uploaded for a product, a placeholder image will be shown.
 
-
 ![placeholder](/docs/features/placeholder.png)
 
 Additionally, there is a checkbox option labeled " Available Products Only ". When this checkbox is selected, the product listing will automatically filter to display only those products that are currently in stock and available for purchase. This feature provides users with the convenience of viewing products that they can immediately order.
@@ -440,7 +432,6 @@ Additionally, there is a checkbox option labeled " Available Products Only ". Wh
 ![available-products-only](/docs/features/availableproducts-only.png)
 
 ## Product-Details
-
 
 Adter clicking the "Product Details" button for any product, you will be directed to the product detail page. On this page,This page offers a comprehensive view of the selected product's details:
 
@@ -462,14 +453,11 @@ Adter clicking the "Product Details" button for any product, you will be directe
 
 </details>
 
+If the product is out of stock, the quantity selection will be disabled, and the 'Add to Bag' button will be removed to prevent adding out-of-stock items.
 
+![product-out-of-stock](/docs/features/product-details-out-of-stock.png)
 
-
- If the product is out of stock, the quantity selection will be disabled, and the 'Add to Bag' button will be removed to prevent adding out-of-stock items.
-
- ![product-out-of-stock](/docs/features/product-details-out-of-stock.png)
-
- ## Special Offers
+## Special Offers
 
 Clicking on the "Special Offers" link in the main menu will direct you to the Special Offers page. On this page, you will find a curated list of products that are currently on sale.
 
@@ -487,9 +475,6 @@ Clicking on the "Special Offers" link in the main menu will direct you to the Sp
 
        ![restricti-staff-members](/docs/features/restrict-staff-2.png)
 
-
-
-
 After navigating to the shopping bag page, if no items have been added, an appropriate message will be displayed encouraging users to add products to their bag. This message will include a button that directs users to the products page.
 
   ![empty-bag](/docs/features/empty-bag-desktop.png)
@@ -501,8 +486,6 @@ After navigating to the shopping bag page, if no items have been added, an appro
 ![empty-bag-mobile](/docs/features/empty-bag-mobile.png)
 
 </details>
-
-
 
 If there are items in the shopping bag, the page will display all item details including product name, quantity, and price. Users will have the ability to update the quantity or remove items using dedicated buttons. Additionally, there will be a separate section displaying a shopping summary, which includes information about the total cost of items and delivery charges.
 
@@ -532,9 +515,6 @@ On the shopping bag page, you can update or remove items using the appropriate b
 
 ![remove-message](/docs/features/remove-message.png)
 
-
-
-
 ## Checkout Page
 When you click on the "Secure Checkout" link on the shopping bag page, you'll be directed to the checkout page. Here, you can complete your purchase by filling out a form with your personal and delivery information, followed by providing your card details. Once you've filled out the necessary information, you can click "Submit Order" to finalize your purchase. Alternatively, you can return to the products page.
 
@@ -562,15 +542,12 @@ If you enter incorrect card numbers or expiry date, an appropriate message will 
 
 ![Checkout-page-mobile](/docs/features/expiry.png)
 
-
-
 ##  Checkout Success
 
 After successfully submitting your order, you'll be redirected to another page where you'll receive a confirmation message indicating that your order has been completed. On this page, you'll find all the relevant information regarding your order.
 You have the option to return to the home page by clicking the "Back To Home" button.
 
-
- ![Checkout-page-mobile](/docs/features/checkout-page-mobile.png)
+![Checkout-page-mobile](/docs/features/checkout-page-mobile.png)
 
   <details>
   <summary>Checkout-success-Mobile (click to expand)</summary>
@@ -599,13 +576,12 @@ Favorites Page Content: On the Favorites page, you will see the products you hav
     ![restrict-staff-members](/docs/features/restrict-staff-member.png)
 
       
-    ![restrict-staff-members](/docs/features/restrict-staff-member-1.png)
+    ![restrict-staff-members](/docs/features/favourites-restrict-staff.png)
 
 
 - Adding Products to Favorites
  On the product detail page, you can choose to add the product to your favorites with "Add To Favourites" Button. A message will notify you that the product has been added to the Favorites page.
 Duplicate Favorites: If the product is already in your favorites, you will not be able to add it again. A message will notify you that the product is already in your favorites.
-
 
 ![Favourites-info-message](/docs/features/favourites-info-message.png)
 
@@ -621,7 +597,6 @@ Duplicate Favorites: If the product is already in your favorites, you will not b
 When a user removes the last item from their favorites page, a message will be displayed indicating that the item has been removed. If there are items in the shopping bag, an additional message will be shown below, encouraging the user to proceed to the shopping bag and complete their purchase.
 
 ![last-item-remove-message](/docs/features/empty%20-message-favourites.png)
-
 
 ## Contact Page
 Users can contact the staff through the contact page. You can navigate to this page by clicking on the "Contact Us" link in the main navigation bar. On the contact page, there are fields to enter your name, email address, subject, and a text area for your message. You can send your message by clicking the "Send Message" button or cancel the message by clicking "Go Back," which will redirect you to the previous page. 
@@ -645,9 +620,9 @@ The Testimonials page can be accessed via the navigation bar. When you click on 
 Testimonials are displayed in a carousel format, allowing users to browse through them easily. Each testimonial card includes the user's name, profession, image, and testimonial text. You can navigate to the next or previous testimonial by clicking the arrow buttons or using the keyboard arrow keys.
 
 
-  ![Testimonials-desktop](/docs/features/testimonials-desktop.png)
+![Testimonials-desktop](/docs/features/testimonials-desktop.png)
 
-  <details>
+<details>
   <summary>testimonial-Mobile (click to expand)</summary>
 
   ![testimonials-Mobile](/docs/features/testimonials-mobile.png)
@@ -663,19 +638,16 @@ Select "My Account" from the dropdown menu to go to your profile page.
 You can register an account from the dropdown menu options.
 - If you are logged in, you can log out from the site using the logout  link provided in the dropdown menu.
 
-
   ![myaccount-dropdown](/docs/features/myacccount-dropdown.png)
 
 Once you are on your account page, you can manage your previous orders:
-
 
 - All your previous orders will be listed on your account page.
 View Order Details:
 
 - Click on the order number to be redirected to the checkout_success page, where you can see the specific details of the order.
 
-
-  ![profile-desktop](/docs/features/myaccount-desktop.png)
+![profile-desktop](/docs/features/myaccount-desktop.png)
 
   <details>
   <summary>profile-Mobile (click to expand)</summary>
@@ -688,7 +660,6 @@ View Order Details:
 After successfully updating, a message will be displayed to notify you that the information was updated.
 
 ![information-updated](/docs/features/profile-updated-message.png)
-
 
 ## Product Management
 
@@ -711,21 +682,15 @@ If the product is added successfully, an appropriate success message will be dis
 
 If there is any error during the product addition process, an appropriate error message will be displayed.
 
-
 ![product-add-message](/docs/features/failed-add.png)
-
 
 - Edit Product
 
 On the Product Detail and on the Products page, each product has the ability to be edited or deleted (only for staff members). When a staff member clicks Edit, they will be redirected to the same page as the Add Product page, where staff members can change product details. 
 
-
 ![edit-delete-option-on-product-details-page](/docs/features/edit-delete-product-detail.png) 
 
-
 ![edit-delete-option-on-product-details-page](/docs/features/edit-delete-products.png)
-
-
 
 ![edit-product-page-desktop](/docs/features/edit-product-desktop.png)
 
@@ -748,13 +713,11 @@ If there is any error during the product edit process, an appropriate error mess
 
 A staff member can delete a product by simply clicking on the Delete link on the Product Detail or Products page. When the product is deleted, the staff member will be notified by a success message.
 
-
 ![product-delete-message](/docs/features/product-deleted-message.png)
 
   - If anyone other than staff members attempts to access the add/edit/delete/pages functionality, they will be redirected to the home page and presented with an appropriate message indicating that access is restricted.
 
 ![user-not -allowed](/docs/features/user-not-allowed-message.png)
-
 
 ## 404  Page not Found Page
 This error shows when a user types a URL into the browser which does not exist within the app's domain.
@@ -776,7 +739,6 @@ Implement a feature that displays the remaining quantity of each product in stoc
 
 Reset Password
 Introduce a password reset functionality for registered users, allowing them to easily reset their passwords in case they forget them. 
-
 
 ## Testing
 
@@ -804,8 +766,7 @@ Also make sure you create Procfile and requirements.txt file.
 6. Find button **Deploy Branch** at the bottom of page.
 7. After clicking **Deploy Branch** button it will take few minutes to deploy site and you will have ability to view it  clicking on **view** button.
 
-
-### **AWS S3 Bucket**
+### **AWS **
 
 The below works on the assumption that you already have an account with [AWS](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fus-east-1.console.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26region%3Dus-east-1%26skipRegion%3Dtrue%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-1_5ebca9aa1f981aaf&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&forceMobileApp=0&code_challenge=tXaJuB6g7gFkIttyTd75shZNQrYlt0B3-zdaKPesuQI&code_challenge_method=SHA-256) and are already signed in.
 
@@ -962,8 +923,6 @@ Create a webhook for all events in Stripe and save the key
 
 * Add the webhook key to your environment variables and test using the Stripe events log.
 
-
-
 ###  ElephantSQL Database
 
 This project uses [ElephantSQL](https://www.elephantsql.com) for the PostgreSQL Database.
@@ -979,7 +938,6 @@ To set up a database, please follow these steps:
 7. Select a data center near you.
 8. Click **Review**, make sure that all details are correct and then click "Create instance".
 9. Once created, click on the new database name, where you can view the database URL and Password.
-
 
 ### Cloning the Repository
 
@@ -1004,7 +962,6 @@ To create a copy of the repository for viewing and editing without affecting the
 1. In my repository[github repository](https://github.com/tamariam/restaurant-Tamariam) click on the "fork" tab in the top right corner.
 2. Then click **create fork**  and it will fork the repository in your github account.
 
-
 # **Technologies used**
 
 * Python
@@ -1027,19 +984,18 @@ To create a copy of the repository for viewing and editing without affecting the
 * Font Awesome
   * All icons throughout the page.
 * Stripe
- * Kiddie Corner utilised Stripe to manage secure payments
+  * Kiddie Corner utilised Stripe to manage secure payments
 * JavaScript 
   * was used to implement interactivity and manipulatethe DOM from the front end.
 
-
-
-  # Credits
+# Credits
 *  Boutique Ado
  * Many elements of the the e-commerce part of this project have been adapted from the Code Institute's "Boutique Ado" Code-through Project.
 * [Balsamiq](https://balsamiq.com/wireframes/) was used to create the wireframes.
 * [lucid.app](https://lucid.app/users/login#/login) was used to create ERD
 * The site was developed using [gitpod](https://www.gitpod.io/).
 * [GitHub](https://github.com/) was used to store my repository.
+* [mailchimp](https://mailchimp.com/) used to set up Email marketing
 * [gitpod](https://www.gitpod.io/) was used as the primary development enviroment.
 * Responsive screenshot made using [amiresponsive.com](https://ui.dev/amiresponsive)
 * [Article on writing good user stories](https://www.industriallogic.com/blog/as-a-developer-is-not-a-user-story/)
@@ -1050,6 +1006,8 @@ To create a copy of the repository for viewing and editing without affecting the
   * for all images used for site  taken from [pixels.com](https://www.pexels.com/) 
   * Tiny PNG to resizing larger image files
 * Multiple videos sourced from youtube :
+    * [django-for -begginers](https://www.studocu.com/sg/document/singapore-university-of-social-sciences/python-programming/beginners-python-cheat-sheet-on-django/23601300)
+    * [django-user-model]https://simpleisbetterthancomplex.com/article/2021/07/08/what-you-should-know-about-the-django-user-model.html
     * [django-wednesdays](https://www.youtube.com/watch?v=HHx3tTQWUx0&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy)
     * [Learn Django - Class-Based Views series](https://youtu.be/ScteNE1jB4g)
 * General references:
