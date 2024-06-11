@@ -11,7 +11,7 @@ Please use the link below to view the deployed project. If you wish to make a mo
 * Postcode = any 5 numerals
 
 Any payments made using an actual payment card will fail and the card will not be charged. No orders made will be fulfilled.
-[Live project: Sensical.ie](https://kiddie-corner-d9bc0a883cc2.herokuapp.com/)
+[Live project: Kiddie Corner](https://kiddie-corner-d9bc0a883cc2.herokuapp.com/)
 
 # Table of Contents
 - [Planning and Design](#planning-and-design)
@@ -19,13 +19,14 @@ Any payments made using an actual payment card will fail and the card will not b
     - [Project-Goalss](#project-goals)
     - [User Stories and Epics](#user-stories-and-epics)
     - [Wireframes](#wireframes)
-    - [Database Schema](#Database-schema)
-    - [Typography](#typography)
-    - [Colour Pallete](#colour-pallete)
     - [SEO](#seo)
       - [keywords](#keywords)
       - [Robots.txt and sitemap.xml](#robotstxt-and-sitemapxml)
     - [E-commeerce  business model](#e-commerce-business-model)
+    - [Marketing Strategy](#marketing-strategy)
+    - [Database Schema](#Database-schema)
+    - [Typography](#typography)
+    - [Colour Pallete](#colour-pallete)
 - [Features](#Features)
     - [Navigation Bar](#navigation-bar)
     - [Account Management](#account-management)
@@ -66,11 +67,11 @@ Any payments made using an actual payment card will fail and the card will not b
 - Individuals looking for gifts for children's birthdays, holidays, or special occasions
 
 ## Project Goals
-To develop an innovative and user-friendly online toy store platform that caters to various age groups, offering a curated selection of toys, while providing seamless functionality for both customers and shop owners to browse, shop, and manage products efficiently
+To develop  user-friendly online toy store platform that caters to various age groups, offering a curated selection of toys, while providing seamless functionality for both customers and shop owners to browse, shop, and manage products efficiently
 
 ## User Stories and Epics
 
-To assist the AGILE process, I have created several user stories to help me plan and implement the project. These will help me prioritize the features and functionality of the site and ensure that I am delivering an MVP by the deadline.Firstly I start creating epics which were broken down into user stories, each representing a specific feature. I utilized the MoSCoW prioritization (Must have, Should have, Could have, Won't have) to categorize and prioritize each user story based on its importance.
+To assist the AGILE process, I start creating epics which were broken down into user stories, each representing a specific feature. These will help me prioritize the features and functionality of the site and ensure that I am delivering an MVP by the deadline.Firstly I utilized the MoSCoW prioritization (Must have, Should have, Could have, Won't have) to categorize and prioritize each user story based on its importance.
 For better planning and estimation, I assigned labels and story points to each user story, considering factors such as time and difficulty. This approach helped me gauge the relative effort required for different tasks and maintain a clear sense of priority. Also every user story includes acceptance criteria and associated tasks.Also I found it beneficial to transition to organizing my work into sprints with milestones. I structured the project into ten sprints  milestones. By grouping related user stories into each milestone, I could efficiently tackle tasks in a more focused manner.
 
 Epic-1  : Work Environment Setup
@@ -93,7 +94,7 @@ Epic-2 :User Experience
 - as a **user** I want  **to remove an item from my shopping bag**  So that I can **adjust my cart contents before proceeding to checkout**
 - as a **user** I want to **view the items in my shopping bag** So that I can **review  my selected items all together**.
 - As a  **User** I want to **see the total amount of my purchases** So that I can  **review the cost of my items before completing my order**.
-- As a **user**  i want to  **make  checkout  quickly and easily ** so that **I can make a purchase without unnecessary delays**
+- As a **user**  i want to  **make  checkout  quickly and easily** so that **I can make a purchase without unnecessary delays**
 - as a **user**  i want to get  **feedback about  checkout completition** , so that **Feel confident that the checkout process is finished**
 - as a **user** I want to be able to **select the quantity of a product**
 So that I can **specify how many of the item I wish to purchase**
@@ -116,6 +117,7 @@ Epic-3 : Staff Management
 I used [Balsamique](https://balsamiq.com/) to create wireframes for my project.These were adapted and improved upon throughout the development process.The wireframes encompass the main pages of the project, with each page extending the base HTML structure that includes navigation and footer elements.Mainly The wireframes display designs for desktop and mobile views. On mobile  screens, elements are arranged from top to bottom for readability and usability. Tablet screens  resemble the mobile version thats why  I decided not to create separate tablet wireframes. . These wireframes offer a clear visual representation of device differences, with most pages following the desktop layout.
 
 _Home Page Wireframes_<br>
+
 ![Home-page-desktop](./docs/wireframes/home-page-desktop.png)
 
 <details>
@@ -184,7 +186,6 @@ _Checkout Success page Wireframes_<br>
 
 _Favourites page Wireframes_<br>
 
-
 ![Favourites-Desktop](/docs/wireframes/favourite-desktop.png)
 
 <details>
@@ -194,7 +195,6 @@ _Favourites page Wireframes_<br>
 
 </details><br>
 _Contact us Page Wireframes_<br>
-
 
 ![contact-page](/docs/wireframes/contact-page.png)
 <br>
@@ -215,9 +215,10 @@ _Profile Page Wireframe_<br>
 _add/edit page Wireframe_<br>
 
 ![add-edit-product](/docs/wireframes/add-edit-product.png)<br>
-_edit_product-Page Wireframe_
+
 
 ## SEO
+
 Each page shows an extra title after the store name to assist help with SEO.
 
 ### Keywords
@@ -228,14 +229,15 @@ The selected keywords are the result of thorough research and analysis, incorpor
 - Narrowed down the list based on relevance, search volume, competition, and alignment with our brand and product offerings. 
   
 ### Robots.txt and sitemap.xml
+
 Sitemap and robots.txt files have been added to the site's root to help with SEO.
- To ensure that the robots.txt file is recognized as a text file rather than an HTML file within my project, i jhave taken the following steps:
+ To ensure that the robots.txt file is recognized as a text file rather than an HTML file within my project, i have taken the following steps:
  -  added the URL path at the project level to ensure that the robots.txt file is properly recognized.
  -  Due to the initialization of the template in the path, i had to move the robots.txt file into  templates folder to ensure it functions correctly.
 
 ## E-commerce Business Model
 
- Kiddie Corner is a B2C e-commerce application. Selling directly to consumers means that the site is designed to sell quickly, on impulse, and in smaller quantities.The website is not yet intend to sell to other businesses. For this reason, a large amount of the functionality is focused on the user experience and the ability to purchase products quickly and effectively
+Kiddie Corner is a B2C e-commerce application. Selling directly to consumers means that the site is designed to sell quickly, on impulse, and in smaller quantities.The website is not yet intend to sell to other businesses. For this reason, a large amount of the functionality is focused on the user experience and the ability to purchase products quickly and effectively
 
 ## Marketing Strategy
 
@@ -252,11 +254,11 @@ I used [lucid.app](https://lucid.app/) to create database schema for my project 
 - Product: Captures detailed information about each product, including pricing, descriptions, stock status, and user ratings. It also supports user favorites and sale indicators.
 2. Purchase Models:
 - Order: Manages customer orders, tracking essential details such as customer information, order status, and shipping methods. This ensures efficient order processing.
-- OrderLineItem: Allows staff members to make changes to each order by detailing specific products included in the order.
+- OrderLineItem: Allows for the detailed representation of each individual item within an order.
 3. Additional Models:
 - UserMessage: Facilitates user communication via a contact form.
 - UserProfile: Maintains user-specific details, including default delivery addresses and order history, to provide a personalized and better shopping experience.
-- Testimonial: Stores customer testimonials, including feedback and optional images, to build credibility and trust in the products and services offered.
+- Testimonial: Stores customer testimonials, including feedback , to build credibility and trust in the products and services offered.
 
 ![Database-Schema](/docs/erd-diagram.png)
 
@@ -276,12 +278,14 @@ I utilized a combination of fonts to achieve both aesthetic appeal and optimal r
 A dark bluecolor was chosen for the header and footer backgrounds. These darker tones were complemented by lighter colours such as yellow and orange, imparting  visual interest. Furthermore, a light grey shade was utilized as the background for the body content, providing  optimal readability and user engagement.
 Alongside these colors, standard Bootstrap colors are used for buttons, links, and to highlight certain text and messages.
 Adapting the above throughout the development process. The final list of colors used has been placed in contasr grid to check contrast scores.
-![Color gird](docs/contrast-grid.png.png)
+
+![Color gird](/docs/contrast-grid.png)
 
 [Back to top](#table-of-contents)
 
 # Features
 ## Navigation Bar 
+
 The navigation  bar designed with bootstrap adapts seamlessly to different screen sizes, ensuring a consistent user experience across desktops, tablets, and mobile devices.
 The navbar contains the business logo which links back to the homepage when clicked. There is also a Search bar that allows users to query the 'products' database. There are three icon links in the upper right of the navbar that link to the user favourites, user account/account management, and shopping bag features.The Menu Contains links to the Home, About/testimonials, All Products, shop by age, special offers and contuct us pages.
 
@@ -308,8 +312,7 @@ Login/Register/Logout:
 
   If logged in, the option to logout is available. 
 
-  
- ![dropdown-account](/docs/features/myacccount-dropdown.png)
+![dropdown-account](/docs/features/myacccount-dropdown.png)
 
 Upon clicking the register option, users are redirected to the sign-up page.
 
@@ -327,9 +330,7 @@ After confirming their email address users are notified that their email has bee
 
 ![email-confirmed](/docs/features/confirmed-email.png)
 
-
- For already registered users, clicking the account dropdown/login link redirects them to the sign-in page where they provide their account details. After filling out the form and clicking sign in, users are logged in, and an appropriate message is displayed confirming their login.
- 
+For already registered users, clicking the account dropdown/login link redirects them to the sign-in page where they provide their account details. After filling out the form and clicking sign in, users are logged in, and an appropriate message is displayed confirming their login.
  
 ![login-page](/docs/features/login.png)
 
@@ -341,7 +342,7 @@ To log out, logged in users can click the logout link in the account dropdown me
 
 ![logout-page](/docs/features/sign-out-message.png)
 
-- More extensive account functionalities were implemented in the previous project (Project 4). To avoid duplicating efforts and to focus on new features, the decision was made to prioritize other aspects of the project while maintaining essential account management capabilities.
+- More extensive account functionalities were implemented in the previous project [Project 4](https://tamariamrestaurant-d81c96b3d785.herokuapp.com/). To avoid duplicating efforts and to focus on new features, the decision was made to prioritize other aspects of the project while maintaining essential account management capabilities.
 
 ## Delivery Banner
 
@@ -351,7 +352,7 @@ The website features a prominent delivery banner positioned at the top of the he
 
 ## Homepage
 
-The home page features a main background image to catch users eye, with a button placed in the middle of the banner. Clicking this button takes user to the All Products page. Below that there is Highlighted Features and under that section there's a section about us with a small description of the page. Additionally, users can find age-specific links that lead to toys tailored for different age groups..
+The home page features a main background image to catch users eye, with a button placed in the middle of the banner. Clicking this button takes user to the All Products page. Below that there is Highlighted Features and under that section there's a section about us with a small description of the Store. Additionally, users can find age-specific links that lead to toys tailored for different age groups..
 
 ![Homepage-Desktop](/docs/features/dekstop-home-1.png)
 
@@ -370,9 +371,7 @@ The home page features a main background image to catch users eye, with a button
 ## Footer
 
 The footer of the Kiddie Corner website provides essential information and offers additional ways to connect with the store staff. Users can also subscribe to the newsletter to receive updates and news via email.
- 
 Footer is present on all pages. It contains three main sections, and a copyright section at the bottom.
-
 The three sections typical to both desktop and mobile are:
 
 - address and Social Media Links
@@ -381,14 +380,14 @@ The three sections typical to both desktop and mobile are:
 
 ![Footer-Desktop](/docs/features/footer.png)
 
- <details>
+<details>
   <summary>Footer-Tablet (click to expand)</summary>
 
 ![footer-Tab](/docs/features/footer-tablet.png)
 
 </details>
 
- <details>
+<details>
   <summary>Footer-Mobile (click to expand)</summary>
 
 ![footer-mobile](/docs/features/footer-mobile.png)
@@ -397,7 +396,6 @@ The three sections typical to both desktop and mobile are:
 
 I have included a screenshot of the Facebook page in case Facebook decides to remove link because it is not a real business at this stage. [facebook](https://www.facebook.com/profile.php?id=61560273074359)
 
-
 ![facebook](/docs/features/facebook-page.png)
 
 ## Products-Page
@@ -405,7 +403,7 @@ I have included a screenshot of the Facebook page in case Facebook decides to re
 When you click on "All Products" in the navigation bar, you will be directed to the product listing page where you can view all available products. Each product entry on this page includes:
 
 - Product Name: Clearly labeled to identify the product.Product Price: Indicating the cost of the product.
-- Product Rating: Showing the average rating of the product based on user reviews.
+- Product Rating: Showing the average rating of the product based on user reviews.(Note: Due to time constraints, this implementation uses manually inserted ratings instead of actual user reviews )
 - Stock Status: Displayed to inform users whether the product is in stock or out of stock.
 - Product Details Button: Clicking this button allows you to view more detailed information about the product.
 - Clickable Image: You can also click directly on the product image to navigate to the product details page.
@@ -441,10 +439,9 @@ Adter clicking the "Product Details" button for any product, you will be directe
   - more products: This button allows you to return to the main products page for further browsing.
   - Add to Bag: Clicking this button adds the product to your shopping bag or cart.
   - Add to Favorites: This button allows you to add the product to your favorites or wishlist.
-- Quantity Selection: A dropdown or form is provided to select the desired quantity of the product.
+- Quantity Selection: A dropdown form is provided to select the desired quantity of the product.
 
 ![product-in-stock](/docs/features/product-details-in-stock.png)
-
 
 <details>
   <summary>Product-details-Mobile (click to expand)</summary>
@@ -465,7 +462,7 @@ Clicking on the "Special Offers" link in the main menu will direct you to the Sp
 
  ## Shopping Bag
 
- To access the shopping bag page, click on the cart icon located on the top right side of the page.
+ To access the shopping bag page, click on the shopping cart icon located on the top right side of the page.
 
   ![shopping-bag-icon](/docs/features/shopping-cart-icon.png)
 
@@ -479,8 +476,7 @@ After navigating to the shopping bag page, if no items have been added, an appro
 
   ![empty-bag](/docs/features/empty-bag-desktop.png)
 
-  
- <details>
+<details>
   <summary>Empty-Bag-Mobile (click to expand)</summary>
 
 ![empty-bag-mobile](/docs/features/empty-bag-mobile.png)
@@ -516,6 +512,7 @@ On the shopping bag page, you can update or remove items using the appropriate b
 ![remove-message](/docs/features/remove-message.png)
 
 ## Checkout Page
+
 When you click on the "Secure Checkout" link on the shopping bag page, you'll be directed to the checkout page. Here, you can complete your purchase by filling out a form with your personal and delivery information, followed by providing your card details. Once you've filled out the necessary information, you can click "Submit Order" to finalize your purchase. Alternatively, you can return to the products page.
 
 If you're authenticated, you have the option to save your information for future purchases. Only logged-in users can avail this feature. Additionally, a small card section displays a summary of your shopping, including the number of items you're purchasing and the total cost, including delivery fees. On the left-hand side(on desktop screen) you'll find images of the items you've selected along with their quantities and prices below.
@@ -533,7 +530,6 @@ If you attempt to click the "Secure Checkout" button without having any items in
 
 ![error-message](/docs/features/error-message.png)
 
-
 after sucessfuly submiting infromation appropriate message wil displayed to let you know that order  confirmation has sent to your email.
 
 ![Checkout-page-mobile](/docs/features/order-message.png)
@@ -547,7 +543,7 @@ If you enter incorrect card numbers or expiry date, an appropriate message will 
 After successfully submitting your order, you'll be redirected to another page where you'll receive a confirmation message indicating that your order has been completed. On this page, you'll find all the relevant information regarding your order.
 You have the option to return to the home page by clicking the "Back To Home" button.
 
-![Checkout-page-mobile](/docs/features/checkout-page-mobile.png)
+![Checkout-success-Desktop](/docs/features/checkout-success-desktop.png)
 
   <details>
   <summary>Checkout-success-Mobile (click to expand)</summary>
@@ -560,16 +556,29 @@ You have the option to return to the home page by clicking the "Back To Home" bu
 
 - Navigating to the Favorites Page
 Accessing the Page: Click the "Favorites" link located on the top navigation bar (second from the top right). This will redirect you to the Favorites page.
-Favorites Page Content: On the Favorites page, you will see the products you have marked as favorites. If no products have been added, a text will display indicating that your favorites bag is empty and encouraging you to add products. This message will include a link to the products page.
+- Favorites Page Content: On the Favorites page, you will see the products you have marked as favorites. If no products have been added, a text will display indicating that your favorites bag is empty and encouraging you to add products. This message will include a link to the products page.
 
 ![Favourites-Desktop](/docs/features/favourites-desktop.png)
+
 
  <details>
   <summary>Favourites-Mobile (click to expand)</summary>
 
-![Favourites--mobile](/docs/features/favourites-mobile.png)
+![Favourites-mobile](/docs/features/favourites-mobile.png)
 
 </details>
+
+
+![empty-Favourites-Desktop](/docs/features/empty-favourites-desktop.png)
+
+<details>
+  <summary>Empty Favourites-Mobile (click to expand)</summary>
+
+![Empty-Favourites-mobile](/docs/features/empty-favourites-mobile.png)
+
+</details>
+
+
 
   - Staff members are not allowed to add products to favourites page or see the Favourites page itself. When they try to access the page, an appropriate message will notify them, and they will be redirected to the Home page.
     
@@ -604,7 +613,7 @@ Users can contact the staff through the contact page. You can navigate to this p
 ![contact-page-Desktop](/docs/features/contact-page-desktop.png)
 
 <details>
-  <summary>Favourites-Mobile (click to expand)</summary>
+  <summary>Contuct-Us-Mobile (click to expand)</summary>
 
   ![contact-page-Mobile](/docs/features/contact-page-mobile.png)
 
@@ -619,7 +628,6 @@ The Testimonials page can be accessed via the navigation bar. When you click on 
 
 Testimonials are displayed in a carousel format, allowing users to browse through them easily. Each testimonial card includes the user's name, profession, image, and testimonial text. You can navigate to the next or previous testimonial by clicking the arrow buttons or using the keyboard arrow keys.
 
-
 ![Testimonials-desktop](/docs/features/testimonials-desktop.png)
 
 <details>
@@ -630,6 +638,7 @@ Testimonials are displayed in a carousel format, allowing users to browse throug
 </details>
 
 ## My Account
+
 Registered users can access their profile page to check order details or update delivery informations by following these steps:
 Click on the user icon in the navigation bar. This will open a dropdown menu.
 - If You Are a Registered User:
@@ -643,7 +652,7 @@ You can register an account from the dropdown menu options.
 Once you are on your account page, you can manage your previous orders:
 
 - All your previous orders will be listed on your account page.
-View Order Details:
+- View Order Details:
 
 - Click on the order number to be redirected to the checkout_success page, where you can see the specific details of the order.
 
@@ -728,16 +737,16 @@ This error shows when a user types a URL into the browser which does not exist w
 
 Despite the pressing deadlines, it was not possible to implement all  features within the current project.i In future updates, i plan to incorporate the following user stories :
 
-Add Testimonials
+- Add Testimonials
 Introduce the ability for staff members to add testimonials directly from the product management page. 
 
-Social Media  Verification
+- Social Media  Verification
 Integrate social media account sign-in functionality for easy  login process for users. This will allow users to sign in to their accounts using their preferred social media platforms.
 
-Display Product Quantity
+- Display Product Quantity
 Implement a feature that displays the remaining quantity of each product in stock, providing users with real-time information about product availability. This will empower users to make informed purchasing decisions based on current stock levels.
 
-Reset Password
+- Reset Password
 Introduce a password reset functionality for registered users, allowing them to easily reset their passwords in case they forget them. 
 
 ## Testing
@@ -959,7 +968,7 @@ You can clone the repository by following these steps:
 
 To create a copy of the repository for viewing and editing without affecting the original repository you can fork the repository through the following steps:
 
-1. In my repository[github repository](https://github.com/tamariam/restaurant-Tamariam) click on the "fork" tab in the top right corner.
+1. In my repository[github repository](https://github.com/tamariam/Kiddie-Corner) click on the "fork" tab in the top right corner.
 2. Then click **create fork**  and it will fork the repository in your github account.
 
 # **Technologies used**
@@ -989,8 +998,8 @@ To create a copy of the repository for viewing and editing without affecting the
   * was used to implement interactivity and manipulatethe DOM from the front end.
 
 # Credits
-*  Boutique Ado
- * Many elements of the the e-commerce part of this project have been adapted from the Code Institute's "Boutique Ado" Code-through Project.
+
+* Many elements of the the e-commerce part of this project have been adapted from the Code Institute's **"Boutique Ado"** Code-through Project.
 * [Balsamiq](https://balsamiq.com/wireframes/) was used to create the wireframes.
 * [lucid.app](https://lucid.app/users/login#/login) was used to create ERD
 * The site was developed using [gitpod](https://www.gitpod.io/).
