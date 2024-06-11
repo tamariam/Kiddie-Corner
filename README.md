@@ -74,13 +74,16 @@ To develop  user-friendly online toy store platform that caters to various age g
 To assist the AGILE process, I start creating epics which were broken down into user stories, each representing a specific feature. These will help me prioritize the features and functionality of the site and ensure that I am delivering an MVP by the deadline.Firstly I utilized the MoSCoW prioritization (Must have, Should have, Could have, Won't have) to categorize and prioritize each user story based on its importance.
 For better planning and estimation, I assigned labels and story points to each user story, considering factors such as time and difficulty. This approach helped me gauge the relative effort required for different tasks and maintain a clear sense of priority. Also every user story includes acceptance criteria and associated tasks.Also I found it beneficial to transition to organizing my work into sprints with milestones. I structured the project into ten sprints  milestones. By grouping related user stories into each milestone, I could efficiently tackle tasks in a more focused manner.
 
-Epic-1  : Work Environment Setup
+Epic-1  :  Setup and Deployment Infrastructure 
+
 - As a **developer** I can **install Django and essential libraries**,
 so that I can **quickly set up a robust development environment and kickstart my web projects with confidence**..
+- As a developer, **my goal is to establish a secure environment for managing confidential configuration variables**., so that **sensitive information remains confidential,**.
 - As a **developer** I want to **deploy the website on Heroku** so that i can  **test its functionality in a live environment and make the completed site accessible to the public**.
 - As a **Developer** i want to **validate my HTML, CSS, Python, and JavaScript code and perform Lighthouse audits to ensure that my web application is compliant with standards, performs well, and provides a good user experience.**
 
 Epic-2 :User Experience
+
 - As a **site user** I want  **to navigate through landing page** so that **i can easily access various sections**
 - As a **user** I can **register my account** so that  **I can log in and log out in my account.**
 - as a **user** i can **login**  to ** use all features of site**
@@ -102,12 +105,13 @@ So that I can **specify how many of the item I wish to purchase**
 so that I can **inquire about products, orders, or other concerns without needing to make a phone call**.
 - As a **user**, I want to **remove products from the favorites page** so that I can **manage my favorite products easily and keep the list up-to-date**.
 - As a **user**, I want to **add products to my favorites** so that I  **do not spend time looking for favourite products again**.
-- As a **registered user,** I want to **access and manage my order details on the My Account page**, so that I can easily **track my purchases, view specific order details, and update my delivery information**.
+- As a **registered user,** I want to **access and manage my order details on the My Account page**, so that I can easily **view specific order details, and update my delivery information**.
 - As a **registered user,** I want to **update my delivery information** on the My Account page,
 so that **my orders are delivered to the correct address**.
 - As a **user**, I want to **see testimonials** so that I can **read the experiences  from other customers and feel confident about making a purchase**.
 
 Epic-3 : Staff Management
+
 - as a **staff member** i want **to delete product**  so that I can **remove outdated or unnecessary items from the inventory**.
 - as a **staff member** i can  **edit products** So that I can update product details as needed.
 - As a **staff member**, I want to **add a product**, So that I can efficiently **manage inventory and streamline the product addition process**.

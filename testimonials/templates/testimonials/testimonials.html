@@ -11,6 +11,7 @@
  <!-- Testimonials page" -->
 <section class="container-fluid my-5 p-2 lato">
     <h2 class="text-center mb-3 ">What Our Clients Think</h2>
+    <p class="text-center text-dark font-weight-bold ">If you would like to leave a testimonial, please send us a message through the   <a href="{% url 'contact_page' %}" class="contact-page-link text-uppercase " aria-label="link to contact page">Contact Us</a> Page</p>
     <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner mb-5 ">
             {% for testimonial in testimonials %}

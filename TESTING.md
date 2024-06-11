@@ -9,9 +9,10 @@
 ## Manual Testing
 
 Throughout the development process, each user story was thoroughly tested to ensure correct functionality and a positive user experience. Here's a summary of the testing conducted:
-* ### Setting up Working Environment
+* ###  Setup and Deployment Infrastructure
 
 * Package Installation: Necessary packages were successfully installed to set up the development environment.
+*  Secure enviroment is Set up and sensitive information remains confidential.
 * Deployment: The site was successfully deployed to ensure accessibility for users.
 * ### User Experience
 

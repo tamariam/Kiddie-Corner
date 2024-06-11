@@ -39,6 +39,11 @@ testimonial in a testimonial grid.  */
     font-size:30px;
 }
 
+.contact-page-link{
+	text-decoration: underline !important;
+	color:black;
+}
 
-
-
+.contact-page-link:hover{
+	color:red;
+}
