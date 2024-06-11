@@ -1,15 +1,19 @@
 {% extends 'base.html'%}
 
+{% load static %}
+
 {% block content %}
-<div class="server-error-container fill-screen container py-5 my-5 bg-white">
+
+<div class="error-container fill-screen container d-flex justify-content-center align-items-center my-5 py-5 ">
+    <div class="col-md-6">
     <div class="bellow-nav bg-white">
             <h2 class="bg-primary text-center">500 - Server Error</h2>
             <p class="font-weight-bold text-dark text-center">Something went wrong on our end. Please try again later.</p>
+            <div class="text-center">
             <button onclick="window.history.back();" class="btn btn-danger text-white mx-auto " type="text-centerbutton">Go Back</button>
+            </div>
+    </div>
     </div>
 </div>
-
-
-
 
 {% endblock %}
