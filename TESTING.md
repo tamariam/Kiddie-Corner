@@ -515,6 +515,12 @@ To resolve this issue, I modified the admin panel configuration to remove the "d
 - After reviewing the Stripe webhook status, it was discovered that the status returned was 400 instead of 200, even though the payment was confirmed. The root cause of this issue was identified as a typo in the code. Instead of using the correct method save_info  save-info was mistakenly used, leading to the unexpected status code.
 5. Issue
 - Also In the handle_payment_intent_succeeded view, there were several mistakes in the field definitions, including typos and incorrect field names. After addressing these issues, the webhook handler status was successfully changed to 200.
+6. Issue
+When the "Save Info" checkbox is checked during checkout, the user's delivery details, including the name and email, were not updated correctly in the user profile. This issue was identified because the default_email and default_name fields were not passed to the profile data in the checkout_success view.
+7.Issue
+During the checkout process, multiple orders (2 or 3) were being created instead of just one. This issue was identified after reviewing the checkout code and realizing that the order was being saved before setting commit=False in the form save method.This was solved by first saving the order form with commit=False, setting the additional fields, and then saving the order instance.
+8. Issue
+Unauthenticated users could access order details if they knew the order number, posing a security risk. I Added login_required decorator to the completed_order view to restrict unauthorized access.
 ## Deployment Issues
 1. Issue:
 After the initial deployment, it was noticed that no static files were collected from Heroku, resulting in an unattractive appearance of the site.Site was unrecognizable. After spending hours investigating the issue and seeking assistance from tutoring support, two issues were identified as the root cause of the problem:

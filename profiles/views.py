@@ -4,7 +4,6 @@ from .forms import UserProfileForm
 from .models import UserProfile
 from django.contrib import messages
 from checkout.models import Order
-from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
