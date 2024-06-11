@@ -63,7 +63,7 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order_stripe_pid = pid
             order.original_bag = json.dumps(bag)
-            order.save()
+            # order.save()
             for item_id, quantity in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -146,7 +146,7 @@ def checkout_success(request, order_number):
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
         order.user_profile = profile
-        # order.save()
+        order.save()
 
         # Save the user's info is save info is checked
         if save_info:
