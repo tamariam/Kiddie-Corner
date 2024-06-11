@@ -4,6 +4,7 @@ from .forms import UserProfileForm
 from .models import UserProfile
 from django.contrib import messages
 from checkout.models import Order
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -35,6 +36,7 @@ def profile(request):
         return redirect('home')
 
 
+@login_required
 def completed_order(request, order_number):
     '''This view renders completed order details '''
     order = get_object_or_404(Order, order_number=order_number)
