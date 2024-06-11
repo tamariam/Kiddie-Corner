@@ -44,7 +44,7 @@ Any payments made using an actual payment card will fail and the card will not b
     - [My Account](#my-account)
     - [Product Management](#product-management)
     - [404-Page not found](#Page-not-found)
-    - [ 505-server error](#server-error)
+    - [ 500-server error](#server-error)
 - [Future Development](#future-development)
 - [Testing](#testing)
 - [Deployment](#deployment)
@@ -264,7 +264,7 @@ I used [lucid.app](https://lucid.app/) to create database schema for my project 
 - UserProfile: Maintains user-specific details, including default delivery addresses and order history, to provide a personalized and better shopping experience.
 - Testimonial: Stores customer testimonials, including feedback , to build credibility and trust in the products and services offered.
 
-![Database-Schema](/docs/erd-diagram.png)
+![Database-Schema](/docs/ERD-diagram/erd-diagram.png)
 
 ## Typography
 
@@ -276,14 +276,14 @@ I utilized a combination of fonts to achieve both aesthetic appeal and optimal r
 
 ## Colour Pallete
 
-![Color-Pallete](docs/color-pallete.png)
+![Color-Pallete](docs/colours/color-pallete.png)
 
 * The color palette was chosen with [coolers](https://coolors.co/) and consists of 4 simple colours as seen above.
 A dark bluecolor was chosen for the header and footer backgrounds. These darker tones were complemented by lighter colours such as yellow and orange, imparting  visual interest. Furthermore, a light grey shade was utilized as the background for the body content, providing  optimal readability and user engagement.
 Alongside these colors, standard Bootstrap colors are used for buttons, links, and to highlight certain text and messages.
 Adapting the above throughout the development process. The final list of colors used has been placed in contasr grid to check contrast scores.
 
-![Color gird](/docs/contrast-grid.png)
+![Color gird](/docs/colours/contrast-grid.png)
 
 [Back to top](#table-of-contents)
 
@@ -736,6 +736,12 @@ A staff member can delete a product by simply clicking on the Delete link on the
 This error shows when a user types a URL into the browser which does not exist within the app's domain.
 
 ![404-error](/docs/features/404.png)
+
+## 500 Server Error
+
+This error shows up when there is internal server error.
+
+![500-error](/docs/features/500-server-error.png)
 
 # Future Development
 
