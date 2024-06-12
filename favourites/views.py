@@ -19,6 +19,7 @@ def favourites(request):
                       'not allowed to view this page')
         return redirect('home')
 
+
 @login_required
 def add_to_favourite(request, product_id):
     '''view to add product in favourites
