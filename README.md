@@ -43,8 +43,8 @@ Any payments made using an actual payment card will fail and the card will not b
     - [ Testimonials ](#testimonials)
     - [My Account](#my-account)
     - [Product Management](#product-management)
-    - [404-Page not found](#Page-not-found)
-    - [ 500-server error](#server-error)
+    - [404-Page not found error](#404-page-not-found-error)
+    - [500-server error](#500-server-error)
 - [Future Development](#future-development)
 - [Testing](#testing)
 - [Deployment](#deployment)
@@ -732,7 +732,7 @@ A staff member can delete a product by simply clicking on the Delete link on the
 
 ![user-not -allowed](/docs/features/user-not-allowed-message.png)
 
-## 404  Page not Found Page
+## 404  Page not Found Error
 This error shows when a user types a URL into the browser which does not exist within the app's domain.
 
 ![404-error](/docs/features/404.png)
