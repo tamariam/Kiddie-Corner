@@ -50,19 +50,19 @@
     <div class="features-div  my-5 row col-12  d-flex  justify-content-between align-items-center">
         <div class="col-md-6 col-lg-3 d-flex  justify-content-center flex-column align-items-center">
         <div class="rounded-circle"><img class="age-img img rounded-circle" src="{{ MEDIA_URL }}baby.jpg" alt=" baby image  "></div>
-        <a class="text-bold age-btn m-2 btn btn-success" href="{% url 'products' %}?category=up_to_one_year">Up to 1 Year</a>
+        <a class="text-bold age-btn m-2 btn btn-success" href="{% url 'products' %}?category=up_to_one_year" aria-label="link to baby category">Up to 1 Year</a>
         </div>
         <div class="col-md-6 col-lg-3 d-flex  justify-content-center flex-column align-items-center">
             <div class="rounded-circle"><img class="age-img img rounded-circle" src="{{ MEDIA_URL }}two.jpg" alt="picture of 2 years old child"></div>
-            <a class="text-bold age-btn m-2 btn btn-primary" href="{% url 'products' %}?category=up_to_one_year">1-2 years Year</a>
+            <a class="text-bold age-btn m-2 btn btn-primary" href="{% url 'products' %}?category=1_2_years" aria-label="link to 1-2 years category">1-2 years Year</a>
             </div>
             <div class="col-md-6 col-lg-3 d-flex  justify-content-center flex-column align-items-center">
                 <div class="rounded-circle"><img class="age-img rounded-circle" src="{{ MEDIA_URL }}three.jpg" alt=" picture of 3 years old child"></div>
-                <a class="text-bold age-btn m-2 btn btn-warning" href="{% url 'products' %}?category=up_to_one_year">2-3 years Year</a>
+                <a class="text-bold age-btn m-2 btn btn-warning" href="{% url 'products' %}?category=2_3_years" aria-label="link to 2-3 years category">2-3 years Year</a>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex  justify-content-center flex-column align-items-center">
                     <div class="rounded-circle"><img class="age-img img rounded-circle" src="{{ MEDIA_URL }}four.jpg" alt="children-toys  picture of 4 years old child"></div>
-                    <a class="text-bold age-btn m-2 btn btn-danger" href="{% url 'products' %}?category=up_to_one_year">3+ years Year</a>
+                    <a class="text-bold age-btn m-2 btn btn-danger" href="{% url 'products' %}?category=3_plus_years" aria-label="link to 3+ category">3+ years Year</a>
                     </div>
                 </div>
     </div>
